@@ -1,0 +1,6 @@
+.\obj\brake_control.o: User_App\brake_control.c
+.\obj\brake_control.o: User_App\brake_control.h
+.\obj\brake_control.o: User_App\global.h
+.\obj\brake_control.o: User_App\input.h
+.\obj\brake_control.o: User_App\self_check.h
+.\obj\brake_control.o: User_App\fault_check.h

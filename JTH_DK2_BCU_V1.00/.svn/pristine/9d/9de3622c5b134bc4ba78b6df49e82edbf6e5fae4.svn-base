@@ -1,0 +1,2 @@
+.\obj\global.o: User_App\global.c
+.\obj\global.o: User_App\global.h
