@@ -1,4 +1,0 @@
-.\obj\fault_check.o: User_App\fault_check.c
-.\obj\fault_check.o: User_App\fault_check.h
-.\obj\fault_check.o: User_App\global.h
-.\obj\fault_check.o: User_App\brake_control.h
