@@ -1,0 +1,709 @@
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE BRAKE_CONTROL
+OBJECT MODULE PLACED IN .\obj\brake_control.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE User_App\brake_control.c MODV2 BROWSE INCDIR(.\Hardw
+                    -ard File;.\User_App) MODV2 DEBUG PRINT(.\list\brake_control.lst) OBJECT(.\obj\brake_control.obj) 
+
+ stmt lvl     source
+
+    1         
+    2         #include "brake_control.h"
+    3         #include "MAIN.H"
+    4         
+    5         BOOL run_flag = FALSE;  //ÔË×ªÎ»±ê¼Ç
+    6         static unsigned int d_brk_first_collect = 0;    //³õ´Î½øÈëÖÆ¶¯Î»²É¼¯Öµ
+    7         static unsigned int d_res_first_collect = 0;    //³õ´Î½øÈëÒÖÖÆÎ»²É¼¯Öµ
+    8         
+    9         void D_Oc_Logic(void)
+   10         {
+   11  1              if(bcu_emc)
+   12  1              {
+   13  2                      er_target = 0;
+   14  2              }
+   15  1              else
+   16  1              {
+   17  2                      if(bcu_punish.ATP || bcu_punish.HD || bcu_punish.DS || bcu_punish.CCU)
+   18  2                      {
+   19  3                              er_target = MIN(er_target,STD_PRESS - M_JIANYA_MAX);
+   20  3                      }
+   21  2                      else
+   22  2                      {
+   23  3                              er_target = STD_PRESS;
+   24  3                      }
+   25  2              }
+   26  1      }
+   27         
+   28         
+   29         void D_Run_Logic(void)
+   30         {
+   31  1              if(bcu_press.bp > 360)
+   32  1              {
+   33  2                      run_flag = FALSE;
+   34  2              }
+   35  1              else
+   36  1              {
+   37  2                      run_flag = TRUE;
+   38  2              }
+   39  1              
+   40  1              if(bcu_emc)
+   41  1              {
+   42  2                      er_target = 0;
+   43  2              }
+   44  1              else
+   45  1              {
+   46  2                      if(bcu_punish.ATP || bcu_punish.HD || bcu_punish.DS || bcu_punish.CCU)
+   47  2                      {
+   48  3                              er_target = MIN(er_target,STD_PRESS - M_JIANYA_MAX);
+   49  3                      }
+   50  2                      else
+   51  2                      {
+   52  3                              er_target = STD_PRESS;
+   53  3                      }
+   54  2              }
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 2   
+
+   55  1      }
+   56         
+   57         
+   58         void D_Brk_Logic(void)
+   59         {
+   60  1              if(d_move_flag) //³õ´Î½øÈë
+   61  1              {
+   62  2                      if(bcu_press.er > (STD_PRESS - M_JIANYA_MAX))
+   63  2                      {
+   64  3                              if(bcu_last_pos.d_run)
+   65  3                              {
+   66  4                                      d_brk_first_collect = bcu_press.er;
+   67  4                              }
+   68  3                              else if(bcu_last_pos.d_res)
+   69  3                              {
+   70  4                                      d_brk_first_collect = d_res_first_collect;
+   71  4                              }
+   72  3                      }
+   73  2                      else
+   74  2                      {
+   75  3                              if(bcu_switch.S1)       //½×¶Î»º½â
+   76  3                              {
+   77  4                                      d_brk_first_collect = d_res_first_collect;
+   78  4                              }
+   79  3                              else
+   80  3                              {
+   81  4                                      d_brk_first_collect = bcu_press.er;
+   82  4                              }
+   83  3                      }       
+   84  2              }
+   85  1      
+   86  1              if(bcu_emc)
+   87  1              {
+   88  2                      er_target = 0;
+   89  2              }
+   90  1              else
+   91  1              {
+   92  2                      if(bcu_punish.ATP || bcu_punish.HD || bcu_punish.DS || bcu_punish.CCU)
+   93  2                      {
+   94  3                              er_target = MIN(er_target,STD_PRESS - M_JIANYA_MAX);
+   95  3                      }
+   96  2                      else
+   97  2                      {
+   98  3                              if(d_brk_first_collect > (STD_PRESS - 51))      //Î´´ïµ½×îÐ¡¼õÑ¹Á¿
+   99  3                              {
+  100  4                                      er_target = MAX(MIN((STD_PRESS - AI_JIANYA),(STD_PRESS-56)),STD_PRESS - M_JIANYA_MAX);
+*** ERROR C67 IN LINE 100 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+*** ERROR C67 IN LINE 100 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+*** ERROR C67 IN LINE 100 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+*** ERROR C67 IN LINE 100 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+  101  4                              }
+  102  3                              else if(d_brk_first_collect < (STD_PRESS - M_JIANYA_MAX))
+  103  3                              {
+  104  4                                      er_target = d_brk_first_collect;
+  105  4                              }
+  106  3                              else
+  107  3                              {
+  108  4                                      er_target = MAX((STD_PRESS - M_JIANYA_MAX),(STD_PRESS - AI_JIANYA));
+*** ERROR C67 IN LINE 108 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+*** ERROR C67 IN LINE 108 OF User_App\brake_control.c: 'AI_JIANYA': undefined identifier
+  109  4                              }
+  110  3                      }
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 3   
+
+  111  2              }       
+  112  1      }
+  113         
+  114         
+  115         void D_Res_Logic(void)
+  116         {
+  117  1              static unsigned char res_time=0;
+  118  1              static unsigned int er_press_buf = 0;
+  119  1              static BOOL res_flag = FALSE;
+  120  1              
+  121  1              if(!M_ENABLE_ALL)               
+  122  1              {
+  123  2                      if(res_time++ > 20)             
+  124  2                      {
+  125  3                              res_time = 0;
+  126  3                              M_ENABLE_ALL = TRUE;
+  127  3                      }
+  128  2              }
+  129  1              else
+  130  1              {               
+  131  2                      if(bcu_switch.S1)       //½×¶Î»º½â
+  132  2                      {
+  133  3                              if(bcu_last_pos.d_brk)
+  134  3                                      d_res_first_collect = d_brk_first_collect;
+  135  3                              else if(bcu_last_pos.d_run)
+  136  3                                      d_res_first_collect = STD_PRESS - 3;
+  137  3                      }
+  138  2                      else
+  139  2                      {
+  140  3                              d_res_first_collect = STD_PRESS - 3;
+  141  3                      }
+  142  2                      
+  143  2                      if(bcu_emc)
+  144  2                      {
+  145  3                              er_target = 0;
+  146  3                      }
+  147  2                      else
+  148  2                      {
+  149  3                              if(bcu_press.er > (STD_PRESS - M_JIANYA_MAX))
+  150  3                              {
+  151  4                                      er_target = MAX((d_res_first_collect - M_JIANYA_MAX),(STD_PRESS - M_JIANYA_MAX));
+  152  4                              }
+  153  3                              else
+  154  3                              {
+  155  4                                      if(!res_flag)
+  156  4                                      {
+  157  5                                              res_flag = TRUE;
+  158  5                                              er_press_buf = bcu_press.er;
+  159  5                                      }
+  160  4                                      else
+  161  4                                      {
+  162  5                                              er_target = er_press_buf;
+  163  5                                      }
+  164  4                              }               
+  165  3                      }
+  166  2              }
+  167  1      }
+  168         
+  169         void D_Mul_Logic(void)
+  170         {
+  171  1              static unsigned char mul_time=0;
+  172  1              
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 4   
+
+  173  1              if(!M_ENABLE_ALL)               
+  174  1              {
+  175  2                      if(mul_time++ > 20)             
+  176  2                      {
+  177  3                              mul_time = 0;
+  178  3                              M_ENABLE_ALL = TRUE;
+  179  3                      }
+  180  2              }
+  181  1              else
+  182  1              {       
+  183  2              
+  184  2              }
+  185  1      }
+  186         
+  187         
+  188         
+  189         void D_Emc_Logic(void)
+  190         {
+  191  1      
+  192  1      }
+  193         
+  194         
+  195         unsigned int Monitor_Logic(void)
+  196         {
+  197  1              return 1;
+  198  1      }
+  199         
+  200         
+  201         
+  202         void BCU_Pusher_Logic(void)
+  203         {
+  204  1      
+  205  1      }
+  206         
+  207         
+  208         
+  209         //unsigned int po2_value=0,po2_xz=0,xz_lap_flag=0;
+  210         //unsigned int PO2_EBV_F=0;
+  211         
+  212         //unsigned int XZ_Logic(void)
+  213         //{
+  214         
+  215         //      static unsigned int xz_rel_time=0;
+  216         //      static unsigned int xz_lap_jishu=0;
+  217         //      
+  218         //      if(PO2_EBV ==0)
+  219         //      {
+  220         ////            xz_time = 0;
+  221         ////            xz_time_flow = 0;
+  222         //              xz_rel_time = 0;
+  223         //      }       
+  224         //      
+  225         //      if(PO2_EBV > (unsigned int)(xz_rel_time*50*9/100))
+  226         //      {
+  227         //              PO2_EBV_F = PO2_EBV - (unsigned int)(xz_rel_time*50*9/100);
+  228         //      }
+  229         //      else
+  230         //              PO2_EBV_F = 0;  
+  231         //      
+  232         //      if(bcu_pos.x_rel)
+  233         //      {
+  234         //              po2_xz = 0;
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 5   
+
+  235         //              po2_value = 0;
+  236         //              
+  237         //              if(PO2_EBV_F > 0)
+  238         //              {
+  239         //                      xz_rel_time++;
+  240         //              }
+  241         
+  242         //              xz_lap_flag = 0;
+  243         //              xz_lap_jishu = 0;
+  244         //      }
+  245         //      
+  246         //      else if(bcu_pos.x_run)
+  247         //      {
+  248         //              po2_xz = 0;
+  249         //              po2_value = MAX(PO2_EBV_F,po2_xz);
+  250         //              xz_lap_flag = 0;
+  251         //              xz_lap_jishu = 0;
+  252         //      }
+  253         //      
+  254         //      else if(bcu_pos.x_lap)
+  255         //      {
+  256         //              if(xz_lap_jishu == 0)
+  257         //              {
+  258         //                      xz_lap_jishu = 1;
+  259         //                      if(bcu_last_pos.x_brk)
+  260         //                      {
+  261         //                              if(xz_lap_flag < 314)
+  262         //                              {
+  263         //                                      if(!faults[26])
+  264         //                                              po2_xz = bcu_press.bc_pre + 30;
+  265         //                                      else
+  266         //                                              po2_xz = bcu_press.wp + 30;
+  267         //                                      
+  268         //                                      if(po2_xz > 314)
+  269         //                                              po2_xz = 314;
+  270         //                              }
+  271         //                              else
+  272         //                              {
+  273         //                                      po2_xz = xz_lap_flag;
+  274         //                              }
+  275         //                      }
+  276         //                      else if(bcu_last_pos.x_rel || bcu_last_pos.x_run)
+  277         //                      {
+  278         //                              if(!faults[26])
+  279         //                              {
+  280         //                                      if(bcu_press.bc_pre > 200)
+  281         //                                              po2_xz = bcu_press.bc_pre - 15;
+  282         //                                      else if(bcu_press.bc_pre > 130)
+  283         //                                              po2_xz = bcu_press.bc_pre - 30;
+  284         //                                      else if(bcu_press.bc_pre > 90)
+  285         //                                              po2_xz = bcu_press.bc_pre - 40;
+  286         //                                      else
+  287         //                                      {
+  288         //                                              if(bcu_press.bc_pre > 5)
+  289         //                                                      po2_xz = bcu_press.bc_pre - 5;
+  290         //                                              else
+  291         //                                                      po2_xz = 0;
+  292         //                                      }
+  293         //                              }
+  294         //                              else
+  295         //                              {
+  296         //                                      if(bcu_press.wp > 200)
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 6   
+
+  297         //                                              po2_xz = bcu_press.wp - 15;
+  298         //                                      else if(bcu_press.wp > 130)
+  299         //                                              po2_xz = bcu_press.wp - 30;
+  300         //                                      else if(bcu_press.wp > 90)
+  301         //                                              po2_xz = bcu_press.wp - 40;
+  302         //                                      else
+  303         //                                      {
+  304         //                                              if(bcu_press.wp > 5)
+  305         //                                                      po2_xz = bcu_press.wp - 5;
+  306         //                                              else
+  307         //                                                      po2_xz = 0;
+  308         //                                      }
+  309         //                              }
+  310         //                      }
+  311         //              }
+  312         //              
+  313         //              if(PO2_EBV_F > po2_xz)  //Èç¹û´óÕ¢Ä¿±êÖµ¼ÌÐøÔö¼ÓµÄ»°£¬Õ¢¸×Ä¿±êÖµÒª¸úËæ£¬µ«ÊÇ´óÕ¢Ä¿±êÖµ»º½âÊ±£¬Õ¢¸×Ä¿±êÖ
+             -µ²»¸úËæ
+  314         //              {
+  315         //                      po2_xz = PO2_EBV_F;
+  316         //                      xz_lap_flag = PO2_EBV_F;
+  317         //              }
+  318         //              po2_value = MAX(PO2_EBV_F,po2_xz);
+  319         //      }
+  320         //      
+  321         //      else if(bcu_pos.x_brk)
+  322         //      {
+  323         //              xz_lap_jishu = 0;
+  324         //              po2_xz = 314;
+  325         //              if(bcu_last_pos.x_lap && xz_lap_flag >314)
+  326         //                      po2_xz = xz_lap_flag;
+  327         //              po2_value = MAX(PO2_EBV_F,po2_xz);
+  328         //      }
+  329         //      
+  330         //      else
+  331         //              po2_value = PO2_EBV;
+  332         //      
+  333         //      return (po2_value);
+  334         //}
+  335         
+  336         
+  337         
+  338         void BCU_Slave_Logic(void)
+  339         {
+  340  1              
+  341  1      }
+  342         
+  343         
+  344         
+  345         
+  346         
+  347         
+  348         /*******Ô¤´¦ÀíÂß¼­*******/
+  349         void Logic_All_Pre(void)
+  350         {
+  351  1      //      static unsigned char ma_time=0;
+  352  1      //      static unsigned char time=0;
+  353  1      //      static unsigned char do07_time = 0;
+  354  1      //      static unsigned char do07_time1 = 0;
+  355  1      //      BOOL zj1_xrel_flag = FALSE;     
+  356  1      //      
+  357  1      //      if(!bcu_mode.slave)     //·Ç´Ó¿ØÄ£Ê½
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 7   
+
+  358  1      //      {
+  359  1      ////            ZJ1 = ((bcu_pos.d_oc || bcu_pos.d_run || bcu_pos.d_lap || bcu_pos.d_brk) && (ZJ1 || DI17)) || (bcu_p
+             -os.d_mul && DI17) || bcu_pos.d_emc || EM_LOCK;
+  360  1      //              if(((bcu_pos.d_oc || bcu_pos.d_run || bcu_pos.d_lap || bcu_pos.d_brk || bcu_pos.d_other) && (DI17 || Z
+             -J1)) || (bcu_pos.d_mul && DI17) || bcu_pos.d_emc || EM_LOCK)
+  361  1      //              {
+  362  1      //                      ZJ1 = TRUE;
+  363  1      //                      EM_LOCK = TRUE;
+  364  1      //              }
+  365  1      //              else
+  366  1      //              {
+  367  1      //                      ZJ1 = FALSE;
+  368  1      //              }
+  369  1      //              
+  370  1      //              if(DI23 && bcu_switch.ZJI3)
+  371  1      //                      ZJ3 = TRUE;
+  372  1      //              else
+  373  1      //                      ZJ3 = FALSE;
+  374  1      //              /***½ô¼±µç¿Õ·§***/
+  375  1      //              DO01 = ZJ1;
+  376  1      //              
+  377  1      //              /***±£»¤µç¿Õ·§***/
+  378  1      //              DO02 = M_ENABLE_ALL && !a_error[02];
+  379  1      //              
+  380  1      //              /***ÅÅ2µç¿Õ·§***/
+  381  1      //              if((((bcu_last_pos.d_oc || bcu_last_pos.d_run) && bcu_pos.d_lap) || (bcu_pos.d_oc || bcu_pos.d_run)) &
+             -& (!ZJ3) && (!ZJ1) && (!DI18))
+  382  1      //                      DO03 = FALSE;
+  383  1      //              else if(DI18)           //(*²¹»úÎ»ÅÅ2µç¿Õ·§Ê§µç*)
+  384  1      //                      DO03 = FALSE;
+  385  1      //              else 
+  386  1      //                      DO03 = TRUE;
+  387  1      //              
+  388  1      //              /***ÖÐÁ¢µç¿Õ·§***/
+  389  1      //              if(!DI18)       //±¾»úÎ»
+  390  1      //              {
+  391  1      //                      if(!bcu_switch.ZJI1)    //²¹·ç
+  392  1      //                      {
+  393  1      //                              if(ZJ1 || bcu_pos.d_mul)
+  394  1      //                                      DO04 = TRUE;
+  395  1      //                              else
+  396  1      //                                      DO04 = FALSE;
+  397  1      //                      }
+  398  1      //                      else                                    //²»²¹·ç
+  399  1      //                      {
+  400  1      //                              if(ZJ1 || bcu_pos.d_mul || bcu_pos.d_lap || bcu_pos.d_brk)
+  401  1      //                                      DO04 = TRUE;
+  402  1      //                              else
+  403  1      //                                      DO04 = FALSE;
+  404  1      //                      }
+  405  1      //              }
+  406  1      //              else            //²¹»úÎ»
+  407  1      //              {
+  408  1      //                      DO04 = FALSE;
+  409  1      //              }
+  410  1      //              
+  411  1      //              if(!DI18)
+  412  1      //              {
+  413  1      //                      if(ZJ3 || !DI25 || CHENFA_FLAG)
+  414  1      //                              DO04 = TRUE;
+  415  1      //              }
+  416  1      //              
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 8   
+
+  417  1      //              /***ÕÚ¶Ïµç¿Õ·§***/
+  418  1      //              DO05 = ((bcu_pos.d_mul && !DI18) || ZJ1);
+  419  1      //              
+  420  1      //              /***ÖØÁªµç¿Õ·§***/
+  421  1      //              DO06 = (ZJ1 || bcu_pos.d_mul || DI18);
+  422  1      //              
+  423  1      //              /***ÇÐ»»µç¿Õ·§***/
+  424  1      //              if(!a_error[01] && !b_error[16])        //ÁÐ³µ¹Ü´«¸ÐÆ÷¡¢´óÐ¡Õ¢¾ùÕý³£
+  425  1      //              {
+  426  1      //                      if(!b_error[10] && !b_error[04])        //Õ¢¸×Ô¤¿Ø¡¢×÷ÓÃ¹Ü¾ùÕý³£
+  427  1      //                      {
+  428  1      //                              if(bcu_press.bc_pre > 20)
+  429  1      //                              {
+  430  1      //                                      if(bcu_mode.leading)    //±¾»ú
+  431  1      //                                      {
+  432  1      //                                              if(!ZJ1)        //ÎÞ½ô¼±
+  433  1      //                                              {
+  434  1      //                                                      jin_xrel_flag = FALSE;
+  435  1      //                                                      if(bcu_pos.x_rel && (b_error[10] || b_error[04]))
+  436  1      //                                                      {
+  437  1      //                                                              DO07 = TRUE;
+  438  1      //                                                              L = FALSE;
+  439  1      //                                                      }
+  440  1      //                                                      else
+  441  1      //                                                      {
+  442  1      //                                                              if(!b_error[10] && !b_error[04])        //¾ùÕý³£
+  443  1      //                                                              {
+  444  1      //                                                                      if(RUN_BIAOJI)
+  445  1      //                                                                      {
+  446  1      //                                                                              if(bcu_pos.x_brk || bcu_press.bc_pre >= bcu_press.wp)   //Ð¡Õ¢ÖÆ¶¯Î»£¬»òÕ¢¸×Ô¤¿Ø´óÓÚµÈÓÚ×÷ÓÃ¹ÜÑ¹
+             -Á¦
+  447  1      //                                                                              {
+  448  1      //                                                                                      DO07 = TRUE;
+  449  1      //                                                                              }
+  450  1      //                                                                      }
+  451  1      //                                                                      else
+  452  1      //                                                                              DO07 = TRUE;
+  453  1      //                                                              }
+  454  1      //                                                              else if(b_error[10] || b_error[04])             //ÈÎÒ»¹ÊÕÏ
+  455  1      //                                                              {
+  456  1      //                                                                      DO07 = TRUE;
+  457  1      //                                                              }
+  458  1      //                                                              else
+  459  1      //                                                              {
+  460  1      //                                                                      DO07 = FALSE;
+  461  1      //                                                              }
+  462  1      //                                                      }
+  463  1      //                                              }
+  464  1      //                                              else    //½ô¼±
+  465  1      //                                              {
+  466  1      //                                                      if(bcu_pos.x_rel && (b_error[10] || b_error[04]))
+  467  1      //                                                      {
+  468  1      //                                                              DO07 = TRUE;
+  469  1      //                                                              jin_xrel_flag = TRUE;
+  470  1      //                                                      }
+  471  1      //                                                      else
+  472  1      //                                                      {
+  473  1      //                                                              if(jin_xrel_flag)
+  474  1      //                                                              {
+  475  1      //                                                                      DO07 = TRUE;
+  476  1      //                                                                      do07_time = 0;
+  477  1      //                                                              }
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 9   
+
+  478  1      //                                                              else
+  479  1      //                                                              {
+  480  1      //                                                                      if(do07_time++ > 120)   //6s
+  481  1      //                                                                      {
+  482  1      //                                                                              do07_time = 121;
+  483  1      //                                                                              if(bcu_press.bc_pre > bcu_press.wp)
+  484  1      //                                                                                      DO07 = TRUE;
+  485  1      //                                                                      }
+  486  1      //                                                                      else
+  487  1      //                                                                      {
+  488  1      //                                                                              DO07 = FALSE;
+  489  1      //                                                                      }
+  490  1      //                                                              }
+  491  1      //                                                      }
+  492  1      //                                              }
+  493  1      //                                      }
+  494  1      //                              }
+  495  1      //                              else
+  496  1      //                              {
+  497  1      //                                      do07_time = 0;
+  498  1      //                                      if(!bcu_pos.x_rel)
+  499  1      //                                      {
+  500  1      //                                              if(bcu_press.bp > (STD_PRESS - 20))
+  501  1      //                                              {
+  502  1      //                                                      if(do07_time1++ > 170)
+  503  1      //                                                      {
+  504  1      //                                                              do07_time1 = 171;
+  505  1      //                                                              DO07 = FALSE;
+  506  1      //                                                      }
+  507  1      //                                              }
+  508  1      //                                              else
+  509  1      //                                              {
+  510  1      //                                                      DO07 = TRUE;
+  511  1      //                                                      do07_time1 = 0;
+  512  1      //                                              }
+  513  1      //                                      }
+  514  1      //                                      else
+  515  1      //                                      {
+  516  1      //                                              DO07 = TRUE;
+  517  1      //                                              do07_time1 = 0;
+  518  1      //                                      }
+  519  1      //                              }
+  520  1      //                      }
+  521  1      //              }
+  522  1      //              else
+  523  1      //              {
+  524  1      //                      if(!DI18)
+  525  1      //                              DO07 = FALSE;
+  526  1      //              }
+  527  1      //              
+  528  1      //              
+  529  1      //              /***¹ý³äµç¿Õ·§***/
+  530  1      //              DO08 = (bcu_pos.d_oc && !ZJ3 && !ZJ1 && !DI18 && (bcu_press.bp < 638));
+  531  1      //              
+  532  1      //              /***ÖÆ¶¯»ú½ô¼±Êä³ö***/
+  533  1      //              
+  534  1      //              if(DI18)
+  535  1      //              {
+  536  1      //                      if(ZJ1)
+  537  1      //                      {
+  538  1      //                              if(DI20)
+  539  1      //                              {
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 10  
+
+  540  1      //                                      time = 0;
+  541  1      //                                      DO09 = FALSE;
+  542  1      //                              }
+  543  1      //                              else
+  544  1      //                              {
+  545  1      //                                      if(time++ >= 50)
+  546  1      //                                      {
+  547  1      //                                              time = 50;
+  548  1      //                                              DO09 = FALSE;
+  549  1      //                                      }
+  550  1      //                                      else
+  551  1      //                                              DO09 = TRUE;
+  552  1      //                              }
+  553  1      //                      }
+  554  1      //                      else
+  555  1      //                      {
+  556  1      //                              time = 0;
+  557  1      //                              DO09 = FALSE;
+  558  1      //                      }
+  559  1      //              }
+  560  1      //              else
+  561  1      //              {
+  562  1      //                      if(ZJ1)
+  563  1      //                      {
+  564  1      //                              if(bcu_pos.x_rel)
+  565  1      //                                      zj1_xrel_flag = TRUE;                                   
+  566  1      //                      }
+  567  1      //                      else
+  568  1      //                              zj1_xrel_flag = FALSE;  
+  569  1      //                      
+  570  1      //                      if(!ZJ1 || zj1_xrel_flag || (ZJ1 && DI20))
+  571  1      //                              DO09 = FALSE;
+  572  1      //                      
+  573  1      //                      if(ZJ1 && !(zj1_xrel_flag || DI20))
+  574  1      //                              DO09 = TRUE;
+  575  1      //              }
+  576  1      //              
+  577  1      //              /***Ç¿ÅÅµç¿Õ·§***/
+  578  1      //              DO10 = bcu_pos.x_rel && ZJ1;
+  579  1      //              
+  580  1      //              /***Êä³öÇ£Òý·âËø***/
+  581  1      //              if(bcu_press.ma < 500)  //×Ü·çµÍ£¬Ç£Òý·âËø
+  582  1      //              {
+  583  1      //                      if(ma_time++ > 60)
+  584  1      //                      {
+  585  1      //                              ma_time = 61;
+  586  1      //                              DO11 = TRUE;
+  587  1      //                      }
+  588  1      //              }
+  589  1      //              else 
+  590  1      //              {
+  591  1      //                      if(bcu_press.ma > 750)
+  592  1      //                      {
+  593  1      //                              ma_time = 0;
+  594  1      //                              DO11 = FALSE;
+  595  1      //                      }
+  596  1      //              }
+  597  1      //      }
+  598  1      //      
+  599  1      //      /***ÖÆ¶¯×´Ì¬µÆ***/
+  600  1      //      DO12 = M_ENABLE_ALL;
+  601  1      //      
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 11  
+
+  602  1      //      /***40kPa£¬Ç£ÒýÇÐ³ýÐÅºÅ***/
+  603  1      //      if(!DI18)       //±¾»ú
+  604  1      //      {
+  605  1      //              if(MAX(bcu_press.bc1,bcu_press.bc2) > 40)
+  606  1      //                      DO13 = TRUE;
+  607  1      //              else if(MAX(bcu_press.bc1,bcu_press.bc2) < 25)
+  608  1      //                      DO13 = FALSE;
+  609  1      //      }
+  610  1      //      else
+  611  1      //      {
+  612  1      //              if(MAX(bcu_press.bc1,bcu_press.bc2) > 45)
+  613  1      //                      DO13 = TRUE;
+  614  1      //              else if(MAX(bcu_press.bc1,bcu_press.bc2) < 40)
+  615  1      //                      DO13 = FALSE;           
+  616  1      //      }
+  617  1      
+  618  1      //      /***90kPa£¬µçÖÆ¶¯ÇÐ³ýÐÅºÅ***/
+  619  1      //      if(!DI18)               //±¾»ú
+  620  1      //      {
+  621  1      //              if(MAX(bcu_press.bc1,bcu_press.bc2) > 90)
+  622  1      //                      DO16 = TRUE;
+  623  1      //              else if(MAX(bcu_press.bc1,bcu_press.bc2) < 75)
+  624  1      //                      DO16 = FALSE;
+  625  1      //      }
+  626  1      //      else
+  627  1      //      {
+  628  1      //              if(MAX(bcu_press.bc1,bcu_press.bc2) > 95)
+  629  1      //                      DO16 = TRUE;
+  630  1      //              else if(MAX(bcu_press.bc1,bcu_press.bc2) < 80)
+  631  1      //                      DO16 = FALSE;           
+  632  1      //      }
+  633  1      //      
+  634  1      //      DO14 = FALSE;
+  635  1      //      
+  636  1      //      /***½ô¼±ÅÔÂ·***/
+  637  1      //      if(jin_xrel_flag)
+  638  1      //      {
+  639  1      //              DO15 = FALSE;
+  640  1      //              L = FALSE;
+  641  1      //      }
+  642  1      //      else
+  643  1      //      {
+  644  1      //              if(!DI18)       //±¾»úÎ»
+  645  1      //              {
+  646  1      //                      if(ZJ1)
+  647  1      //                      {
+  648  1      //                              if(!DI20)
+  649  1      //                                      DO15 = TRUE;
+  650  1      //                              else
+  651  1      //                                      DO15 = FALSE;
+  652  1      //                      }
+  653  1      //                      else
+  654  1      //                      {
+  655  1      //                              DO15 = L;
+  656  1      //                      }
+  657  1      //              }
+  658  1      //              else
+  659  1      //              {
+  660  1      //                      DO15 = FALSE;
+  661  1      //                      L = FALSE;
+  662  1      //              }
+  663  1      //      }
+C166 COMPILER V7.53.0.0, BRAKE_CONTROL                                                     07/29/2021 10:10:10 PAGE 12  
+
+  664  1      }
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)

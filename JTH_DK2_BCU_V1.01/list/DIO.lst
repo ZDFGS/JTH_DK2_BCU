@@ -1,0 +1,375 @@
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE DIO
+OBJECT MODULE PLACED IN .\obj\DIO.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\DIO.c MODV2 BROWSE INCDIR(.\Hardward F
+                    -ile;.\User_App) MODV2 DEBUG PRINT(.\list\DIO.lst) OBJECT(.\obj\DIO.obj) 
+
+ stmt lvl     source
+
+    1         #include "MAIN.H"
+    2         #include "global.h"
+    3         
+    4         
+    5         #define  OUTPE_ClrVal()    (OUTPE = 0)
+    6         #define  OUTPE_SetVal()    (OUTPE = 1)
+    7         
+    8         #define OE_CS                   0
+    9         #define OUT_CS                  1
+   10         #define DINCS1                  0
+   11         #define DINCS2                  1
+   12         #define DINCS3                  2
+   13         //const float unitTime =3.2;
+   14         
+   15         
+   16         void Watch_Dog(void)
+   17         {
+   18  1              WDI = ~WDI;     
+   19  1      }
+   20         
+   21         
+   22         void LED_Flash(void)
+   23         {
+   24  1              LED = ~LED;
+   25  1      }
+   26         
+   27         
+   28         void LED_ON(void)
+   29         {
+   30  1              LED = HIGH;
+   31  1      }
+   32         
+   33         
+   34         void LED_OFF(void)
+   35         {
+   36  1              LED = LOW;
+   37  1      }
+   38         
+   39         
+   40         /****************dout处理*********************/
+   41         void DATA_IO_PORT_OUT(void)
+   42         {
+   43  1              IO_vSetPinOut(IO_P10_0, IO_PUSH_PULL);
+   44  1              IO_vSetPinOut(IO_P10_1, IO_PUSH_PULL);
+   45  1              IO_vSetPinOut(IO_P10_2, IO_PUSH_PULL);
+   46  1              IO_vSetPinOut(IO_P10_3, IO_PUSH_PULL);
+   47  1              IO_vSetPinOut(IO_P10_4, IO_PUSH_PULL);
+   48  1              IO_vSetPinOut(IO_P10_5, IO_PUSH_PULL);
+   49  1              IO_vSetPinOut(IO_P10_6, IO_PUSH_PULL);
+   50  1              IO_vSetPinOut(IO_P10_7, IO_PUSH_PULL);
+   51  1      }                                                               
+   52         
+   53         
+   54         void DATA_IO_PORT_IN(void)
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 2   
+
+   55         {
+   56  1              IO_vSetPinIn(IO_P10_0, IO_NO_PULL);
+   57  1              IO_vSetPinIn(IO_P10_1, IO_NO_PULL);
+   58  1              IO_vSetPinIn(IO_P10_2, IO_NO_PULL);
+   59  1              IO_vSetPinIn(IO_P10_3, IO_NO_PULL);
+   60  1              IO_vSetPinIn(IO_P10_4, IO_NO_PULL);
+   61  1              IO_vSetPinIn(IO_P10_5, IO_NO_PULL);
+   62  1              IO_vSetPinIn(IO_P10_6, IO_NO_PULL);
+   63  1              IO_vSetPinIn(IO_P10_7, IO_NO_PULL);
+   64  1      }
+   65         
+   66         
+   67         void ADDR_IO_PORT_OUT(void)
+   68         {
+   69  1              IO_vSetPinOut(IO_P0_0, IO_PUSH_PULL);
+   70  1              IO_vSetPinOut(IO_P0_1, IO_PUSH_PULL);
+   71  1              IO_vSetPinOut(IO_P0_2, IO_PUSH_PULL);
+   72  1              IO_vSetPinOut(IO_P0_3, IO_PUSH_PULL);
+   73  1              IO_vSetPinOut(IO_P0_4, IO_PUSH_PULL);
+   74  1              IO_vSetPinOut(IO_P0_5, IO_PUSH_PULL);
+   75  1              IO_vSetPinOut(IO_P0_6, IO_PUSH_PULL);
+   76  1              IO_vSetPinOut(IO_P0_7, IO_PUSH_PULL);
+   77  1      }
+   78         
+   79         
+   80         void ADDR_IO_PORT_IN(void)
+   81         {
+   82  1              IO_vSetPinIn(IO_P0_0, IO_NO_PULL);
+   83  1              IO_vSetPinIn(IO_P0_1, IO_NO_PULL);
+   84  1              IO_vSetPinIn(IO_P0_2, IO_NO_PULL);
+   85  1              IO_vSetPinIn(IO_P0_3, IO_NO_PULL);
+   86  1              IO_vSetPinIn(IO_P0_4, IO_NO_PULL);
+   87  1              IO_vSetPinIn(IO_P0_5, IO_NO_PULL);
+   88  1              IO_vSetPinIn(IO_P0_6, IO_NO_PULL);
+   89  1              IO_vSetPinIn(IO_P0_7, IO_NO_PULL);
+   90  1      }                                                               
+   91         
+   92         
+   93         void doutDisable(void)
+   94         {
+   95  1              DOUT1 = 1;
+   96  1              DOUT2 = 1;
+   97  1      }
+   98         
+   99         
+  100         void OutBoardClean(void)  //输出板短路保护状态清空
+  101         {
+  102  1               OUTPE_ClrVal();
+  103  1               DelayMs(5); 
+  104  1         OUTPE_SetVal();
+  105  1      }
+  106         
+  107         
+  108         void doutEnalbe(ubyte num)
+  109         {
+  110  1              switch(num)
+  111  1              {
+  112  2                      case 1:
+  113  2                              DOUT1 = 0;
+  114  2                              break;
+  115  2                      
+  116  2                      case 2:
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 3   
+
+  117  2                              DOUT2 = 0;
+  118  2                              break;
+  119  2                      
+  120  2                      default:
+  121  2                              doutDisable();
+  122  2                              break;
+  123  2              }       
+  124  1              OUTOC = 0;              
+  125  1      }
+  126         
+  127         
+  128         /**给138地址信号**/
+  129         void writeAddr(ubyte boardNum, ubyte addrId)
+  130         {
+  131  1              ubyte addr = 0;                    
+  132  1              
+  133  1      //      ADDR_IO_PORT_IN();      
+  134  1              doutDisable();
+  135  1              addr = (ubyte)IO_uwReadPort(P0);           
+  136  1      //      
+  137  1              addr = addr&0xf8;
+  138  1              addr += addrId;
+  139  1      //      ADDR_IO_PORT_OUT();             
+  140  1              IO_vWritePort(P0, addr);
+  141  1              doutEnalbe(boardNum);   //
+  142  1      }
+  143         
+  144         
+  145         /***读短路信号***/
+  146         ubyte getOUTOE(ubyte boardNum)
+  147         {
+  148  1              ubyte OEData = 0;
+  149  1              
+  150  1              doutDisable();  
+  151  1              delay(20); 
+  152  1              DATA_IO_PORT_IN();
+  153  1      
+  154  1              DATA_IN();      
+  155  1              ENABLE245();    
+  156  1              writeAddr(boardNum, OE_CS);     //138的y0输出   
+  157  1      
+  158  1              OEData = (ubyte)IO_uwReadPort(P10);
+  159  1      
+  160  1              DISABLE245();
+  161  1              
+  162  1              doutDisable();
+  163  1                                                                                
+  164  1              return(OEData);                                 
+  165  1      }
+  166         
+  167         
+  168         void doutByte(ubyte boardNum, ubyte data)
+  169         {
+  170  1              OUTOC = 0;
+  171  1              DATA_IO_PORT_OUT();     
+  172  1              delay(20);
+  173  1      
+  174  1              IO_vWritePort(P10, data);
+  175  1              delay(10);
+  176  1              DATA_OUT();             //245方向设置为A-->B
+  177  1              ENABLE245();    //
+  178  1      
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 4   
+
+  179  1              writeAddr(boardNum, 1);         //138的y1输出 
+  180  1                                      
+  181  1              doutDisable();
+  182  1              DISABLE245();
+  183  1      }
+  184         
+  185         
+  186         ubyte OEClear(ubyte boardNum, ubyte outData)
+  187         {
+  188  1              static OEcount = 0;
+  189  1              ubyte OEData = 0;
+  190  1              ubyte Outdata = 0;
+  191  1      
+  192  1              OEData = getOUTOE(boardNum);    
+  193  1              
+  194  1              if(OEData)
+  195  1              {
+  196  2                      OEcount++;
+  197  2                      if(OEcount>2)                                                      //出现三次短路则关闭
+  198  2                      {
+  199  3                              Outdata = (outData & (~OEData));                 //关闭相应输出
+  200  3                              doutByte(boardNum, Outdata);    
+  201  3                              return (OEData);
+  202  3                      }
+  203  2                      Outdata = (outData & (~OEData));                 //关闭相应输出
+  204  2                      doutByte(boardNum, Outdata);
+  205  2                      OutBoardClean();                                //              清短路状态                      
+  206  2              }
+  207  1      
+  208  1              return(OEData); 
+  209  1      }
+  210         
+  211         
+  212         void dout(ubyte boardNum, ubyte outData)
+  213         {               
+  214  1              if(OUTOE2||OUTOE1)
+  215  1              {
+  216  2                      OEClear(boardNum, outData);                             
+  217  2              }
+  218  1              doutByte(boardNum, outData);
+  219  1              delay(20);
+  220  1              switch(boardNum)
+  221  1              {
+  222  2                      case 1:
+  223  2                      {
+  224  3                              OUTOE1 = getOUTOE(1);           
+  225  3                      }
+  226  2                      break;
+  227  2                      case 2: 
+  228  2                      {
+  229  3                              OUTOE2 = getOUTOE(2)&0x0f;
+  230  3                      }
+  231  2                      break;
+  232  2              }                                 
+  233  1      }
+  234                 
+  235         
+  236         /****************din处理************************/
+  237         void dinDisable(void)
+  238         {
+  239  1              CSDIN1 = 1;
+  240  1              CSDIN2 = 1;
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 5   
+
+  241  1              CSDIN3 = 1;
+  242  1      }
+  243         
+  244         
+  245         void dinEnable(ubyte boardNum)
+  246         {
+  247  1              switch(boardNum)
+  248  1              {
+  249  2                      case 1:
+  250  2                              CSDIN1=0;
+  251  2                              break;
+  252  2                      
+  253  2                      case 2:
+  254  2                              CSDIN2=0;
+  255  2                              break;
+  256  2                      
+  257  2                      case 3:
+  258  2                              CSDIN3=0;
+  259  2                              break;
+  260  2                      
+  261  2                      default:
+  262  2                              dinDisable();   
+  263  2                              break;
+  264  2              }
+  265  1      }
+  266         
+  267         
+  268         void DINwriteAddr(ubyte boardNum, ubyte addrId)
+  269         {
+  270  1              ubyte addr = 0;                    
+  271  1      //      ADDR_IO_PORT_IN();
+  272  1              dinDisable();
+  273  1              addr = (ubyte)IO_uwReadPort(P0);
+  274  1              
+  275  1              addr = addr&0xf8;
+  276  1              addr += addrId;
+  277  1      //      ADDR_IO_PORT_OUT();
+  278  1              IO_vWritePort(P0, addr);
+  279  1              dinEnable(boardNum);    //
+  280  1      }
+  281         
+  282         
+  283         ubyte din(ubyte boardNum, ubyte byteNum)
+  284         {
+  285  1              ubyte dinData = 0;
+  286  1      
+  287  1              dinDisable();
+  288  1              delay(20);
+  289  1              DATA_IO_PORT_IN();                                         //
+  290  1      
+  291  1              DATA_IN();
+  292  1              ENABLE245();
+  293  1              DINwriteAddr(boardNum, byteNum);
+  294  1              dinData = (ubyte)IO_uwReadPort(P10);
+  295  1              delay(50);
+  296  1              dinDisable();
+  297  1                      
+  298  1              return(dinData);
+  299  1      }
+  300         
+  301         
+  302         #define BOARD1  1
+C166 COMPILER V7.53.0.0, DIO                                                               07/29/2021 09:17:57 PAGE 6   
+
+  303         #define BOARD2  2
+  304         #define BOARD3  3
+  305         #define BYTE1   0
+  306         #define BYTE2   1
+  307         #define BYTE3   2
+  308         #define BYTE4   3
+  309         #define BYTE5   4
+  310         #define BYTE6   5
+  311         
+  312         
+  313         void ALLDIN(void)
+  314         {
+  315  1              DIN1_byte1 = din(BOARD3, BYTE1);
+  316  1              DIN1_byte2 = din(BOARD3, BYTE2);
+  317  1              DIN1_byte3 = din(BOARD3, BYTE3);
+  318  1              DIN1_byte4 = din(BOARD3, BYTE4);
+  319  1              DIN1_byte5 = din(BOARD3, BYTE5);
+  320  1              DIN1_byte6 = din(BOARD3, BYTE6);
+  321  1              DOUT_Fed1 = din(BOARD1, BYTE3);
+  322  1              DOUT_Fed2 = din(BOARD2, BYTE3);
+  323  1              switch_value = ((ubyte)(IO_ubReadPin(IO_P5_8)) << 0) | 
+  324  1                                         ((ubyte)(IO_ubReadPin(IO_P5_7)) << 1) | 
+  325  1                                         ((ubyte)(IO_ubReadPin(IO_P5_6)) << 2) |
+  326  1                                         ((ubyte)(IO_ubReadPin(IO_P5_5)) << 3);
+*** WARNING C192 IN LINE 326 OF Hardward File\DIO.c: '=': value truncated
+  327  1              
+  328  1              dindata[0] = (unsigned char)(DIN1_byte2 << 5 | DIN1_byte3 >> 3);
+  329  1              dindata[1] = (unsigned char)(DIN1_byte3 << 5 | DIN1_byte4 >> 3);
+  330  1              dindata[2] = (unsigned char)(DIN1_byte4 << 5 | DIN1_byte5 >> 3);
+  331  1              dindata[3] = (unsigned char)(DIN1_byte5 << 5 | DIN1_byte6 >> 3);
+  332  1      }
+  333         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =        1114     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           3     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =           6     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,71 @@
+C166 COMPILER V7.53.0.0, GLABLE                                                            07/29/2021 09:17:59 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE GLABLE
+OBJECT MODULE PLACED IN .\obj\glable.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\glable.c MODV2 BROWSE INCDIR(.\Hardwar
+                    -d File;.\User_App) MODV2 DEBUG PRINT(.\list\glable.lst) OBJECT(.\obj\glable.obj) 
+
+ stmt lvl     source
+
+    1         #include "MAIN.H"
+    2         
+    3         unsigned char CPUBoardLife = 0;
+    4         unsigned char EPBoardLife = 0;
+    5         unsigned char EP_Fault = 0;
+    6         unsigned char DIN_Fault = 0;
+    7         
+    8         unsigned char DIN1_byte1 = 0;
+    9         unsigned char DIN1_byte2 = 0;
+   10         unsigned char DIN1_byte3 = 0;
+   11         unsigned char DIN1_byte4 = 0;
+   12         unsigned char DIN1_byte5 = 0;
+   13         unsigned char DIN1_byte6 = 0;
+   14         
+   15         unsigned char DOUT_Fed1 = 0;
+   16         unsigned char DOUT_Fed2 = 0;
+   17         
+   18         
+   19         unsigned char DOUT_Fault = 0;
+   20         unsigned char DOUT1_data = 0;
+   21         unsigned char DOUT2_data = 0;
+   22         volatile unsigned char OUTOE1 = 0;
+   23         volatile unsigned char OUTOE2 = 0;
+   24         
+   25         
+   26         uword AD_Data[8] = {0};
+   27         uword DA_DATA = 0; 
+   28         
+   29         
+   30         ubyte CANdownloadFlag = 0;
+   31         ubyte PWM_IN=0;
+   32         /***上电计数*重新定协议*****/
+   33         static ubyte PowerCount = 0;
+   34         
+   35         //
+   36         ubyte Download_Flag = 0;
+   37         unsigned int JH_Target   = 0;          //均衡风缸目标值
+   38         unsigned int YK_Target   = 0;          //yukong风缸目标值
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =    --------     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =          43     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+C166 COMPILER V7.53.0.0, GLABLE                                                            07/29/2021 09:17:59 PAGE 2   
+
+  INIT'L SIZE      =         164     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

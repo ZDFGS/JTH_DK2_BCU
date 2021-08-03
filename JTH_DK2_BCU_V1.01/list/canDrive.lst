@@ -1,0 +1,138 @@
+C166 COMPILER V7.53.0.0, CANDRIVE                                                          07/29/2021 09:17:59 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE CANDRIVE
+OBJECT MODULE PLACED IN .\obj\canDrive.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\canDrive.c MODV2 BROWSE INCDIR(.\Hardw
+                    -ard File;.\User_App) MODV2 DEBUG PRINT(.\list\canDrive.lst) OBJECT(.\obj\canDrive.obj) 
+
+ stmt lvl     source
+
+    1         #include  "MAIN.H"
+    2         
+    3         Message RecvTestMes1;
+    4         Message RecvTestMes2;
+    5         
+    6         
+    7         void can_trans_data_StandardFrame(unsigned char port, Message *m)
+    8         {
+    9  1              ubyte i;
+   10  1              stCAN_SWObj m_CAN_MO;
+   11  1      
+   12  1              m_CAN_MO.ubMOCfg = (1<<6) | ((0x00)<<5) | (1<<4)| (m->len);
+   13  1              m_CAN_MO.ulID = m->cob_id;      //FrmIdntfr;
+   14  1              m_CAN_MO.ulMask = 0x0;
+   15  1      //      memcpy(m_CAN_MO.ubData, m->data, 8);
+   16  1              for(i=0;i<(m->len);i++)
+   17  1              {
+   18  2                      m_CAN_MO.ubData[i]=m->data[i];
+   19  2              }
+   20  1              //m_CAN_MO.uwCounter
+   21  1              
+   22  1              switch(port)
+   23  1              {
+   24  2                      case 1:
+   25  2                              {                       
+   26  3                                      CAN_vConfigMsgObj(0,&m_CAN_MO);
+   27  3                                      CAN_vTransmit(0);
+   28  3                                      break;
+   29  3                              }
+   30  2                      case 2:
+   31  2                              {       
+   32  3                                      CAN_vConfigMsgObj(8,&m_CAN_MO);
+   33  3                                      CAN_vTransmit(8);
+   34  3                                      break;
+   35  3                              }
+   36  2                      default:
+   37  2                              break;
+   38  2              }
+   39  1      }
+   40         
+   41         unsigned char canReceive(ubyte port, Message *m) 
+   42         {
+   43  1              stCAN_SWObj SW_R;
+   44  1              ubyte err = 0;
+   45  1              ubyte ret = 0;
+   46  1              unsigned char i;
+   47  1              
+   48  1              switch(port)
+   49  1              {
+   50  2                      case NODEA:
+   51  2                                      ret = CAN_ubNewData(1);
+   52  2                                      if(ret)
+   53  2                                      {
+   54  3                                              CAN_vGetMsgObj(1, &SW_R);
+C166 COMPILER V7.53.0.0, CANDRIVE                                                          07/29/2021 09:17:59 PAGE 2   
+
+   55  3                                              
+   56  3                                              m->cob_id=(uword)SW_R.ulID;                                                      //m_dev_id = (unsigned char)((SW_R.ulID & 0x700)>>8);
+   57  3                                                                                                                                                      //m_frm_id = (unsigned char)((SW_R.ulID & 0x0E0)>>5);
+   58  3                                              m->len=8;       //m->len = SW_R.ubMOCfg & 0x0f
+   59  3                                              m->rtr=0; //CAN_ubRequestMsgObj(1);
+   60  3                                              for(i=0;i<(m->len);i++)
+   61  3                                              {
+   62  4                                                      m->data[i]=SW_R.ubData[i];
+   63  4                                              }
+   64  3                                      }
+   65  2                                      break;                                  
+   66  2                      case NODEB:
+   67  2                                      ret = CAN_ubNewData(9);
+   68  2                                      if(ret)
+   69  2                                      {
+   70  3                                              CAN_vGetMsgObj(9, &SW_R);
+   71  3      //                                              unsigned char i;
+   72  3                                              m->cob_id=(uword)SW_R.ulID;
+   73  3                                              m->len=8;
+   74  3                                              m->rtr=0; //CAN_ubRequestMsgObj(1);
+   75  3                                              for(i=0;i<(m->len);i++)
+   76  3                                              {
+   77  4                                                      m->data[i]=SW_R.ubData[i];
+   78  4                                              }
+   79  3                                      }
+   80  2                                      break;
+   81  2              }
+   82  1              return 1;
+   83  1      }
+   84         
+   85         void canReceive_irq(ubyte ubObjNr, Message *m)  //中断中接收CAN程序
+   86         {
+   87  1              stCAN_SWObj SW_R;
+   88  1              unsigned char i;
+   89  1              
+   90  1              CAN_vGetMsgObj(ubObjNr, &SW_R);
+   91  1      
+   92  1              m->cob_id=(uword)SW_R.ulID;
+   93  1              
+   94  1              m->len=SW_R.ubMOCfg&0x0f;               //      m_can_data_len = m_CAN_MO.ubMOCfg & 0x0f;   
+   95  1      
+   96  1              m->rtr=0; 
+   97  1              for(i=0;i<(m->len);i++)
+   98  1              {
+   99  2                      m->data[i]=SW_R.ubData[i];
+  100  2              }
+  101  1      }
+  102         
+  103         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         418     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =          25     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+C166 COMPILER V7.53.0.0, CANDRIVE                                                          07/29/2021 09:17:59 PAGE 3   
+
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

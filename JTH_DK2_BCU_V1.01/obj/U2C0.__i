@@ -1,0 +1,1 @@
+"U2C0.C" MODV2 BROWSE INCDIR(.\Hardward File;.\User_App) MODV2 DEBUG PRINT(.\list\U2C0.lst) OBJECT(.\obj\U2C0.obj)

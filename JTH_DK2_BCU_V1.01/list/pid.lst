@@ -1,0 +1,547 @@
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE PID
+OBJECT MODULE PLACED IN .\obj\pid.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\pid.c MODV2 BROWSE INCDIR(.\Hardward F
+                    -ile;.\User_App) MODV2 DEBUG PRINT(.\list\pid.lst) OBJECT(.\obj\pid.obj) 
+
+ stmt lvl     source
+
+    1         #include "main.h"                                          
+    2         #include "math.h"
+    3         struct PID idata pid_jh;
+    4         struct PID idata pid_zg;
+    5         
+    6         
+    7         unsigned int  in,out; //用来测试，保留当前PWM输出值到ram中
+    8         unsigned char count = 0;          //误差连续稳定在允许范围内的次数
+    9         
+   10         
+   11         void transfer(struct PID *pid_value)
+   12         {
+   13  1        long temp=0;
+   14  1              //pid_value->p_out=2000-pid_value->p_out;
+   15  1              if(pid_value->p_out>=2000)                                                       //占空比100%
+   16  1                      pid_value->p_out=0x3CB1;
+   17  1              else if(pid_value->p_out<=0)                                             //占空比约等于0%
+   18  1                      pid_value->p_out=0x3000;
+   19  1              else
+   20  1              {
+   21  2                temp=(65535-0x3CB1);
+   22  2                      temp*=(long)(pid_value->p_out);
+   23  2                      temp/=2000;
+   24  2                      temp+=0x3CB1;
+   25  2                      pid_value->p_out=(unsigned int)temp;
+   26  2              }
+   27  1        //pid_value->p_in=2000-pid_value->p_in;
+   28  1              if(pid_value->p_in>=2000)
+   29  1                      pid_value->p_in=0x3CB1;
+   30  1              else if(pid_value->p_in<=0)
+   31  1                      pid_value->p_in=0x3000;
+   32  1              else
+   33  1              {
+   34  2                      temp=(65535-0x3CB1);
+   35  2                      temp*=(long)(pid_value->p_in);
+   36  2                      temp/=2000;
+   37  2                      temp+=0x3CB1;
+   38  2                      pid_value->p_in=(unsigned int)temp;
+   39  2              }
+   40  1      }
+   41         
+   42         /******************************************************
+   43         从双口RAM中获取闸缸和均衡风缸的目标值
+   44         *******************************************************/
+   45         
+   46         void pid_change(void)
+   47         {       
+   48  1        pid_jh.dt = JH_Target;
+   49  1              pid_zg.dt = YK_Target;
+   50  1      }
+   51         /**********************************************************
+   52         初始化神经控制的参数，包括权值，学习速率，神经元的比例系数
+   53         ***********************************************************/
+   54         void pid_initial(void)
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 2   
+
+   55         {
+   56  1              pid_jh.p_out=0;         //定义初始输出的比较值
+   57  1              pid_jh.p_in=0;    
+   58  1        pid_zg.p_out=0;               //定义初始输出的比较值
+   59  1              pid_zg.p_in=0;    
+   60  1      }
+   61         
+   62         
+   63         
+   64         /***************************************
+   65         直通预控充气特性：
+   66         目标值越小，越容易超调，微调时间要越长
+   67         目标值越大，越不易超调，微调时间越短
+   68         ***************************************/
+   69         #define STATIC 0
+   70         #define IN 1
+   71         #define OUT 2
+   72         #define MA4 12221  //0kpa，4ma采样值
+   73         #define MA20 48884 //1000kpa，20ma采样值
+   74         
+   75         /****************************************************************
+   76           均衡风缸
+   77         *****************************************************************/
+   78         void pid1(struct PID *pPID, unsigned int df)     //
+   79         {
+   80  1              long  e0;
+   81  1              int  flag=0;     //测试还是运行的标志，如果=0，那么正常运行
+   82  1              static char status = STATIC;    
+   83  1              static unsigned long cur = 0, target = 0, last_target = 0; //当前值，目标值，上一个目标值
+   84  1              static char ok = 0;       //是否调节稳定，1代表稳定
+   85  1              static unsigned int total_count = 0, count2 = 0, count3 = 0, count4 = 0;
+   86  1              static unsigned int min_in = 1000;//充风最小输出值
+   87  1              int pwm_scope_in = 0;   //充风微调范围，目标值越大，这个值越小
+   88  1              int pwm_scope_out = 0;  //放风微调范围，目标值越大，这个值越大
+   89  1              unsigned int zha_pos = 0;
+   90  1              int E_MAX = 5;  //运转位泄露误差=10，其他情况=5
+   91  1              
+   92  1              static int chong_flag;
+   93  1              static int pai_flag;
+   94  1              static int count_m=0;
+   95  1              static int micr_flag=0;
+   96  1      
+   97  1              flag = 0;
+   98  1              if(flag==0)
+   99  1              {
+  100  2                      total_count++;
+  101  2                      if (pPID->dt>=60000)    //如果目标值大于60000，说明不需要PWM输出
+  102  2                      {
+  103  3                              pPID->p_out=0 ;         //放气阀不调节
+  104  3                              pPID->p_in=0  ;         //进气阀不调节
+  105  3                              transfer(pPID);
+  106  3                              return;
+  107  3                      }                                                                                         
+  108  2                      
+  109  2                      df = (df < MA4)? MA4 : df;
+  110  2                      cur = (unsigned long)(df - MA4) * 1000 /MA20;
+  111  2              //      pPID->dt = (pPID->dt < MA4)? MA4:pPID->dt;
+  112  2                      //target = (unsigned long)(pPID->dt - MA4) * 1000 /MA20;
+  113  2                      //cur = df;
+  114  2                      target = pPID->dt;
+  115  2                      e0 = (long)target - (long)cur;  //计算当前偏
+  116  2      //              pwm_scope_in = (unsigned int)(650 - target) * 20 / 650 ;//650是目标值最大值
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 3   
+
+  117  2                      pwm_scope_in = 8 + (unsigned int)(650 - target) * 7 / 650 ;//650是目标值最大值
+  118  2                      if(pwm_scope_in < 0)//some error
+  119  2                              pwm_scope_in = 5;
+  120  2      //              pwm_scope_out = (unsigned int)(target) * 20 / 650;//450是目标值最大值
+  121  2              pwm_scope_out = 2 + (unsigned int)(target) * 10 / 650;//450是目标值最大值
+  122  2      
+  123  2                      if (target < 3)
+  124  2                      {
+  125  3                              if(cur <=6)       //由于+5修正，所以到6就认为到0
+  126  3                              {
+  127  4                                      if (count4++ > 375)     //5s
+  128  4                                              pPID->p_out=0 ;         //放气阀不调节
+  129  4                                      else
+  130  4                                              pPID->p_out=2000 ;              
+  131  4                                              
+  132  4                                      
+  133  4                                                      
+  134  4                              }       
+  135  3                              else
+  136  3                              {
+  137  4                                      count4 = 0;
+  138  4                                      pPID->p_out=2000 ;              
+  139  4                                      
+  140  4                              }
+  141  3                              pPID->p_in=0  ;         //进气阀不调节
+  142  3                              transfer(pPID);
+  143  3                              return;
+  144  3                      }
+  145  2      
+  146  2                      if(ok == 1 && zha_pos == 1)             //运转位稳定状态
+  147  2                      {
+  148  3                              E_MAX = 10;
+  149  3                      }
+  150  2                      else     //其他情况误差是5
+  151  2                      {
+  152  3                              E_MAX = 5;
+  153  3                      }
+  154  2                      
+  155  2                      if (e0 > E_MAX)   //当前压力太低，处于充风状态
+  156  2                      {
+  157  3                              ok = 0;
+  158  3                              status = IN;
+  159  3                              count2 = 0;
+  160  3                      }
+  161  2                      else if (e0 < -1 * E_MAX)  //压力太高，放风状态
+  162  2                      {
+  163  3                              ok = 0;
+  164  3                              status = OUT;
+  165  3                              count3 = 0;
+  166  3                      }
+  167  2                      else{
+  168  3                              ok = 1;
+  169  3                              status = STATIC;
+  170  3                      } 
+  171  2      
+  172  2                      if (status == IN)
+  173  2                      {
+  174  3                              if (e0 > pwm_scope_in)
+  175  3                              {
+  176  4                                      pPID->p_in=2000;//修改上升速度
+  177  4                              
+  178  4                                      
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 4   
+
+  179  4                                      pPID->p_out=0;
+  180  4                                      
+  181  4                                      chong_flag =1;
+  182  4                                      pai_flag =0;
+  183  4                                      micr_flag=0;
+  184  4                              }
+  185  3                              else if(e0 > E_MAX)
+  186  3                              {
+  187  4                                      pPID->p_in=899; //800  ;
+  188  4                                      pPID->p_out=0;//1200;
+  189  4                                      micr_flag=0;
+  190  4                                      chong_flag =1;
+  191  4                              }
+  192  3                              else  //误差较小时，要稳定n秒后，才认为ok
+  193  3                              {
+  194  4                                      count2++;
+  195  4                                      //if (count2 > target/3) //250
+  196  4                                      if (count2 > 200)
+  197  4                                              ok = 1;
+  198  4                                      pPID->p_in=0 ;
+  199  4                                      pPID->p_out=0;
+  200  4                              }
+  201  3      
+  202  3                      }
+  203  2                      else if (status == OUT)
+  204  2                      {
+  205  3                              if (e0 < (-1)* pwm_scope_out)
+  206  3                              {
+  207  4                                      pPID->p_out= 2000;//修改下降速度
+  208  4                              
+  209  4                                      
+  210  4                                      pPID->p_in=0;
+  211  4                                      
+  212  4                                      chong_flag =0;
+  213  4                                      pai_flag =1;
+  214  4                                      micr_flag=0;
+  215  4                              }
+  216  3                              else if (e0 < -1 * E_MAX)
+  217  3                              {
+  218  4                                      pPID->p_out= 899;       //目标越大，放风越快，为防止超调，所以目标越大，这个脉宽应越小
+  219  4                                      pPID->p_in=0;
+  220  4                                      micr_flag=0;
+  221  4                                      chong_flag =0;
+  222  4                                      pai_flag =1;
+  223  4                              }
+  224  3                              else    //误差较小时，要稳定n秒后，才认为ok
+  225  3                              {
+  226  4                                      count3++;
+  227  4                                      if (count3 > 250)
+  228  4                                              ok = 1;
+  229  4                                      pPID->p_out= 0;
+  230  4                                      pPID->p_in=0 ;
+  231  4                              }
+  232  3                      }
+  233  2                      else
+  234  2                      {
+  235  3                              if((!chong_flag) && (e0 < -1 * E_MAX+4)&& (!micr_flag))
+  236  3                              {
+  237  4                                      count_m = count_m+1;
+  238  4                                      if(count_m<6)
+  239  4                                              pPID->p_out =2000;
+  240  4                                      
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 5   
+
+  241  4                                      else
+  242  4                                      {
+  243  5                                              micr_flag =1;
+  244  5                                              count_m=0;
+  245  5                                              pPID->p_out =0;
+  246  5                                      }
+  247  4                              }
+  248  3                              else
+  249  3                              {
+  250  4                                      pPID->p_out =0;
+  251  4                                      //count_m=0;
+  252  4                              }
+  253  3                                      
+  254  3                              //pPID->p_out=0;
+  255  3                              pPID->p_in=0 ;
+  256  3                      
+  257  3                      }
+  258  2                      //if (pPID->p_in > 0 && pPID->p_in != 2000)
+  259  2                      if (pPID->p_in > 0 && pPID->p_in == 899)
+  260  2                      {
+  261  3                              //if(total_count % 150 < 145)
+  262  3                              //if(total_count % 100 < 90)
+  263  3                                      //pPID->p_in = 0;       
+  264  3                              //else
+  265  3                                      pPID->p_in = 2000;
+  266  3                              
+  267  3                      }
+  268  2                      if (pPID->p_out > 0 && pPID->p_out == 899)
+  269  2                      {
+  270  3                              //if(total_count % 150 <145 )
+  271  3                              //if(total_count % 100 <90 )
+  272  3                              //      pPID->p_out = 0;
+  273  3                              //else
+  274  3                                      pPID->p_out = 2000;
+  275  3                      
+  276  3                                              
+  277  3                      }
+  278  2                      transfer(pPID);
+  279  2                      return;                         
+  280  2              }
+  281  1                      
+  282  1      }
+  283         
+  284         /****************************************************************
+  285           闸缸风缸
+  286         *****************************************************************/
+  287         void pid2(struct PID *pPID, unsigned int df)     //
+  288         {
+  289  1              long  e0;
+  290  1              int  flag=0;     //测试还是运行的标志，如果=0，那么正常运行
+  291  1              static char status = STATIC;    
+  292  1              static unsigned long cur = 0, target = 0, last_target = 0; //当前值，目标值，上一个目标值
+  293  1              static char ok = 0;       //是否调节稳定，1代表稳定
+  294  1              static unsigned int total_count = 0, count2 = 0, count3 = 0, count4 = 0;
+  295  1              static unsigned int min_in = 1000;//充风最小输出值
+  296  1              int pwm_scope_in = 0;   //充风微调范围，目标值越大，这个值越小
+  297  1              int pwm_scope_out = 0;  //放风微调范围，目标值越大，这个值越大
+  298  1              unsigned int zha_pos = 0;
+  299  1              int E_MAX = 5;  //运转位泄露误差=10，其他情况=5
+  300  1              
+  301  1              static int chong_flag;
+  302  1              static int pai_flag;
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 6   
+
+  303  1              static int count_m=0;
+  304  1              static int micr_flag=0;
+  305  1      
+  306  1              flag = 0;
+  307  1              if(flag==0)
+  308  1              {
+  309  2                      total_count++;
+  310  2                      if (pPID->dt>=60000)    //如果目标值大于60000，说明不需要PWM输出
+  311  2                      {
+  312  3                              pPID->p_out=0 ;         //放气阀不调节
+  313  3                              pPID->p_in=0  ;         //进气阀不调节
+  314  3                              transfer(pPID);
+  315  3                              return;
+  316  3                      }                                                                                         
+  317  2                      
+  318  2                      df = (df < MA4)? MA4 : df;
+  319  2                      cur = (unsigned long)(df - MA4) * 1000 /MA20;
+  320  2              //      pPID->dt = (pPID->dt < MA4)? MA4:pPID->dt;
+  321  2                      //target = (unsigned long)(pPID->dt - MA4) * 1000 /MA20;
+  322  2                      //cur = df;
+  323  2                      target = pPID->dt;
+  324  2                      e0 = (long)target - (long)cur;  //计算当前偏
+  325  2      //              pwm_scope_in = (unsigned int)(650 - target) * 20 / 650 ;//650是目标值最大值
+  326  2                      pwm_scope_in = 8 + (unsigned int)(650 - target) * 7 / 650 ;//650是目标值最大值
+  327  2                      if(pwm_scope_in < 0)//some error
+  328  2                              pwm_scope_in = 5;
+  329  2      //              pwm_scope_out = (unsigned int)(target) * 20 / 650;//450是目标值最大值
+  330  2              pwm_scope_out = 2 + (unsigned int)(target) * 10 / 650;//450是目标值最大值
+  331  2      
+  332  2                      if (target < 3)
+  333  2                      {
+  334  3                              if(cur <=6)       //由于+5修正，所以到6就认为到0
+  335  3                              {
+  336  4                                      if (count4++ > 375)     //5s
+  337  4                                              pPID->p_out=0 ;         //放气阀不调节
+  338  4                                      else
+  339  4                                              pPID->p_out=2000 ;              
+  340  4                                              
+  341  4                                      
+  342  4                                                      
+  343  4                              }       
+  344  3                              else
+  345  3                              {
+  346  4                                      count4 = 0;
+  347  4                                      pPID->p_out=2000 ;              
+  348  4                                      
+  349  4                              }
+  350  3                              pPID->p_in=0  ;         //进气阀不调节
+  351  3                              transfer(pPID);
+  352  3                              return;
+  353  3                      }
+  354  2      
+  355  2                      if(ok == 1 && zha_pos == 1)             //运转位稳定状态
+  356  2                      {
+  357  3                              E_MAX = 10;
+  358  3                      }
+  359  2                      else     //其他情况误差是5
+  360  2                      {
+  361  3                              E_MAX = 5;
+  362  3                      }
+  363  2                      
+  364  2                      if (e0 > E_MAX)   //当前压力太低，处于充风状态
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 7   
+
+  365  2                      {
+  366  3                              ok = 0;
+  367  3                              status = IN;
+  368  3                              count2 = 0;
+  369  3                      }
+  370  2                      else if (e0 < -1 * E_MAX)  //压力太高，放风状态
+  371  2                      {
+  372  3                              ok = 0;
+  373  3                              status = OUT;
+  374  3                              count3 = 0;
+  375  3                      }
+  376  2                      else{
+  377  3                              ok = 1;
+  378  3                              status = STATIC;
+  379  3                      } 
+  380  2      
+  381  2                      if (status == IN)
+  382  2                      {
+  383  3                              if (e0 > pwm_scope_in)
+  384  3                              {
+  385  4                                      pPID->p_in=2000;//修改上升速度
+  386  4                              
+  387  4                                      
+  388  4                                      pPID->p_out=0;
+  389  4                                      
+  390  4                                      chong_flag =1;
+  391  4                                      pai_flag =0;
+  392  4                                      micr_flag=0;
+  393  4                              }
+  394  3                              else if(e0 > E_MAX)
+  395  3                              {
+  396  4                                      pPID->p_in=899; //800  ;
+  397  4                                      pPID->p_out=0;//1200;
+  398  4                                      micr_flag=0;
+  399  4                                      chong_flag =1;
+  400  4                              }
+  401  3                              else  //误差较小时，要稳定n秒后，才认为ok
+  402  3                              {
+  403  4                                      count2++;
+  404  4                                      //if (count2 > target/3) //250
+  405  4                                      if (count2 > 200)
+  406  4                                              ok = 1;
+  407  4                                      pPID->p_in=0 ;
+  408  4                                      pPID->p_out=0;
+  409  4                              }
+  410  3      
+  411  3                      }
+  412  2                      else if (status == OUT)
+  413  2                      {
+  414  3                              if (e0 < (-1)* pwm_scope_out)
+  415  3                              {
+  416  4                                      pPID->p_out= 2000;//修改下降速度
+  417  4                              
+  418  4                                      
+  419  4                                      pPID->p_in=0;
+  420  4                                      
+  421  4                                      chong_flag =0;
+  422  4                                      pai_flag =1;
+  423  4                                      micr_flag=0;
+  424  4                              }
+  425  3                              else if (e0 < -1 * E_MAX)
+  426  3                              {
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 8   
+
+  427  4                                      pPID->p_out= 899;       //目标越大，放风越快，为防止超调，所以目标越大，这个脉宽应越小
+  428  4                                      pPID->p_in=0;
+  429  4                                      micr_flag=0;
+  430  4                                      chong_flag =0;
+  431  4                                      pai_flag =1;
+  432  4                              }
+  433  3                              else    //误差较小时，要稳定n秒后，才认为ok
+  434  3                              {
+  435  4                                      count3++;
+  436  4                                      if (count3 > 250)
+  437  4                                              ok = 1;
+  438  4                                      pPID->p_out= 0;
+  439  4                                      pPID->p_in=0 ;
+  440  4                              }
+  441  3                      }
+  442  2                      else
+  443  2                      {
+  444  3                              if((!chong_flag) && (e0 < -1 * E_MAX+4)&& (!micr_flag))
+  445  3                              {
+  446  4                                      count_m = count_m+1;
+  447  4                                      if(count_m<6)
+  448  4                                              pPID->p_out =2000;
+  449  4                                      
+  450  4                                      else
+  451  4                                      {
+  452  5                                              micr_flag =1;
+  453  5                                              count_m=0;
+  454  5                                              pPID->p_out =0;
+  455  5                                      }
+  456  4                              }
+  457  3                              else
+  458  3                              {
+  459  4                                      pPID->p_out =0;
+  460  4                                      //count_m=0;
+  461  4                              }
+  462  3                                      
+  463  3                              //pPID->p_out=0;
+  464  3                              pPID->p_in=0 ;
+  465  3                      
+  466  3                      }
+  467  2                      //if (pPID->p_in > 0 && pPID->p_in != 2000)
+  468  2                      if (pPID->p_in > 0 && pPID->p_in == 899)
+  469  2                      {
+  470  3                              //if(total_count % 150 < 145)
+  471  3                              //if(total_count % 100 < 90)
+  472  3                                      //pPID->p_in = 0;       
+  473  3                              //else
+  474  3                                      pPID->p_in = 2000;
+  475  3                              
+  476  3                      }
+  477  2                      if (pPID->p_out > 0 && pPID->p_out == 899)
+  478  2                      {
+  479  3                              //if(total_count % 150 <145 )
+  480  3                              //if(total_count % 100 <90 )
+  481  3                              //      pPID->p_out = 0;
+  482  3                              //else
+  483  3                                      pPID->p_out = 2000;
+  484  3                      
+  485  3                                              
+  486  3                      }
+  487  2                      transfer(pPID);
+  488  2                      return;                         
+C166 COMPILER V7.53.0.0, PID                                                               07/29/2021 09:18:00 PAGE 9   
+
+  489  2              }
+  490  1                      
+  491  1      }
+  492         
+  493         
+  494         
+  495         void pid_test(struct PID *pPID, unsigned int df1,unsigned int df2)     //
+  496         {
+  497  1              pPID->p_in = df1;
+  498  1              pPID->p_out = df2;
+  499  1              transfer(pPID);
+  500  1      }
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =        1732     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =          70     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =          12     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =         162     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

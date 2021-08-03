@@ -1,0 +1,519 @@
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE CC2
+OBJECT MODULE PLACED IN .\obj\CC2.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE CC2.C MODV2 BROWSE INCDIR(.\Hardward File;.\User_App
+                    -) MODV2 DEBUG PRINT(.\list\CC2.lst) OBJECT(.\obj\CC2.obj) 
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        Capture / Compare Unit 2 (CAPCOM2)
+    3         // @Filename      CC2.C
+    4         // @Project       CF_EBCU.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167FM-72F80
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.0
+   11         //
+   12         // @Description   This file contains functions that use the CC2 module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2021/7/20 15:44:56
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (CC2_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (CC2_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (CC2_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (CC2_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (CC2_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (CC2_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (CC2_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (CC2_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (CC2_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void CC2_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This is the initialization function of the CAPCOM2 function 
+  104         //                library. It is assumed that the SFRs used by this library 
+  105         //                are in reset state. 
+  106         //
+  107         //----------------------------------------------------------------------------
+  108         // @Returnvalue   None
+  109         //
+  110         //----------------------------------------------------------------------------
+  111         // @Parameters    None
+  112         //
+  113         //----------------------------------------------------------------------------
+  114         // @Date          2021/7/20
+  115         //
+  116         //****************************************************************************
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 3   
+
+  117         
+  118         // USER CODE BEGIN (Init,1)
+  119         
+  120         // USER CODE END
+  121         
+  122         void CC2_vInit(void)
+  123         {
+  124  1        // USER CODE BEGIN (Init,2)
+  125  1      
+  126  1        // USER CODE END
+  127  1      
+  128  1        ///  -----------------------------------------------------------------------
+  129  1        ///  Configuration of  Kernel state configuration Control:
+  130  1        ///  -----------------------------------------------------------------------
+  131  1        ///  - the Peripheral is supplied with clock signal for CAPCOM2 unit
+  132  1        ///  - the CC2 module clock = 80.00 MHz
+  133  1      
+  134  1        CC2_KSCCFG     =  0x0003;      // load CAPCOM2 Kernel state configuration 
+  135  1                                       // register
+  136  1      
+  137  1      
+  138  1        _nop_();  // one cycle delay 
+  139  1      
+  140  1        _nop_();  // one cycle delay 
+  141  1      
+  142  1        ///  -----------------------------------------------------------------------
+  143  1        ///  Configuration of CAPCOM2 Control:
+  144  1        ///  -----------------------------------------------------------------------
+  145  1        ///  - the contents of the CC2_OUT register is visble at output port
+  146  1        ///  - the contents of the port register is changed by the CAPCOM2 unit
+  147  1      
+  148  1        ///  -----------------------------------------------------------------------
+  149  1        ///  Configuration of CAPCOM2 Timer 7:
+  150  1        ///  -----------------------------------------------------------------------
+  151  1        ///  - timer 7 works in timer mode
+  152  1        ///  - prescaler factor is 64
+  153  1        ///  - timer 7 run bit is set
+  154  1      
+  155  1        ///  -----------------------------------------------------------------------
+  156  1        ///  Configuration of CAPCOM2 Timer 8:
+  157  1        ///  -----------------------------------------------------------------------
+  158  1        ///  - timer 8 works in timer mode
+  159  1        ///  - prescaler factor is 8
+  160  1        ///  - timer 8 run bit is reset
+  161  1      
+  162  1      
+  163  1        CC2_T78CON     =  0x0003;      // load CAPCOM2 timer 7 and timer 8 control 
+  164  1                                       // register
+  165  1      
+  166  1        CC2_T7         =  0x3CB0;      // load CAPCOM2 timer 7 register
+  167  1      
+  168  1        CC2_T7REL      =  0x3CB0;      // load CAPCOM2 timer 7 reload register
+  169  1      
+  170  1        ///  -----------------------------------------------------------------------
+  171  1        ///  Configuration of the used CAPCOM2 Timer Port Pins:
+  172  1        ///  -----------------------------------------------------------------------
+  173  1      
+  174  1      
+  175  1        ///  -----------------------------------------------------------------------
+  176  1        ///  Configuration of the used CAPCOM2 Timer Interrupts:
+  177  1        ///  -----------------------------------------------------------------------
+  178  1        ///  Tmr7 service request node configuration:
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 4   
+
+  179  1        ///  - Tmr7 interrupt priority level (ILVL) = 7
+  180  1        ///  - Tmr7 interrupt group level (GLVL) = 0
+  181  1        ///  - Tmr7 group priority extension (GPX) = 0
+  182  1      
+  183  1        CC2_T7IC       =  0x005C;     
+  184  1      
+  185  1      
+  186  1      
+  187  1        ///  -----------------------------------------------------------------------
+  188  1        ///  Configuration of the used CAPCOM2 Channel 16:
+  189  1        ///  -----------------------------------------------------------------------
+  190  1        ///  - compare mode 3:  set bit CC0IO and pin CC16IO (P2.3) on each match
+  191  1        ///  - CC16 allocated to CAPCOM2 timer 7
+  192  1        ///  - single event mode is disabled
+  193  1      
+  194  1      
+  195  1        CC2_CC16       =  0x3CB0;      // load CAPCOM2 channel 16 register
+  196  1      
+  197  1        ///  -----------------------------------------------------------------------
+  198  1        ///  Configuration of the used CAPCOM2 Channel 17:
+  199  1        ///  -----------------------------------------------------------------------
+  200  1        ///  - compare mode 3:  set bit CC1IO and pin CC17IO (P2.4) on each match
+  201  1        ///  - CC17 allocated to CAPCOM2 timer 7
+  202  1        ///  - single event mode is disabled
+  203  1      
+  204  1      
+  205  1        CC2_CC17       =  0x3CB0;      // load CAPCOM2 channel 17 register
+  206  1      
+  207  1        ///  -----------------------------------------------------------------------
+  208  1        ///  Configuration of the used CAPCOM2 Channel 18:
+  209  1        ///  -----------------------------------------------------------------------
+  210  1        ///  - compare mode 3:  set bit CC2IO and pin CC18IO (P2.5) on each match
+  211  1        ///  - CC18 allocated to CAPCOM2 timer 7
+  212  1        ///  - single event mode is disabled
+  213  1      
+  214  1      
+  215  1        CC2_CC18       =  0x3CB0;      // load CAPCOM2 channel 18 register
+  216  1      
+  217  1        ///  -----------------------------------------------------------------------
+  218  1        ///  Configuration of the used CAPCOM2 Channel 19:
+  219  1        ///  -----------------------------------------------------------------------
+  220  1        ///  - compare mode 3:  set bit CC3IO and pin CC19IO (P2.6) on each match
+  221  1        ///  - CC19 allocated to CAPCOM2 timer 7
+  222  1        ///  - single event mode is disabled
+  223  1      
+  224  1      
+  225  1        CC2_CC19       =  0x3CB0;      // load CAPCOM2 channel 19 register
+  226  1      
+  227  1        ///  -----------------------------------------------------------------------
+  228  1        ///  Configuration of the used CAPCOM2 Channel 20:
+  229  1        ///  -----------------------------------------------------------------------
+  230  1        ///  - channel 20 is disabled
+  231  1      
+  232  1        ///  -----------------------------------------------------------------------
+  233  1        ///  Configuration of the used CAPCOM2 Channel 21:
+  234  1        ///  -----------------------------------------------------------------------
+  235  1        ///  - channel 21 is disabled
+  236  1      
+  237  1        ///  -----------------------------------------------------------------------
+  238  1        ///  Configuration of the used CAPCOM2 Channel 22:
+  239  1        ///  -----------------------------------------------------------------------
+  240  1        ///  - channel 22 is disabled
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 5   
+
+  241  1      
+  242  1        ///  -----------------------------------------------------------------------
+  243  1        ///  Configuration of the used CAPCOM2 Channel 23:
+  244  1        ///  -----------------------------------------------------------------------
+  245  1        ///  - channel 23 is disabled
+  246  1      
+  247  1        ///  -----------------------------------------------------------------------
+  248  1        ///  Configuration of the used CAPCOM2 Channel 24:
+  249  1        ///  -----------------------------------------------------------------------
+  250  1        ///  - channel 24 is disabled
+  251  1      
+  252  1        ///  -----------------------------------------------------------------------
+  253  1        ///  Configuration of the used CAPCOM2 Channel 25:
+  254  1        ///  -----------------------------------------------------------------------
+  255  1        ///  - channel 25 is disabled
+  256  1      
+  257  1        ///  -----------------------------------------------------------------------
+  258  1        ///  Configuration of the used CAPCOM2 Channel 26:
+  259  1        ///  -----------------------------------------------------------------------
+  260  1        ///  - channel 26 is disabled
+  261  1      
+  262  1        ///  -----------------------------------------------------------------------
+  263  1        ///  Configuration of the used CAPCOM2 Channel 27:
+  264  1        ///  -----------------------------------------------------------------------
+  265  1        ///  - channel 27 is disabled
+  266  1      
+  267  1        ///  -----------------------------------------------------------------------
+  268  1        ///  Configuration of the used CAPCOM2 Channel 28:
+  269  1        ///  -----------------------------------------------------------------------
+  270  1        ///  - channel 28 is disabled
+  271  1      
+  272  1        ///  -----------------------------------------------------------------------
+  273  1        ///  Configuration of the used CAPCOM2 Channel 29:
+  274  1        ///  -----------------------------------------------------------------------
+  275  1        ///  - channel 29 is disabled
+  276  1      
+  277  1        ///  -----------------------------------------------------------------------
+  278  1        ///  Configuration of the used CAPCOM2 Channel 30:
+  279  1        ///  -----------------------------------------------------------------------
+  280  1        ///  - channel 30 is disabled
+  281  1      
+  282  1        ///  -----------------------------------------------------------------------
+  283  1        ///  Configuration of the used CAPCOM2 Channel 31:
+  284  1        ///  -----------------------------------------------------------------------
+  285  1        ///  - channel 31 is disabled
+  286  1      
+  287  1        CC2_M4         =  0x7777;      // load CAPCOM2 mode register 4
+  288  1      
+  289  1        ///  -----------------------------------------------------------------------
+  290  1        ///  Configuration of the used CAPCOM2 Channel Port Pins:
+  291  1        ///  -----------------------------------------------------------------------
+  292  1        ///  - P2.3 is used for CAPCOM2 output(CC2_16)
+  293  1        ///  - P2.4 is used for CAPCOM2 output(CC2_17)
+  294  1        ///  - P2.5 is used for CAPCOM2 output(CC2_18)
+  295  1        ///  - P2.6 is used for CAPCOM2 output(CC2_19)
+  296  1      
+  297  1        P2_IOCR03 = 0x00B0;    //set direction register
+  298  1        P2_IOCR04 = 0x00B0;    //set direction register
+  299  1        P2_IOCR05 = 0x00B0;    //set direction register
+  300  1        P2_IOCR06 = 0x00B0;    //set direction register
+  301  1      
+  302  1        ///  -----------------------------------------------------------------------
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 6   
+
+  303  1        ///  Configuration of the used CAPCOM2 Channels Interrupts:
+  304  1        ///  -----------------------------------------------------------------------
+  305  1      
+  306  1        CC2_T78CON_T7R    = 1;    // set CAPCOM2 timer 7 run bit
+  307  1      
+  308  1      
+  309  1        // USER CODE BEGIN (Tmr8,3)
+  310  1      
+  311  1        // USER CODE END
+  312  1      
+  313  1      } //  End of function CC2_viTmr8
+  314         
+  315         
+  316         //****************************************************************************
+  317         // @Function      void CC2_viTmr7(void) 
+  318         //
+  319         //----------------------------------------------------------------------------
+  320         // @Description   This is the interrupt service routine for the CAPCOM2 timer 
+  321         //                7. It is called when overflow of the timer 7 register 
+  322         //                occurs.
+  323         //                Please note that you have to add application specific code 
+  324         //                to this function.
+  325         //
+  326         //----------------------------------------------------------------------------
+  327         // @Returnvalue   None
+  328         //
+  329         //----------------------------------------------------------------------------
+  330         // @Parameters    None
+  331         //
+  332         //----------------------------------------------------------------------------
+  333         // @Date          2021/7/20
+  334         //
+  335         //****************************************************************************
+  336         
+  337         // USER CODE BEGIN (Tmr7,1)
+  338         void Out_Clean()   //PWM短路保护状态清空
+  339         {
+  340  1               OUTPE = 0;
+  341  1               delay(1000); 
+  342  1         OUTPE = 1;
+  343  1      }
+  344                 void PWM_OEClear()
+  345         {
+  346  1              unsigned char LEDOE_PWM1;
+  347  1              unsigned char LEDOE_PWM2;
+  348  1              unsigned char LEDOE_PWM3;
+  349  1              unsigned char LEDOE_PWM4;
+  350  1              static unsigned char PWMcount1 = 0;
+  351  1              static unsigned char PWMcount2 = 0;
+  352  1              static unsigned char PWMcount3 = 0;
+  353  1              static unsigned char PWMcount4 = 0;
+  354  1              LEDOE_PWM1 = getOUTOE(2)&0x10;//PWM1短路保护读取
+  355  1              LEDOE_PWM2 = getOUTOE(2)&0x20;//PWM2短路保护读取
+  356  1              LEDOE_PWM1 = getOUTOE(2)&0x40;//PWM1短路保护读取
+  357  1              LEDOE_PWM2 = getOUTOE(2)&0x80;//PWM2短路保护读取
+  358  1              if(LEDOE_PWM1)
+  359  1              {
+  360  2                      PWMcount1++;
+  361  2                      if(PWMcount1>2)                                                    //出现三次短路则关闭
+  362  2                      {
+  363  3                       PWM1=0x3000;            //关闭相应输出
+  364  3                       PWMcount1=16;
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 7   
+
+  365  3                      }
+  366  2                      else
+  367  2                      {
+  368  3                      Out_Clean();                            //              清短路状态              
+  369  3                      PWM1=0x3000;             //关闭相应输出
+  370  3                      }                       
+  371  2              }
+  372  1              if(LEDOE_PWM2)
+  373  1              {
+  374  2                      PWMcount2++;
+  375  2                      if(PWMcount2>2)                                                    //出现三次短路则关闭
+  376  2                      {
+  377  3                       PWM2=0x3000;            //关闭相应输出
+  378  3                       PWMcount2=16;
+  379  3                      }
+  380  2                      else
+  381  2                      {
+  382  3                      Out_Clean();                            //              清短路状态      
+  383  3                      PWM2=0x3000;             //关闭相应输出
+  384  3                      }                       
+  385  2              }
+  386  1              if(LEDOE_PWM3)
+  387  1              {
+  388  2                      PWMcount3++;
+  389  2                      if(PWMcount3>2)                                                    //出现三次短路则关闭
+  390  2                      {
+  391  3                       PWM3=0x3000;            //关闭相应输出
+  392  3                       PWMcount3=16;
+  393  3                      }
+  394  2                      else
+  395  2                      {
+  396  3                      Out_Clean();                            //              清短路状态      
+  397  3                      PWM3=0x3000;             //关闭相应输出
+  398  3                      }                       
+  399  2              }
+  400  1              if(LEDOE_PWM4)
+  401  1              {
+  402  2                      PWMcount4++;
+  403  2                      if(PWMcount4>2)                                                    //出现三次短路则关闭
+  404  2                      {
+  405  3                       PWM4=0x3000;            //关闭相应输出
+  406  3                       PWMcount4=16;
+  407  3                      }
+  408  2                      else
+  409  2                      {
+  410  3                      Out_Clean();                            //              清短路状态      
+  411  3                      PWM4=0x3000;             //关闭相应输出
+  412  3                      }                       
+  413  2              }
+  414  1      }
+  415         void PWM_OUTPUT()
+  416         {
+  417  1                PWMOE1 = (getOUTOE(2)&0xf0)>>4;//PWM1短路保护读取
+  418  1                      if((PWMOE1&0x01)==0x01)
+  419  1                      {
+  420  2                              PWM_OEClear();
+  421  2          } 
+  422  1                      else 
+  423  1                {
+  424  2                              PWM1=pid_jh.p_in;  // pid_jh.p_out;     //25%                   //进气  
+  425  2                      }
+  426  1                      if((PWMOE1&0x02)==0x02)
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 8   
+
+  427  1                      {
+  428  2                              PWM_OEClear();                  
+  429  2          } 
+  430  1                      else 
+  431  1                {
+  432  2                              PWM2=pid_jh.p_out;                      //75%   放气'   
+  433  2                      }
+  434  1                      if((PWMOE1&0x04)==0x04)
+  435  1                      {
+  436  2                              PWM_OEClear();                  
+  437  2          } 
+  438  1                      else 
+  439  1                {
+  440  2                              PWM3=pid_zg.p_in;                       //75%   放气'   
+  441  2                      }
+  442  1                      if((PWMOE1&0x08)==0x08)
+  443  1                      {
+  444  2                              PWM_OEClear();                  
+  445  2          } 
+  446  1                      else 
+  447  1                {
+  448  2                              PWM4=pid_zg.p_out;                      //75%   放气'   
+  449  2                      }
+  450  1      }
+  451         // USER CODE END
+  452         
+  453         void CC2_viTmr7(void) interrupt CC2_T7INT
+  454         {
+  455  1        // USER CODE BEGIN (Tmr7,2)
+  456  1                      pid_change();
+  457  1      //        pid1(&pid_jh, AD_Data[4]);     //均衡风缸
+  458  1      //              pid2(&pid_zg, AD_Data[5]);     //闸缸预控
+  459  1          pid_test(&pid_jh,2000,0);  
+  460  1                pid_test(&pid_zg,2000,0);  
+  461  1                PWM_OUTPUT();
+  462  1        // USER CODE END
+  463  1      
+  464  1      } //  End of function CC2_viTmr7
+  465         
+  466         
+  467         
+  468         
+  469         // USER CODE BEGIN (CC2_General,10)
+  470         
+  471         // USER CODE END
+  472         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         496     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           5     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+C166 COMPILER V7.53.0.0, CC2                                                               07/29/2021 09:17:56 PAGE 9   
+
+  INIT'L SIZE      =          24     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

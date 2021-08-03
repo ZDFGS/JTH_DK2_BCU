@@ -1,0 +1,1 @@
+"User_App\input.c" MODV2 BROWSE INCDIR(.\Hardward File;.\User_App) MODV2 DEBUG PRINT(.\list\input.lst) OBJECT(.\obj\input.obj)

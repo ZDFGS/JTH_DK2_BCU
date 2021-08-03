@@ -1,0 +1,257 @@
+C166 COMPILER V7.57.0, EEPROM                                                              04/25/2021 13:51:46 PAGE 1   
+
+
+C166 COMPILER V7.57.0, COMPILATION OF MODULE EEPROM
+OBJECT MODULE PLACED IN .\obj\EEPROM.obj
+COMPILER INVOKED BY: C:\Keil_v5\C166\BIN\C166.EXE Hardward File\EEPROM.c MODV2 BROWSE INCDIR(.\Include File) MODV2 DEBUG
+                    - PRINT(.\list\EEPROM.lst) TABS(2) OBJECT(.\obj\EEPROM.obj) 
+
+ stmt lvl     source
+
+    1         #include  "MAIN.H"
+    2         #define HIGH  1
+    3         #define LOW   0
+    4         
+    5         
+    6         ubyte AT25256_SPICommunicate(ubyte data)
+    7         {
+    8  1        ubyte RcvData = 0;
+    9  1      
+   10  1        SPICLK = LOW;
+   11  1        SPISI = ((UVS_SPI *)&data)->DD7;
+   12  1        SPICLK = HIGH;
+   13  1        if(SPISO)                 //输出是一位一位地检测 ，最后得到AT25256返回的数据
+   14  1            RcvData |= 0x80;
+   15  1      
+   16  1        SPICLK = LOW;
+   17  1        SPISI = ((UVS_SPI *)&data)->DD6;
+   18  1        SPICLK = HIGH;
+   19  1        if(SPISO)
+   20  1            RcvData |= 0x40;
+   21  1      
+   22  1        SPICLK = LOW;
+   23  1        SPISI = ((UVS_SPI *)&data)->DD5;
+   24  1        SPICLK = HIGH;
+   25  1        if(SPISO)
+   26  1            RcvData |= 0x20;
+   27  1        
+   28  1        SPICLK = LOW;
+   29  1        SPISI = ((UVS_SPI *)&data)->DD4;
+   30  1        SPICLK = HIGH;
+   31  1        if(SPISO)
+   32  1            RcvData |= 0x10;
+   33  1            
+   34  1        SPICLK = LOW;
+   35  1        SPISI = ((UVS_SPI *)&data)->DD3;
+   36  1        SPICLK = HIGH;
+   37  1        if(SPISO)
+   38  1            RcvData |= 0x08;
+   39  1      
+   40  1        SPICLK = LOW;
+   41  1        SPISI = ((UVS_SPI *)&data)->DD2;
+   42  1        SPICLK = HIGH;
+   43  1        if(SPISO)
+   44  1            RcvData |= 0x04;
+   45  1      
+   46  1        SPICLK = LOW;
+   47  1        SPISI = ((UVS_SPI *)&data)->DD1;
+   48  1        SPICLK = HIGH;
+   49  1        if(SPISO)
+   50  1            RcvData |= 0x02;
+   51  1      
+   52  1        SPICLK = LOW;
+   53  1        SPISI = ((UVS_SPI *)&data)->DD0;
+   54  1        SPICLK = HIGH;
+C166 COMPILER V7.57.0, EEPROM                                                              04/25/2021 13:51:46 PAGE 2   
+
+   55  1        if(SPISO)
+   56  1            RcvData |= 0x01;
+   57  1      
+   58  1        SPICLK = LOW;
+   59  1        SPISI = 0;
+   60  1      
+   61  1        return(RcvData);
+   62  1      
+   63  1      }
+   64         
+   65         void writeEnable(void)
+   66         {
+   67  1        SPICS = 1;
+   68  1        delay(1);
+   69  1        SPICS = 0;
+   70  1        delay(1);
+   71  1        AT25256_SPICommunicate(WREN);
+   72  1        delay(1);
+   73  1      
+   74  1        SPICS = 1;  
+   75  1      
+   76  1      }
+   77         
+   78         
+   79         void writeDisEnable(void)
+   80         {
+   81  1        SPICS = 1;
+   82  1        delay(1);
+   83  1        SPICS = 0;
+   84  1        delay(1);
+   85  1        AT25256_SPICommunicate(WRDI);
+   86  1        delay(1);
+   87  1      
+   88  1        SPICS = 1;  
+   89  1      
+   90  1      }
+   91         
+   92         ubyte ReadStatue(void)
+   93         {
+   94  1        ubyte RcvStatueData;
+   95  1      
+   96  1        SPICS = 1;    delay(1);
+   97  1        SPICS = 0;
+   98  1        delay(1);
+   99  1        AT25256_SPICommunicate(RDSR);
+  100  1        RcvStatueData = AT25256_SPICommunicate(0xff);
+  101  1        delay(1);
+  102  1      
+  103  1        SPICS = 1;
+  104  1      
+  105  1        return(RcvStatueData);
+  106  1      }
+  107         
+  108         void writeStatue(ubyte data)
+  109         {
+  110  1        ubyte temp;
+  111  1      
+  112  1        SPICS = 1;  delay(1);
+  113  1        SPICS = 0;
+  114  1        AT25256_SPICommunicate(WREN);    //先进行写使能
+  115  1        SPICS = 1;  delay(1);
+  116  1      
+C166 COMPILER V7.57.0, EEPROM                                                              04/25/2021 13:51:46 PAGE 3   
+
+  117  1        SPICS = 0;
+  118  1        AT25256_SPICommunicate(WRSR);
+  119  1        AT25256_SPICommunicate(data);
+  120  1        delay(1);
+  121  1        SPICS = 1;
+  122  1        //检查写操作是否完成
+  123  1        do
+  124  1        {
+  125  2          temp = ReadStatue();
+  126  2        }while(temp&RDSBACK);
+  127  1      
+  128  1      }
+  129         
+  130         ubyte ReadData(uword ReadAddr)
+  131         {
+  132  1        ubyte Addr_temp1 = 0;
+  133  1        ubyte Addr_temp2 = 0;
+  134  1        ubyte RcvData = 0;
+  135  1      
+  136  1        Addr_temp1 = (ubyte)((ReadAddr>>8)&0xff);
+  137  1        Addr_temp2 = (ubyte)(ReadAddr&0xff);
+  138  1        SPICS = 1;    
+  139  1        delay(1);
+  140  1        SPICS = 0;
+  141  1        delay(1);
+  142  1        AT25256_SPICommunicate(READ);
+  143  1        AT25256_SPICommunicate(Addr_temp1);
+  144  1        AT25256_SPICommunicate(Addr_temp2);
+  145  1        RcvData = AT25256_SPICommunicate(0xff);
+  146  1        delay(1);
+  147  1        SPICS = 1;
+  148  1      
+  149  1        return(RcvData);
+  150  1      }
+  151         
+  152         void WriteData(uword WriteAddr, ubyte data)
+  153         {
+  154  1        ubyte temp;
+  155  1        ubyte Addr_temp1, Addr_temp2;
+  156  1        Addr_temp2 = (ubyte)(WriteAddr&0xff);
+  157  1        Addr_temp1 = (ubyte)((WriteAddr>>8)&0xff);
+  158  1        
+  159  1        writeEnable();
+  160  1        
+  161  1        SPICS = 1;   delay(1);
+  162  1        SPICS = 0;
+  163  1        delay(1);
+  164  1        AT25256_SPICommunicate(WREN);
+  165  1        SPICS = 1;   delay(1);
+  166  1        SPICS = 0;
+  167  1        AT25256_SPICommunicate(WRITE);
+  168  1        AT25256_SPICommunicate(Addr_temp1);
+  169  1        AT25256_SPICommunicate(Addr_temp2);
+  170  1        AT25256_SPICommunicate(data);
+  171  1        delay(1); 
+  172  1        SPICS = 1;
+  173  1        //检查写操作是否完成
+  174  1      //  temp = ReadStatue();
+  175  1      //  if(temp&RDSBACK)
+  176  1      //    while(temp&RDSBACK);
+  177  1        do
+  178  1        {
+C166 COMPILER V7.57.0, EEPROM                                                              04/25/2021 13:51:46 PAGE 4   
+
+  179  2          temp = ReadStatue();
+  180  2        }while(temp&RDSBACK);
+  181  1      
+  182  1      }
+  183         
+  184         //读写测试
+  185         ubyte testAT25256(void)
+  186         {
+  187  1        ubyte testdata;
+  188  1        uword i;
+  189  1        
+  190  1        for(i=0;i<256;i++)
+  191  1        {
+  192  2          WriteData(i,i);
+  193  2        }
+  194  1        
+  195  1        for(i=0;i<256;i++)
+  196  1        {
+  197  2          testdata = ReadData(i);
+  198  2          if(testdata != i)
+  199  2          {
+  200  3            return 0;
+  201  3          }
+  202  2        }
+  203  1        return 1;   
+  204  1      
+  205  1      }
+  206         //
+  207         ubyte ROMSaveDate(uword  WriteAddr, struct timeInfo *data)
+  208         {
+  209  1        int i = 0;
+  210  1      //  uword  WriteAddr = 0x10;//从地址0x10开始存时间数据,  
+  211  1      
+  212  1        while(data->date[i])
+  213  1        {
+  214  2          WriteData(WriteAddr, (ubyte)(data->date[i]));
+  215  2          i++;  
+  216  2          WriteAddr++;
+  217  2        }
+  218  1      
+  219  1        return 0;
+  220  1      }
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         812     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           1     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

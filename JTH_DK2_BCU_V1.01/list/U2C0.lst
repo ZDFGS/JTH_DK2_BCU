@@ -1,0 +1,456 @@
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE U2C0
+OBJECT MODULE PLACED IN .\obj\U2C0.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE U2C0.C MODV2 BROWSE INCDIR(.\Hardward File;.\User_Ap
+                    -p) MODV2 DEBUG PRINT(.\list\U2C0.lst) OBJECT(.\obj\U2C0.obj) 
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        Universal Serial Interface Channel (USIC) U2C0
+    3         // @Filename      U2C0.C
+    4         // @Project       CF_EBCU.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167FM-72F80
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.0
+   11         //
+   12         // @Description   This file contains functions that use the U2C0 module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2021/7/20 15:44:55
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (U2C0_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (U2C0_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (U2C0_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (U2C0_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (U2C0_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (U2C0_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (U2C0_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (U2C0_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (U2C0_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void U2C0_SSC_vInit(void)
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This is the initialization function of the U2C0 function
+  104         //                library. It is assumed that the SFRs used by this library
+  105         //                are in reset state.
+  106         //
+  107         //----------------------------------------------------------------------------
+  108         // @Returnvalue   None
+  109         //
+  110         //----------------------------------------------------------------------------
+  111         // @Parameters    None
+  112         //
+  113         //----------------------------------------------------------------------------
+  114         // @Date          2021/7/20
+  115         //
+  116         //****************************************************************************
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 3   
+
+  117         
+  118         // USER CODE BEGIN (Init,1)
+  119         
+  120         // USER CODE END
+  121         
+  122         void U2C0_SSC_vInit(void)
+  123         {
+  124  1        // USER CODE BEGIN (Init,2)
+  125  1      
+  126  1        // USER CODE END
+  127  1      
+  128  1        ///  -----------------------------------------------------------------------
+  129  1        ///  Configuration of the U2C0 Fractional Divider:
+  130  1        ///  -----------------------------------------------------------------------
+  131  1        ///  - The Fractional divider is selected
+  132  1        ///  - The step value STEP = 640
+  133  1      
+  134  1        U2C0_FDRL      =  0x8280;      // load U2C0 fractional divider register
+  135  1      
+  136  1        ///  -----------------------------------------------------------------------
+  137  1        ///  Configuration of the U2C0 Baudrate Generator:
+  138  1        ///  -----------------------------------------------------------------------
+  139  1        ///  - The selected BaudRate is 100.000 kbaud
+  140  1        ///  - The PreDivider for CTQ, PCTQ = 0
+  141  1        ///  - The Denominator for CTQ, DCTQ = 0
+  142  1        ///  - The Divider factor PDIV = 249
+  143  1      
+  144  1        U2C0_BRGL      =  0x0000;      // load U2C0 load baud rate generator 
+  145  1                                       // register L
+  146  1      
+  147  1        ///  - Shift Clock output configuration (SCLKCFG) = 2, Clock phase =1
+  148  1      
+  149  1        U2C0_BRGH      =  0x80F9;      // load U2C0 load baud rate generator 
+  150  1                                       // register H
+  151  1      
+  152  1        ///  -----------------------------------------------------------------------
+  153  1        ///  Configuration of the U2C0 Input Control Register:
+  154  1        ///  -----------------------------------------------------------------------
+  155  1        ///  - The data input DX0E is selected
+  156  1      
+  157  1        U2C0_DX0CR     =  0x0014;      // load U2C0 input control register(Data)
+  158  1      
+  159  1        ///  -----------------------------------------------------------------------
+  160  1        ///  Configuration of the U2C0 Interrupt Node Pointer Register:
+  161  1        ///  -----------------------------------------------------------------------
+  162  1        ///  - TSINP pointer points to Interrupt node U2C0_0IC
+  163  1      
+  164  1        U2C0_INPRL     =  0x0000;      // load U2C0 Interrupt Node Pointer register 
+  165  1                                       // L
+  166  1        U2C0_INPRH     =  0x0000;      // load U2C0 Interrupt Node Pointer register 
+  167  1                                       // H
+  168  1      
+  169  1        ///  -----------------------------------------------------------------------
+  170  1        ///  Configuration of the U2C0 Shift Control:
+  171  1        ///  -----------------------------------------------------------------------
+  172  1        ///  - Transmit/Receive MSB first is selected
+  173  1      
+  174  1        U2C0_SCTRL     =  0x0103;      // load U2C0 shift control register L
+  175  1        U2C0_SCTRH     =  0x0F0F;      // load U2C0 shift control register H
+  176  1      
+  177  1        ///  -----------------------------------------------------------------------
+  178  1        ///  Configuration of the U2C0 Transmit Control/Status Register:
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 4   
+
+  179  1        ///  -----------------------------------------------------------------------
+  180  1      
+  181  1        U2C0_TCSRL     =  0x0500;      // load U2C0 transmit control/status 
+  182  1                                       // register L
+  183  1        U2C0_TCSRH     =  0x0000;      // load U2C0 transmit control/status 
+  184  1                                       // register H
+  185  1      
+  186  1        ///  -----------------------------------------------------------------------
+  187  1        ///  Configuration of the U2C0 Protocol Control Register:
+  188  1        ///  -----------------------------------------------------------------------
+  189  1      
+  190  1        U2C0_PCRL      =  0x0F47;      // load U2C0 protocol control register L
+  191  1        U2C0_PCRH      =  0x0000;      // load U2C0 protocol control register H
+  192  1      
+  193  1        ///  -----------------------------------------------------------------------
+  194  1        ///  Configuration of the U2C0 Protocol Status Register:
+  195  1        ///  -----------------------------------------------------------------------
+  196  1        ///  - TBIF is set to simplify polling
+  197  1      
+  198  1        U2C0_PSR      |=  0x2000;      // load U2C0 protocol status register
+  199  1      
+  200  1      
+  201  1        ///  -----------------------------------------------------------------------
+  202  1        ///  Configuration of the used U2C0 Interrupts:
+  203  1        ///  -----------------------------------------------------------------------
+  204  1        ///  U2C00IC service request node configuration:
+  205  1        ///  - U2C00IC interrupt priority level (ILVL) = 5
+  206  1        ///  - U2C00IC interrupt group level (GLVL) = 0
+  207  1        ///  - U2C00IC group priority extension (GPX) = 0
+  208  1      
+  209  1        U2C0_0IC       =  0x0054;     
+  210  1      
+  211  1        ///  -----------------------------------------------------------------------
+  212  1        ///  Configuration of the used U2C0 Port Pins:
+  213  1        ///  -----------------------------------------------------------------------
+  214  1        P9_IOCR05      =  0x0020;      // load port register for data input
+  215  1      
+  216  1        ///  - P9.4 is used for USIC2 Channel0 Shift Data Output(DOUT)
+  217  1        ///  - P3.2 is used for USIC2 Channel0 Shift Clock output(SCLKOUT)
+  218  1      
+  219  1        P9_IOCR04 = 0x00A0;    //set direction register
+  220  1        P3_IOCR02 = 0x0090;    //set direction register
+  221  1      
+  222  1      
+  223  1        ///  -----------------------------------------------------------------------
+  224  1        ///  Configuration of U2C0 FIFO:
+  225  1        ///  -----------------------------------------------------------------------
+  226  1        ///  -----------------------------------------------------------------------
+  227  1        ///  Configuration of U2C0 Transmitter Buffer Conrol Register:
+  228  1        ///  -----------------------------------------------------------------------
+  229  1        ///  - Transmit FIFO buffer is disabled
+  230  1        ///  -----------------------------------------------------------------------
+  231  1        ///  Configuration of U2C0 Receiver Buffer Conrol Register:
+  232  1        ///  -----------------------------------------------------------------------
+  233  1        ///  - Receive FIFO buffer is disabled
+  234  1      
+  235  1        // USER CODE BEGIN (U2C0_Function,3)
+  236  1      
+  237  1        // USER CODE END
+  238  1      
+  239  1      
+  240  1      
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 5   
+
+  241  1      } //  End of function U2C0_SSC_vInit
+  242         
+  243         
+  244         //****************************************************************************
+  245         // @Function      void U2C0_SSC_vSendData(uword uwData) 
+  246         //
+  247         //----------------------------------------------------------------------------
+  248         // @Description   This function clears the transmit buffer Indication flag 
+  249         //                first  & then writes the send data initialization word into 
+  250         //                the transmit buffer register.
+  251         //                
+  252         //                Note: 
+  253         //                In a multiprocessor system the master with this function 
+  254         //                has the possibility to send data to the selected slave.
+  255         //
+  256         //----------------------------------------------------------------------------
+  257         // @Returnvalue   None
+  258         //
+  259         //----------------------------------------------------------------------------
+  260         // @Parameters    uwData: 
+  261         //                Data to be send
+  262         //
+  263         //----------------------------------------------------------------------------
+  264         // @Date          2021/7/20
+  265         //
+  266         //****************************************************************************
+  267         
+  268         // USER CODE BEGIN (SSCSendData,1)
+  269         
+  270         // USER CODE END
+  271         
+  272         void U2C0_SSC_vSendData(uword uwData)
+  273         {
+  274  1      
+  275  1        while(!(U2C0_PSR & 0x2000));   //  wait until tx buffer indication flag is set
+  276  1      
+  277  1        U2C0_PSCR     |= 0x2000;   //  clear transmit buffer indication flag
+  278  1        U2C0_TBUF00    = uwData;   //  load transmit buffer register
+  279  1      
+  280  1      } //  End of function U2C0_SSC_vSendData
+  281         
+  282         
+  283         //****************************************************************************
+  284         // @Function      uword U2C0_SSC_uwGetData(void) 
+  285         //
+  286         //----------------------------------------------------------------------------
+  287         // @Description   This function reads out the content of the receive buffer 
+  288         //                register which contains the received data.
+  289         //
+  290         //----------------------------------------------------------------------------
+  291         // @Returnvalue   Data that has been received
+  292         //
+  293         //----------------------------------------------------------------------------
+  294         // @Parameters    None
+  295         //
+  296         //----------------------------------------------------------------------------
+  297         // @Date          2021/7/20
+  298         //
+  299         //****************************************************************************
+  300         
+  301         // USER CODE BEGIN (SSCGetData,1)
+  302         
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 6   
+
+  303         // USER CODE END
+  304         
+  305         uword U2C0_SSC_uwGetData(void)
+  306         {
+  307  1        while(!((U2C0_PSR & 0x8000) || (U2C0_PSR & 0x4000)));
+  308  1      
+  309  1        U2C0_PSCR     |= 0xC000;   //  clear alternate receive indication flag & receive indication flag
+  310  1        return(U2C0_RBUF);         // return receive buffer register
+  311  1      
+  312  1      
+  313  1      } //  End of function U2C0_SSC_uwGetData
+  314         
+  315         
+  316         //****************************************************************************
+  317         // @Function      ubyte U2C0_SSC_ubTxDataReady(void) 
+  318         //
+  319         //----------------------------------------------------------------------------
+  320         // @Description   This function can be used for checking up the status of the 
+  321         //                transmit shift indication flag U2C0_PSR_TSIF. This function 
+  322         //                shows when the sending of data has terminated. By 
+  323         //                continuously polling this flag after the function 
+  324         //                U2C0_SSC_vSendData has been called, it is possible to 
+  325         //                establish when U2C0 has terminated its task.
+  326         //
+  327         //----------------------------------------------------------------------------
+  328         // @Returnvalue   0 if transmitter is busy, else 1
+  329         //
+  330         //----------------------------------------------------------------------------
+  331         // @Parameters    None
+  332         //
+  333         //----------------------------------------------------------------------------
+  334         // @Date          2021/7/20
+  335         //
+  336         //****************************************************************************
+  337         
+  338         // USER CODE BEGIN (SSCTxDataReady,1)
+  339         
+  340         // USER CODE END
+  341         
+  342         ubyte U2C0_SSC_ubTxDataReady(void)
+  343         {
+  344  1        ubyte ubReturnValue;
+  345  1      
+  346  1        ubReturnValue = 0;
+  347  1      
+  348  1        if(U2C0_PSR & 0x1000)               // if sending of data is terminated
+  349  1        {
+  350  2          ubReturnValue = 1;
+  351  2          U2C0_PSCR |= 0x1000;
+  352  2        }
+  353  1        return(ubReturnValue);         
+  354  1      
+  355  1      } //  End of function U2C0_SSC_ubTxDataReady
+  356         
+  357         
+  358         //****************************************************************************
+  359         // @Function      void U2C0_SSC_vi0IC(void) 
+  360         //
+  361         //----------------------------------------------------------------------------
+  362         // @Description   This is the interrupt service routine for the Service 
+  363         //                Request Node U2C0_0IC.
+  364         //                Please note that you have to add application specific code 
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 7   
+
+  365         //                to this function.
+  366         //
+  367         //----------------------------------------------------------------------------
+  368         // @Returnvalue   None
+  369         //
+  370         //----------------------------------------------------------------------------
+  371         // @Parameters    None
+  372         //
+  373         //----------------------------------------------------------------------------
+  374         // @Date          2021/7/20
+  375         //
+  376         //****************************************************************************
+  377         
+  378         // USER CODE BEGIN (SSC0IC,1)
+  379         ubyte SPItransismit = 1;
+  380         // USER CODE END
+  381         
+  382         void U2C0_SSC_vi0IC(void) interrupt U2C0_0INT
+  383         {
+  384  1      
+  385  1        // USER CODE BEGIN (SSC0IC,2)
+  386  1      
+  387  1        // USER CODE END
+  388  1      
+  389  1        if (U2C0_PSR & 0x1000)          //Transmit shift indication flag
+  390  1        {
+  391  2      
+  392  2        // USER CODE BEGIN (SSC0IC,6)
+  393  2              SPItransismit = 1;
+  394  2        // USER CODE END
+  395  2      
+  396  2        U2C0_PSCR   |= 0x1000;         //clear PSR_TSIF
+  397  2        }
+  398  1      
+  399  1        // USER CODE BEGIN (SSC0IC,11)
+  400  1      
+  401  1        // USER CODE END
+  402  1      
+  403  1      } //  End of function U2C0_SSC_vi0IC
+  404         
+  405         
+  406         
+  407         
+  408         // USER CODE BEGIN (U2C0_General,10)
+  409         
+  410         // USER CODE END
+  411         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         346     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           2     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+C166 COMPILER V7.53.0.0, U2C0                                                              07/29/2021 09:17:54 PAGE 8   
+
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =           6     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

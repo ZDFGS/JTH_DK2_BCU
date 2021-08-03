@@ -1,0 +1,3569 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\¼òÍ³»¯BCU\JTH_DK2_BCU_V1.01\JTH_DK2_BCU_V1.01\CF_EBCU.uvproj
+Project File Date:  07/27/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(321): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+linking...
+Program Size: data=1601(near=1601) const=889(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1601(near=1601) const=889(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+MAIN.C(289): error C42: 'Init': not in formal parameter list
+MAIN.C(290): error C42: 'systemTest': not in formal parameter list
+MAIN.C(291): error C42: 'closeOutput': not in formal parameter list
+MAIN.C(296): error C42: 'main': not in formal parameter list
+MAIN.C(296): error C25: syntax error near '{'
+MAIN.C(328): error C25: syntax error near 'uword'
+MAIN.C(330): error C25: syntax error near 'uword'
+MAIN.C(333): error C25: syntax error near 'uword'
+MAIN.C(335): error C25: syntax error near 'uword'
+MAIN.C(449): error C7: compilation aborted
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling SCS.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling IO.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling U2C0.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling USIC2.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling GPT1.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling GPT2.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling WDT.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling CC2.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling CAN.C...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling DIO.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+Hardward File\DIO.c(321): warning C192: '=': value truncated
+compiling Delay.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling AIO.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling glable.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling canDrive.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+compiling protocol.c...
+MAIN.H(147): error C318: can't open file 'speed.h'
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+main.h(147): error C318: can't open file 'speed.h'
+compiling PWM.c...
+main.h(147): error C318: can't open file 'speed.h'
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(321): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1593(near=1593) const=865(near=17) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1592(near=1592) const=858(near=16) code=11026
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1591(near=1591) const=852(near=16) code=11022
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1591(near=1591) const=852(near=16) code=11050
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1591(near=1591) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(321): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+linking...
+Program Size: data=1590(near=1590) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1590(near=1590) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(98): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1590(near=1590) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(100): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1590(near=1590) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(100): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1590(near=1590) const=852(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(26): warning C192: '=': value truncated
+Hardward File\protocol.c(100): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(24): warning C192: '=': value truncated
+Hardward File\protocol.c(98): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(20): warning C192: '=': value truncated
+Hardward File\protocol.c(97): error C67: 'vsCANID': undefined identifier
+Hardward File\protocol.c(97): error C25: syntax error near ')'
+Hardward File\protocol.c(97): error C25: syntax error near ')'
+Hardward File\protocol.c(97): error C25: syntax error near ')'
+Hardward File\protocol.c(98): error C67: 'vsCANID': undefined identifier
+Hardward File\protocol.c(98): error C25: syntax error near ')'
+Hardward File\protocol.c(98): error C25: syntax error near ')'
+Hardward File\protocol.c(98): warning C34: 'MESID': missing declaration specifiers
+Hardward File\protocol.c(99): error C25: syntax error near 'if'
+Hardward File\protocol.c(99): error C25: syntax error near '=='
+Hardward File\protocol.c(101): error C76: formal parameter ignored
+Hardward File\protocol.c(101): error C76: formal parameter ignored
+Hardward File\protocol.c(101): error C53: redefinition of 'EP_Dispatch': different return types
+Hardward File\protocol.c(102): error C25: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(20): warning C192: '=': value truncated
+Hardward File\protocol.c(94): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1589(near=1589) const=846(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(321): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+linking...
+Program Size: data=1753(near=1753) const=858(near=16) code=11048
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(326): error C25: syntax error near '}'
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+Target not created
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+linking...
+Program Size: data=1755(near=1755) const=864(near=16) code=11052
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+linking...
+Program Size: data=1755(near=1755) const=864(near=16) code=11114
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling glable.c...
+linking...
+Program Size: data=1755(near=1755) const=864(near=16) code=11114
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1755(near=1755) const=864(near=16) code=11114
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1755(near=1755) const=864(near=16) code=11114
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(334): error C67: 'STD_PRESS': undefined identifier
+User_App\input.c(335): error C67: 'M_ZHAG_MAX': undefined identifier
+User_App\input.c(336): error C67: 'M_JIANYA_MAX': undefined identifier
+User_App\input.c(340): error C67: 'STD_PRESS': undefined identifier
+User_App\input.c(341): error C67: 'M_ZHAG_MAX': undefined identifier
+User_App\input.c(342): error C67: 'M_JIANYA_MAX': undefined identifier
+User_App\input.c(397): error C67: 'can0_rx': undefined identifier
+User_App\input.c(398): error C67: 'can0_rx': undefined identifier
+User_App\input.c(399): error C67: 'can0_rx': undefined identifier
+User_App\input.c(400): error C67: 'can0_rx': undefined identifier
+User_App\input.c(401): error C67: 'can0_rx': undefined identifier
+User_App\input.c(402): error C67: 'can0_rx': undefined identifier
+User_App\input.c(684): warning C140: 'seg_write_1' undefined; assuming 'extern int seg_write_1()'
+User_App\input.c(840): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(844): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(912): error C67: 'bcu_pos': undefined identifier
+User_App\input.c(912): warning C96: 'Get_Brake_Position': too few actual parameters
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(395): warning C174: 'Get_Calibrate_Set': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling global.c...
+compiling input.c...
+User_App\input.c(397): error C67: 'can0_rx': undefined identifier
+User_App\input.c(398): error C67: 'can0_rx': undefined identifier
+User_App\input.c(399): error C67: 'can0_rx': undefined identifier
+User_App\input.c(400): error C67: 'can0_rx': undefined identifier
+User_App\input.c(401): error C67: 'can0_rx': undefined identifier
+User_App\input.c(402): error C67: 'can0_rx': undefined identifier
+User_App\input.c(684): warning C140: 'seg_write_1' undefined; assuming 'extern int seg_write_1()'
+User_App\input.c(840): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(844): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(912): error C67: 'bcu_pos': undefined identifier
+User_App\input.c(912): warning C96: 'Get_Brake_Position': too few actual parameters
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(395): warning C174: 'Get_Calibrate_Set': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(684): warning C140: 'seg_write_1' undefined; assuming 'extern int seg_write_1()'
+User_App\input.c(840): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(844): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(912): error C67: 'bcu_pos': undefined identifier
+User_App\input.c(912): warning C96: 'Get_Brake_Position': too few actual parameters
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling global.c...
+compiling input.c...
+User_App\input.c(684): warning C140: 'seg_write_1' undefined; assuming 'extern int seg_write_1()'
+User_App\input.c(840): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(844): error C67: 'd_move_flag': undefined identifier
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling global.c...
+compiling input.c...
+User_App\input.c(684): warning C140: 'seg_write_1' undefined; assuming 'extern int seg_write_1()'
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 1798H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 17A2H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 17ACH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 17C4H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 17CEH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  seg_write_1
+    MODULE:  .\obj\input.obj (INPUT)
+    ADDRESS: 17D8H
+Program Size: data=1970(near=1970) const=1330(near=142) code=14062
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+Program Size: data=1970(near=1970) const=1330(near=142) code=13996
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(285): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(305): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+Program Size: data=1970(near=1970) const=1330(near=142) code=13996
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+MAIN.C(340): warning C140: 'Get_Input' undefined; assuming 'extern int Get_Input()'
+compiling input.c...
+User_App\input.c(911): warning C140: 'ALLDIN' undefined; assuming 'extern int ALLDIN()'
+User_App\input.c(284): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(304): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  Get_Input
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\input.obj (INPUT)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  ALLDIN
+    MODULE:  .\obj\input.obj (INPUT)
+   DEFINED:  .\obj\DIO.obj (DIO)
+Program Size: data=1970(near=1970) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  ALLDIN
+    MODULE:  .\obj\input.obj (INPUT)
+   DEFINED:  .\obj\DIO.obj (DIO)
+Program Size: data=1970(near=1970) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  ALLDIN
+    MODULE:  .\obj\input.obj (INPUT)
+   DEFINED:  .\obj\DIO.obj (DIO)
+Program Size: data=1970(near=1970) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(911): warning C140: 'ALLDIN' undefined; assuming 'extern int ALLDIN()'
+User_App\input.c(284): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(304): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  ALLDIN
+    MODULE:  .\obj\input.obj (INPUT)
+   DEFINED:  .\obj\DIO.obj (DIO)
+Program Size: data=1970(near=1970) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(284): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(304): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+Program Size: data=1971(near=1971) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(302): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+Program Size: data=1971(near=1971) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1971(near=1971) const=1330(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+Hardward File\DIO.c(325): warning C192: '=': value truncated
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+Hardward File\DIO.c(327): warning C192: '=': value truncated
+Hardward File\DIO.c(328): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(302): warning C174: 'Get_Toggle_Switch': unreferenced 'static' function
+linking...
+Program Size: data=1972(near=1972) const=1336(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 9 Warning(s).
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(323): warning C192: '=': value truncated
+linking...
+Program Size: data=1972(near=1972) const=1336(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+linking...
+Program Size: data=1972(near=1972) const=1336(near=142) code=14000
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(913): error C67: 'bcu_switch': undefined identifier
+User_App\input.c(913): warning C96: 'Get_Toggle_Switch': too few actual parameters
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1972(near=1972) const=1336(near=142) code=14190
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1964(near=1964) const=1322(near=136) code=14174
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling global.c...
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1964(near=1964) const=1322(near=136) code=14118
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(387): error C70: bc1: undefined member
+User_App\input.c(812): error C67: 'bcu_press': undefined identifier
+User_App\input.c(812): warning C96: 'Get_Brake_Press': too few actual parameters
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Rebuild target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(812): error C67: 'bcu_press': undefined identifier
+User_App\input.c(812): warning C96: 'Get_Brake_Press': too few actual parameters
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1942(near=1942) const=1266(near=136) code=13252
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(293): error C70: K1: undefined member
+User_App\input.c(294): error C70: K2: undefined member
+User_App\input.c(295): error C70: K3: undefined member
+User_App\input.c(296): error C70: K4: undefined member
+User_App\input.c(313): error C70: ZJI1: undefined member
+User_App\input.c(314): error C70: ZJI2: undefined member
+User_App\input.c(315): error C70: ZJI3: undefined member
+User_App\input.c(316): error C70: ZJI4: undefined member
+User_App\input.c(575): error C70: pusher: undefined member
+User_App\input.c(576): error C70: leading: undefined member
+User_App\input.c(585): error C70: leading: undefined member
+User_App\input.c(586): error C70: pusher: undefined member
+User_App\input.c(635): error C70: d_lap: undefined member
+User_App\input.c(640): error C70: x_rel: undefined member
+User_App\input.c(641): error C70: x_run: undefined member
+User_App\input.c(642): error C70: x_lap: undefined member
+User_App\input.c(643): error C70: x_brk: undefined member
+User_App\input.c(653): error C70: d_lap: undefined member
+User_App\input.c(666): error C70: d_lap: undefined member
+User_App\input.c(673): error C70: d_lap: undefined member
+User_App\input.c(675): error C70: d_lap: undefined member
+User_App\input.c(679): error C70: d_lap: undefined member
+User_App\input.c(692): error C70: d_lap: undefined member
+User_App\input.c(705): error C70: d_lap: undefined member
+User_App\input.c(718): error C70: d_lap: undefined member
+User_App\input.c(732): error C70: d_lap: undefined member
+User_App\input.c(742): error C70: x_rel: undefined member
+User_App\input.c(744): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_rel: undefined member
+User_App\input.c(747): error C70: x_run: undefined member
+User_App\input.c(748): error C70: x_lap: undefined member
+User_App\input.c(749): error C70: x_brk: undefined member
+User_App\input.c(753): error C70: x_run: undefined member
+User_App\input.c(755): error C70: x_run: undefined member
+User_App\input.c(757): error C70: x_rel: undefined member
+User_App\input.c(758): error C70: x_run: undefined member
+User_App\input.c(759): error C70: x_lap: undefined member
+User_App\input.c(760): error C70: x_brk: undefined member
+User_App\input.c(764): error C70: x_lap: undefined member
+User_App\input.c(766): error C70: x_lap: undefined member
+User_App\input.c(768): error C70: x_rel: undefined member
+User_App\input.c(769): error C70: x_run: undefined member
+User_App\input.c(770): error C70: x_lap: undefined member
+User_App\input.c(771): error C70: x_brk: undefined member
+User_App\input.c(775): error C70: x_brk: undefined member
+User_App\input.c(777): error C70: x_brk: undefined member
+User_App\input.c(779): error C70: x_rel: undefined member
+User_App\input.c(780): error C70: x_run: undefined member
+User_App\input.c(781): error C70: x_lap: undefined member
+User_App\input.c(782): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(794): error C70: x_rel: undefined member
+User_App\input.c(795): error C70: x_run: undefined member
+User_App\input.c(796): error C70: x_lap: undefined member
+User_App\input.c(797): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(313): error C70: ZJI1: undefined member
+User_App\input.c(314): error C70: ZJI2: undefined member
+User_App\input.c(315): error C70: ZJI3: undefined member
+User_App\input.c(316): error C70: ZJI4: undefined member
+User_App\input.c(575): error C70: pusher: undefined member
+User_App\input.c(576): error C70: leading: undefined member
+User_App\input.c(585): error C70: leading: undefined member
+User_App\input.c(586): error C70: pusher: undefined member
+User_App\input.c(635): error C70: d_lap: undefined member
+User_App\input.c(640): error C70: x_rel: undefined member
+User_App\input.c(641): error C70: x_run: undefined member
+User_App\input.c(642): error C70: x_lap: undefined member
+User_App\input.c(643): error C70: x_brk: undefined member
+User_App\input.c(653): error C70: d_lap: undefined member
+User_App\input.c(666): error C70: d_lap: undefined member
+User_App\input.c(673): error C70: d_lap: undefined member
+User_App\input.c(675): error C70: d_lap: undefined member
+User_App\input.c(679): error C70: d_lap: undefined member
+User_App\input.c(692): error C70: d_lap: undefined member
+User_App\input.c(705): error C70: d_lap: undefined member
+User_App\input.c(718): error C70: d_lap: undefined member
+User_App\input.c(732): error C70: d_lap: undefined member
+User_App\input.c(742): error C70: x_rel: undefined member
+User_App\input.c(744): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_rel: undefined member
+User_App\input.c(747): error C70: x_run: undefined member
+User_App\input.c(748): error C70: x_lap: undefined member
+User_App\input.c(749): error C70: x_brk: undefined member
+User_App\input.c(753): error C70: x_run: undefined member
+User_App\input.c(755): error C70: x_run: undefined member
+User_App\input.c(757): error C70: x_rel: undefined member
+User_App\input.c(758): error C70: x_run: undefined member
+User_App\input.c(759): error C70: x_lap: undefined member
+User_App\input.c(760): error C70: x_brk: undefined member
+User_App\input.c(764): error C70: x_lap: undefined member
+User_App\input.c(766): error C70: x_lap: undefined member
+User_App\input.c(768): error C70: x_rel: undefined member
+User_App\input.c(769): error C70: x_run: undefined member
+User_App\input.c(770): error C70: x_lap: undefined member
+User_App\input.c(771): error C70: x_brk: undefined member
+User_App\input.c(775): error C70: x_brk: undefined member
+User_App\input.c(777): error C70: x_brk: undefined member
+User_App\input.c(779): error C70: x_rel: undefined member
+User_App\input.c(780): error C70: x_run: undefined member
+User_App\input.c(781): error C70: x_lap: undefined member
+User_App\input.c(782): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(794): error C70: x_rel: undefined member
+User_App\input.c(795): error C70: x_run: undefined member
+User_App\input.c(796): error C70: x_lap: undefined member
+User_App\input.c(797): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(575): error C70: pusher: undefined member
+User_App\input.c(576): error C70: leading: undefined member
+User_App\input.c(585): error C70: leading: undefined member
+User_App\input.c(586): error C70: pusher: undefined member
+User_App\input.c(635): error C70: d_lap: undefined member
+User_App\input.c(640): error C70: x_rel: undefined member
+User_App\input.c(641): error C70: x_run: undefined member
+User_App\input.c(642): error C70: x_lap: undefined member
+User_App\input.c(643): error C70: x_brk: undefined member
+User_App\input.c(653): error C70: d_lap: undefined member
+User_App\input.c(666): error C70: d_lap: undefined member
+User_App\input.c(673): error C70: d_lap: undefined member
+User_App\input.c(675): error C70: d_lap: undefined member
+User_App\input.c(679): error C70: d_lap: undefined member
+User_App\input.c(692): error C70: d_lap: undefined member
+User_App\input.c(705): error C70: d_lap: undefined member
+User_App\input.c(718): error C70: d_lap: undefined member
+User_App\input.c(732): error C70: d_lap: undefined member
+User_App\input.c(742): error C70: x_rel: undefined member
+User_App\input.c(744): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_rel: undefined member
+User_App\input.c(747): error C70: x_run: undefined member
+User_App\input.c(748): error C70: x_lap: undefined member
+User_App\input.c(749): error C70: x_brk: undefined member
+User_App\input.c(753): error C70: x_run: undefined member
+User_App\input.c(755): error C70: x_run: undefined member
+User_App\input.c(757): error C70: x_rel: undefined member
+User_App\input.c(758): error C70: x_run: undefined member
+User_App\input.c(759): error C70: x_lap: undefined member
+User_App\input.c(760): error C70: x_brk: undefined member
+User_App\input.c(764): error C70: x_lap: undefined member
+User_App\input.c(766): error C70: x_lap: undefined member
+User_App\input.c(768): error C70: x_rel: undefined member
+User_App\input.c(769): error C70: x_run: undefined member
+User_App\input.c(770): error C70: x_lap: undefined member
+User_App\input.c(771): error C70: x_brk: undefined member
+User_App\input.c(775): error C70: x_brk: undefined member
+User_App\input.c(777): error C70: x_brk: undefined member
+User_App\input.c(779): error C70: x_rel: undefined member
+User_App\input.c(780): error C70: x_run: undefined member
+User_App\input.c(781): error C70: x_lap: undefined member
+User_App\input.c(782): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(794): error C70: x_rel: undefined member
+User_App\input.c(795): error C70: x_run: undefined member
+User_App\input.c(796): error C70: x_lap: undefined member
+User_App\input.c(797): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(526): error C70: pusher: undefined member
+User_App\input.c(527): error C70: leading: undefined member
+User_App\input.c(536): error C70: leading: undefined member
+User_App\input.c(537): error C70: pusher: undefined member
+User_App\input.c(586): error C70: d_lap: undefined member
+User_App\input.c(591): error C70: x_rel: undefined member
+User_App\input.c(592): error C70: x_run: undefined member
+User_App\input.c(593): error C70: x_lap: undefined member
+User_App\input.c(594): error C70: x_brk: undefined member
+User_App\input.c(604): error C70: d_lap: undefined member
+User_App\input.c(617): error C70: d_lap: undefined member
+User_App\input.c(624): error C70: d_lap: undefined member
+User_App\input.c(626): error C70: d_lap: undefined member
+User_App\input.c(630): error C70: d_lap: undefined member
+User_App\input.c(643): error C70: d_lap: undefined member
+User_App\input.c(656): error C70: d_lap: undefined member
+User_App\input.c(669): error C70: d_lap: undefined member
+User_App\input.c(683): error C70: d_lap: undefined member
+User_App\input.c(693): error C70: x_rel: undefined member
+User_App\input.c(695): error C70: x_rel: undefined member
+User_App\input.c(697): error C70: x_rel: undefined member
+User_App\input.c(698): error C70: x_run: undefined member
+User_App\input.c(699): error C70: x_lap: undefined member
+User_App\input.c(700): error C70: x_brk: undefined member
+User_App\input.c(704): error C70: x_run: undefined member
+User_App\input.c(706): error C70: x_run: undefined member
+User_App\input.c(708): error C70: x_rel: undefined member
+User_App\input.c(709): error C70: x_run: undefined member
+User_App\input.c(710): error C70: x_lap: undefined member
+User_App\input.c(711): error C70: x_brk: undefined member
+User_App\input.c(715): error C70: x_lap: undefined member
+User_App\input.c(717): error C70: x_lap: undefined member
+User_App\input.c(719): error C70: x_rel: undefined member
+User_App\input.c(720): error C70: x_run: undefined member
+User_App\input.c(721): error C70: x_lap: undefined member
+User_App\input.c(722): error C70: x_brk: undefined member
+User_App\input.c(726): error C70: x_brk: undefined member
+User_App\input.c(728): error C70: x_brk: undefined member
+User_App\input.c(730): error C70: x_rel: undefined member
+User_App\input.c(731): error C70: x_run: undefined member
+User_App\input.c(732): error C70: x_lap: undefined member
+User_App\input.c(733): error C70: x_brk: undefined member
+User_App\input.c(740): error C70: d_lap: undefined member
+User_App\input.c(745): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_run: undefined member
+User_App\input.c(747): error C70: x_lap: undefined member
+User_App\input.c(748): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(526): error C70: pusher: undefined member
+User_App\input.c(527): error C70: leading: undefined member
+User_App\input.c(536): error C70: leading: undefined member
+User_App\input.c(537): error C70: pusher: undefined member
+User_App\input.c(586): error C70: d_lap: undefined member
+User_App\input.c(591): error C70: x_rel: undefined member
+User_App\input.c(592): error C70: x_run: undefined member
+User_App\input.c(593): error C70: x_lap: undefined member
+User_App\input.c(594): error C70: x_brk: undefined member
+User_App\input.c(604): error C70: d_lap: undefined member
+User_App\input.c(617): error C70: d_lap: undefined member
+User_App\input.c(624): error C70: d_lap: undefined member
+User_App\input.c(626): error C70: d_lap: undefined member
+User_App\input.c(630): error C70: d_lap: undefined member
+User_App\input.c(643): error C70: d_lap: undefined member
+User_App\input.c(656): error C70: d_lap: undefined member
+User_App\input.c(669): error C70: d_lap: undefined member
+User_App\input.c(683): error C70: d_lap: undefined member
+User_App\input.c(693): error C70: x_rel: undefined member
+User_App\input.c(695): error C70: x_rel: undefined member
+User_App\input.c(697): error C70: x_rel: undefined member
+User_App\input.c(698): error C70: x_run: undefined member
+User_App\input.c(699): error C70: x_lap: undefined member
+User_App\input.c(700): error C70: x_brk: undefined member
+User_App\input.c(704): error C70: x_run: undefined member
+User_App\input.c(706): error C70: x_run: undefined member
+User_App\input.c(708): error C70: x_rel: undefined member
+User_App\input.c(709): error C70: x_run: undefined member
+User_App\input.c(710): error C70: x_lap: undefined member
+User_App\input.c(711): error C70: x_brk: undefined member
+User_App\input.c(715): error C70: x_lap: undefined member
+User_App\input.c(717): error C70: x_lap: undefined member
+User_App\input.c(719): error C70: x_rel: undefined member
+User_App\input.c(720): error C70: x_run: undefined member
+User_App\input.c(721): error C70: x_lap: undefined member
+User_App\input.c(722): error C70: x_brk: undefined member
+User_App\input.c(726): error C70: x_brk: undefined member
+User_App\input.c(728): error C70: x_brk: undefined member
+User_App\input.c(730): error C70: x_rel: undefined member
+User_App\input.c(731): error C70: x_run: undefined member
+User_App\input.c(732): error C70: x_lap: undefined member
+User_App\input.c(733): error C70: x_brk: undefined member
+User_App\input.c(740): error C70: d_lap: undefined member
+User_App\input.c(745): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_run: undefined member
+User_App\input.c(747): error C70: x_lap: undefined member
+User_App\input.c(748): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(146): error C70: d_lap: undefined member
+User_App\input.c(158): error C70: d_lap: undefined member
+User_App\input.c(171): error C70: d_lap: undefined member
+User_App\input.c(183): error C70: d_lap: undefined member
+User_App\input.c(195): error C70: d_lap: undefined member
+User_App\input.c(208): error C70: d_lap: undefined member
+User_App\input.c(219): error C70: d_lap: undefined member
+User_App\input.c(230): error C70: x_rel: undefined member
+User_App\input.c(231): error C70: x_run: undefined member
+User_App\input.c(232): error C70: x_lap: undefined member
+User_App\input.c(233): error C70: x_brk: undefined member
+User_App\input.c(234): error C70: x_other: undefined member
+User_App\input.c(240): error C70: x_rel: undefined member
+User_App\input.c(241): error C70: x_run: undefined member
+User_App\input.c(242): error C70: x_lap: undefined member
+User_App\input.c(243): error C70: x_brk: undefined member
+User_App\input.c(244): error C70: x_other: undefined member
+User_App\input.c(251): error C70: x_rel: undefined member
+User_App\input.c(252): error C70: x_run: undefined member
+User_App\input.c(253): error C70: x_lap: undefined member
+User_App\input.c(254): error C70: x_brk: undefined member
+User_App\input.c(255): error C70: x_other: undefined member
+User_App\input.c(262): error C70: x_rel: undefined member
+User_App\input.c(263): error C70: x_run: undefined member
+User_App\input.c(264): error C70: x_lap: undefined member
+User_App\input.c(265): error C70: x_brk: undefined member
+User_App\input.c(266): error C70: x_other: undefined member
+User_App\input.c(271): error C70: x_rel: undefined member
+User_App\input.c(272): error C70: x_run: undefined member
+User_App\input.c(273): error C70: x_lap: undefined member
+User_App\input.c(274): error C70: x_brk: undefined member
+User_App\input.c(275): error C70: x_other: undefined member
+User_App\input.c(526): error C70: pusher: undefined member
+User_App\input.c(527): error C70: leading: undefined member
+User_App\input.c(536): error C70: leading: undefined member
+User_App\input.c(537): error C70: pusher: undefined member
+User_App\input.c(586): error C70: d_lap: undefined member
+User_App\input.c(591): error C70: x_rel: undefined member
+User_App\input.c(592): error C70: x_run: undefined member
+User_App\input.c(593): error C70: x_lap: undefined member
+User_App\input.c(594): error C70: x_brk: undefined member
+User_App\input.c(604): error C70: d_lap: undefined member
+User_App\input.c(617): error C70: d_lap: undefined member
+User_App\input.c(624): error C70: d_lap: undefined member
+User_App\input.c(626): error C70: d_lap: undefined member
+User_App\input.c(630): error C70: d_lap: undefined member
+User_App\input.c(643): error C70: d_lap: undefined member
+User_App\input.c(656): error C70: d_lap: undefined member
+User_App\input.c(669): error C70: d_lap: undefined member
+User_App\input.c(683): error C70: d_lap: undefined member
+User_App\input.c(693): error C70: x_rel: undefined member
+User_App\input.c(695): error C70: x_rel: undefined member
+User_App\input.c(697): error C70: x_rel: undefined member
+User_App\input.c(698): error C70: x_run: undefined member
+User_App\input.c(699): error C70: x_lap: undefined member
+User_App\input.c(700): error C70: x_brk: undefined member
+User_App\input.c(704): error C70: x_run: undefined member
+User_App\input.c(706): error C70: x_run: undefined member
+User_App\input.c(708): error C70: x_rel: undefined member
+User_App\input.c(709): error C70: x_run: undefined member
+User_App\input.c(710): error C70: x_lap: undefined member
+User_App\input.c(711): error C70: x_brk: undefined member
+User_App\input.c(715): error C70: x_lap: undefined member
+User_App\input.c(717): error C70: x_lap: undefined member
+User_App\input.c(719): error C70: x_rel: undefined member
+User_App\input.c(720): error C70: x_run: undefined member
+User_App\input.c(721): error C70: x_lap: undefined member
+User_App\input.c(722): error C70: x_brk: undefined member
+User_App\input.c(726): error C70: x_brk: undefined member
+User_App\input.c(728): error C70: x_brk: undefined member
+User_App\input.c(730): error C70: x_rel: undefined member
+User_App\input.c(731): error C70: x_run: undefined member
+User_App\input.c(732): error C70: x_lap: undefined member
+User_App\input.c(733): error C70: x_brk: undefined member
+User_App\input.c(740): error C70: d_lap: undefined member
+User_App\input.c(745): error C70: x_rel: undefined member
+User_App\input.c(746): error C70: x_run: undefined member
+User_App\input.c(747): error C70: x_lap: undefined member
+User_App\input.c(748): error C70: x_brk: undefined member
+User_App\input.c(282): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(144): error C70: port1: undefined member
+User_App\input.c(145): error C70: port1: undefined member
+User_App\input.c(146): error C70: port1: undefined member
+User_App\input.c(147): error C70: port1: undefined member
+User_App\input.c(148): error C70: port1: undefined member
+User_App\input.c(149): error C70: port1: undefined member
+User_App\input.c(150): error C70: port1: undefined member
+User_App\input.c(155): error C70: port2: undefined member
+User_App\input.c(156): error C70: port2: undefined member
+User_App\input.c(157): error C70: port2: undefined member
+User_App\input.c(158): error C70: port2: undefined member
+User_App\input.c(159): error C70: port2: undefined member
+User_App\input.c(160): error C70: port2: undefined member
+User_App\input.c(161): error C70: port2: undefined member
+User_App\input.c(166): error C70: net: undefined member
+User_App\input.c(167): error C70: net: undefined member
+User_App\input.c(168): error C70: net: undefined member
+User_App\input.c(169): error C70: net: undefined member
+User_App\input.c(170): error C70: net: undefined member
+User_App\input.c(171): error C70: net: undefined member
+User_App\input.c(172): error C70: net: undefined member
+User_App\input.c(178): error C70: port1: undefined member
+User_App\input.c(179): error C70: port1: undefined member
+User_App\input.c(180): error C70: port1: undefined member
+User_App\input.c(181): error C70: port1: undefined member
+User_App\input.c(182): error C70: port1: undefined member
+User_App\input.c(183): error C70: port1: undefined member
+User_App\input.c(184): error C70: port1: undefined member
+User_App\input.c(189): error C70: port2: undefined member
+User_App\input.c(190): error C70: port2: undefined member
+User_App\input.c(191): error C70: port2: undefined member
+User_App\input.c(192): error C70: port2: undefined member
+User_App\input.c(193): error C70: port2: undefined member
+User_App\input.c(194): error C70: port2: undefined member
+User_App\input.c(195): error C70: port2: undefined member
+User_App\input.c(200): error C70: net: undefined member
+User_App\input.c(201): error C70: net: undefined member
+User_App\input.c(202): error C70: net: undefined member
+User_App\input.c(203): error C70: net: undefined member
+User_App\input.c(204): error C70: net: undefined member
+User_App\input.c(205): error C70: net: undefined member
+User_App\input.c(206): error C70: net: undefined member
+User_App\input.c(212): error C70: port1: undefined member
+User_App\input.c(213): error C70: port1: undefined member
+User_App\input.c(214): error C70: port1: undefined member
+User_App\input.c(215): error C70: port1: undefined member
+User_App\input.c(216): error C70: port1: undefined member
+User_App\input.c(217): error C70: port1: undefined member
+User_App\input.c(218): error C70: port1: undefined member
+User_App\input.c(223): error C70: port2: undefined member
+User_App\input.c(224): error C70: port2: undefined member
+User_App\input.c(225): error C70: port2: undefined member
+User_App\input.c(226): error C70: port2: undefined member
+User_App\input.c(227): error C70: port2: undefined member
+User_App\input.c(228): error C70: port2: undefined member
+User_App\input.c(229): error C70: port2: undefined member
+User_App\input.c(234): error C70: net: undefined member
+User_App\input.c(235): error C70: net: undefined member
+User_App\input.c(236): error C70: net: undefined member
+User_App\input.c(237): error C70: net: undefined member
+User_App\input.c(238): error C70: net: undefined member
+User_App\input.c(239): error C70: net: undefined member
+User_App\input.c(240): error C70: net: undefined member
+User_App\input.c(246): error C70: port1: undefined member
+User_App\input.c(247): error C70: port1: undefined member
+User_App\input.c(248): error C70: port1: undefined member
+User_App\input.c(249): error C70: port1: undefined member
+User_App\input.c(250): error C70: port1: undefined member
+User_App\input.c(251): error C70: port1: undefined member
+User_App\input.c(252): error C70: port1: undefined member
+User_App\input.c(257): error C70: port2: undefined member
+User_App\input.c(258): error C70: port2: undefined member
+User_App\input.c(259): error C70: port2: undefined member
+User_App\input.c(260): error C70: port2: undefined member
+User_App\input.c(261): error C70: port2: undefined member
+User_App\input.c(262): error C70: port2: undefined member
+User_App\input.c(263): error C70: port2: undefined member
+User_App\input.c(268): error C70: net: undefined member
+User_App\input.c(269): error C70: net: undefined member
+User_App\input.c(270): error C70: net: undefined member
+User_App\input.c(271): error C70: net: undefined member
+User_App\input.c(272): error C70: net: undefined member
+User_App\input.c(273): error C70: net: undefined member
+User_App\input.c(274): error C70: net: undefined member
+User_App\input.c(280): error C70: port1: undefined member
+User_App\input.c(281): error C70: port1: undefined member
+User_App\input.c(282): error C70: port1: undefined member
+User_App\input.c(283): error C70: port1: undefined member
+User_App\input.c(284): error C70: port1: undefined member
+User_App\input.c(285): error C70: port1: undefined member
+User_App\input.c(286): error C70: port1: undefined member
+User_App\input.c(291): error C70: port2: undefined member
+User_App\input.c(292): error C70: port2: undefined member
+User_App\input.c(293): error C70: port2: undefined member
+User_App\input.c(294): error C70: port2: undefined member
+User_App\input.c(295): error C70: port2: undefined member
+User_App\input.c(296): error C70: port2: undefined member
+User_App\input.c(297): error C70: port2: undefined member
+User_App\input.c(302): error C70: net: undefined member
+User_App\input.c(303): error C70: net: undefined member
+User_App\input.c(304): error C70: net: undefined member
+User_App\input.c(305): error C70: net: undefined member
+User_App\input.c(306): error C70: net: undefined member
+User_App\input.c(307): error C70: net: undefined member
+User_App\input.c(308): error C70: net: undefined member
+User_App\input.c(314): error C70: port1: undefined member
+User_App\input.c(315): error C70: port1: undefined member
+User_App\input.c(316): error C70: port1: undefined member
+User_App\input.c(317): error C70: port1: undefined member
+User_App\input.c(318): error C70: port1: undefined member
+User_App\input.c(319): error C70: port1: undefined member
+User_App\input.c(320): error C70: port1: undefined member
+User_App\input.c(325): error C70: port2: undefined member
+User_App\input.c(326): error C70: port2: undefined member
+User_App\input.c(327): error C70: port2: undefined member
+User_App\input.c(328): error C70: port2: undefined member
+User_App\input.c(329): error C70: port2: undefined member
+User_App\input.c(330): error C70: port2: undefined member
+User_App\input.c(331): error C70: port2: undefined member
+User_App\input.c(336): error C70: net: undefined member
+User_App\input.c(337): error C70: net: undefined member
+User_App\input.c(338): error C70: net: undefined member
+User_App\input.c(339): error C70: net: undefined member
+User_App\input.c(340): error C70: net: undefined member
+User_App\input.c(341): error C70: net: undefined member
+User_App\input.c(342): error C70: net: undefined member
+User_App\input.c(348): error C70: port1: undefined member
+User_App\input.c(349): error C70: port1: undefined member
+User_App\input.c(350): error C70: port1: undefined member
+User_App\input.c(351): error C70: port1: undefined member
+User_App\input.c(352): error C70: port1: undefined member
+User_App\input.c(353): error C70: port1: undefined member
+User_App\input.c(354): error C70: port1: undefined member
+User_App\input.c(356): error C70: port2: undefined member
+User_App\input.c(357): error C70: port2: undefined member
+User_App\input.c(358): error C70: port2: undefined member
+User_App\input.c(359): error C70: port2: undefined member
+User_App\input.c(360): error C70: port2: undefined member
+User_App\input.c(361): error C70: port2: undefined member
+User_App\input.c(362): error C70: port2: undefined member
+User_App\input.c(364): error C70: net: undefined member
+User_App\input.c(365): error C70: net: undefined member
+User_App\input.c(366): error C70: net: undefined member
+User_App\input.c(367): error C70: net: undefined member
+User_App\input.c(368): error C70: net: undefined member
+User_App\input.c(369): error C70: net: undefined member
+User_App\input.c(370): error C70: net: undefined member
+User_App\input.c(373): error C70: port1: undefined member
+User_App\input.c(375): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(376): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(377): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(378): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(379): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(380): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(381): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(383): error C70: port1: undefined member
+User_App\input.c(385): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(386): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(387): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(388): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(389): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(390): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(391): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(393): error C70: port1: undefined member
+User_App\input.c(395): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(396): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(397): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(398): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(399): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(400): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(401): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(403): error C70: port1: undefined member
+User_App\input.c(405): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(406): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(407): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(408): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(409): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(410): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(411): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(413): error C70: port1: undefined member
+User_App\input.c(415): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(416): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(417): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(418): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(419): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(420): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(421): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(423): error C70: port1: undefined member
+User_App\input.c(425): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(426): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(427): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(428): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(429): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(430): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(431): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(435): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(436): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(437): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(438): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(439): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(440): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(441): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(446): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(447): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(448): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(452): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(453): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(454): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(458): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(459): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(460): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(711): error C70: pusher: undefined member
+User_App\input.c(712): error C70: leading: undefined member
+User_App\input.c(721): error C70: leading: undefined member
+User_App\input.c(722): error C70: pusher: undefined member
+User_App\input.c(771): error C70: d_lap: undefined member
+User_App\input.c(776): error C70: x_rel: undefined member
+User_App\input.c(777): error C70: x_run: undefined member
+User_App\input.c(778): error C70: x_lap: undefined member
+User_App\input.c(779): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(802): error C70: d_lap: undefined member
+User_App\input.c(809): error C70: d_lap: undefined member
+User_App\input.c(811): error C70: d_lap: undefined member
+User_App\input.c(815): error C70: d_lap: undefined member
+User_App\input.c(828): error C70: d_lap: undefined member
+User_App\input.c(841): error C70: d_lap: undefined member
+User_App\input.c(854): error C70: d_lap: undefined member
+User_App\input.c(868): error C70: d_lap: undefined member
+User_App\input.c(878): error C70: x_rel: undefined member
+User_App\input.c(880): error C70: x_rel: undefined member
+User_App\input.c(882): error C70: x_rel: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(884): error C70: x_lap: undefined member
+User_App\input.c(885): error C70: x_brk: undefined member
+User_App\input.c(889): error C70: x_run: undefined member
+User_App\input.c(891): error C70: x_run: undefined member
+User_App\input.c(893): error C70: x_rel: undefined member
+User_App\input.c(894): error C70: x_run: undefined member
+User_App\input.c(895): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_brk: undefined member
+User_App\input.c(900): error C70: x_lap: undefined member
+User_App\input.c(902): error C70: x_lap: undefined member
+User_App\input.c(904): error C70: x_rel: undefined member
+User_App\input.c(905): error C70: x_run: undefined member
+User_App\input.c(906): error C70: x_lap: undefined member
+User_App\input.c(907): error C70: x_brk: undefined member
+User_App\input.c(911): error C70: x_brk: undefined member
+User_App\input.c(913): error C70: x_brk: undefined member
+User_App\input.c(915): error C70: x_rel: undefined member
+User_App\input.c(916): error C70: x_run: undefined member
+User_App\input.c(917): error C70: x_lap: undefined member
+User_App\input.c(918): error C70: x_brk: undefined member
+User_App\input.c(925): error C70: d_lap: undefined member
+User_App\input.c(930): error C70: x_rel: undefined member
+User_App\input.c(931): error C70: x_run: undefined member
+User_App\input.c(932): error C70: x_lap: undefined member
+User_App\input.c(933): error C70: x_brk: undefined member
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(130): error C53: redefinition of 'Get_Brake_Position': number of parameters different
+User_App\input.c(144): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(145): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(146): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(147): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(148): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(149): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(150): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(155): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(156): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(157): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(158): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(159): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(160): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(161): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(166): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(167): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(168): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(169): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(170): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(171): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(172): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(178): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(179): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(180): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(181): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(182): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(183): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(184): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(189): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(190): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(191): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(192): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(193): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(194): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(195): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(200): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(201): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(202): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(203): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(204): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(205): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(206): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(212): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(213): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(214): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(215): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(216): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(217): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(218): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(223): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(224): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(225): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(226): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(227): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(228): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(229): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(234): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(235): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(236): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(237): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(238): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(239): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(240): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(246): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(247): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(248): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(249): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(250): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(251): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(252): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(257): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(258): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(259): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(260): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(261): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(262): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(263): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(268): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(269): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(270): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(271): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(272): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(273): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(274): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(280): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(281): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(282): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(283): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(284): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(285): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(286): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(291): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(292): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(293): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(294): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(295): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(296): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(297): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(302): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(303): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(304): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(305): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(306): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(307): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(308): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(314): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(315): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(316): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(317): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(318): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(319): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(320): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(325): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(326): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(327): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(328): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(329): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(330): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(331): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(336): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(337): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(338): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(339): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(340): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(341): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(342): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(348): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(349): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(350): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(351): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(352): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(353): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(354): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(356): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(357): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(358): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(359): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(360): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(361): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(362): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(364): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(365): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(366): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(367): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(368): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(369): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(370): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(375): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(376): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(377): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(378): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(379): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(380): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(381): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(385): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(386): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(387): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(388): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(389): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(390): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(391): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(395): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(396): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(397): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(398): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(399): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(400): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(401): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(405): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(406): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(407): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(408): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(409): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(410): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(411): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(415): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(416): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(417): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(418): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(419): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(420): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(421): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(425): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(426): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(427): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(428): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(429): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(430): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(431): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(435): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(436): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(437): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(438): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(439): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(440): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(441): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(446): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(447): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(448): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(452): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(453): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(454): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(458): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(459): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(460): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(129): warning C47: 'buc_block_t': unreferenced parameter
+User_App\input.c(129): warning C47: 'buc_pos_t': unreferenced parameter
+User_App\input.c(711): error C70: pusher: undefined member
+User_App\input.c(712): error C70: leading: undefined member
+User_App\input.c(721): error C70: leading: undefined member
+User_App\input.c(722): error C70: pusher: undefined member
+User_App\input.c(771): error C70: d_lap: undefined member
+User_App\input.c(776): error C70: x_rel: undefined member
+User_App\input.c(777): error C70: x_run: undefined member
+User_App\input.c(778): error C70: x_lap: undefined member
+User_App\input.c(779): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(802): error C70: d_lap: undefined member
+User_App\input.c(809): error C70: d_lap: undefined member
+User_App\input.c(811): error C70: d_lap: undefined member
+User_App\input.c(815): error C70: d_lap: undefined member
+User_App\input.c(828): error C70: d_lap: undefined member
+User_App\input.c(841): error C70: d_lap: undefined member
+User_App\input.c(854): error C70: d_lap: undefined member
+User_App\input.c(868): error C70: d_lap: undefined member
+User_App\input.c(878): error C70: x_rel: undefined member
+User_App\input.c(880): error C70: x_rel: undefined member
+User_App\input.c(882): error C70: x_rel: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(884): error C70: x_lap: undefined member
+User_App\input.c(885): error C70: x_brk: undefined member
+User_App\input.c(889): error C70: x_run: undefined member
+User_App\input.c(891): error C70: x_run: undefined member
+User_App\input.c(893): error C70: x_rel: undefined member
+User_App\input.c(894): error C70: x_run: undefined member
+User_App\input.c(895): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_brk: undefined member
+User_App\input.c(900): error C70: x_lap: undefined member
+User_App\input.c(902): error C70: x_lap: undefined member
+User_App\input.c(904): error C70: x_rel: undefined member
+User_App\input.c(905): error C70: x_run: undefined member
+User_App\input.c(906): error C70: x_lap: undefined member
+User_App\input.c(907): error C70: x_brk: undefined member
+User_App\input.c(911): error C70: x_brk: undefined member
+User_App\input.c(913): error C70: x_brk: undefined member
+User_App\input.c(915): error C70: x_rel: undefined member
+User_App\input.c(916): error C70: x_run: undefined member
+User_App\input.c(917): error C70: x_lap: undefined member
+User_App\input.c(918): error C70: x_brk: undefined member
+User_App\input.c(925): error C70: d_lap: undefined member
+User_App\input.c(930): error C70: x_rel: undefined member
+User_App\input.c(931): error C70: x_run: undefined member
+User_App\input.c(932): error C70: x_lap: undefined member
+User_App\input.c(933): error C70: x_brk: undefined member
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(130): error C53: redefinition of 'Get_Brake_Position': number of parameters different
+User_App\input.c(144): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(145): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(146): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(147): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(148): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(149): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(150): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(155): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(156): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(157): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(158): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(159): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(160): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(161): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(166): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(167): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(168): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(169): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(170): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(171): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(172): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(178): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(179): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(180): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(181): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(182): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(183): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(184): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(189): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(190): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(191): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(192): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(193): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(194): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(195): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(200): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(201): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(202): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(203): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(204): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(205): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(206): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(212): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(213): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(214): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(215): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(216): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(217): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(218): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(223): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(224): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(225): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(226): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(227): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(228): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(229): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(234): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(235): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(236): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(237): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(238): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(239): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(240): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(246): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(247): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(248): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(249): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(250): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(251): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(252): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(257): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(258): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(259): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(260): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(261): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(262): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(263): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(268): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(269): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(270): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(271): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(272): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(273): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(274): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(280): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(281): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(282): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(283): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(284): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(285): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(286): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(291): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(292): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(293): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(294): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(295): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(296): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(297): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(302): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(303): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(304): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(305): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(306): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(307): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(308): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(314): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(315): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(316): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(317): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(318): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(319): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(320): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(325): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(326): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(327): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(328): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(329): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(330): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(331): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(336): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(337): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(338): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(339): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(340): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(341): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(342): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(348): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(349): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(350): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(351): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(352): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(353): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(354): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(356): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(357): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(358): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(359): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(360): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(361): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(362): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(364): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(365): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(366): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(367): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(368): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(369): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(370): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(375): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(376): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(377): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(378): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(379): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(380): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(381): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(385): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(386): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(387): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(388): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(389): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(390): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(391): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(395): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(396): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(397): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(398): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(399): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(400): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(401): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(405): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(406): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(407): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(408): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(409): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(410): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(411): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(415): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(416): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(417): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(418): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(419): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(420): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(421): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(425): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(426): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(427): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(428): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(429): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(430): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(431): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(435): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(436): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(437): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(438): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(439): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(440): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(441): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(446): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(447): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(448): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(452): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(453): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(454): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(458): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(459): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(460): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(129): warning C47: 'buc_block_t': unreferenced parameter
+User_App\input.c(129): warning C47: 'buc_pos_t': unreferenced parameter
+User_App\input.c(711): error C70: pusher: undefined member
+User_App\input.c(712): error C70: leading: undefined member
+User_App\input.c(721): error C70: leading: undefined member
+User_App\input.c(722): error C70: pusher: undefined member
+User_App\input.c(771): error C70: d_lap: undefined member
+User_App\input.c(776): error C70: x_rel: undefined member
+User_App\input.c(777): error C70: x_run: undefined member
+User_App\input.c(778): error C70: x_lap: undefined member
+User_App\input.c(779): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(802): error C70: d_lap: undefined member
+User_App\input.c(809): error C70: d_lap: undefined member
+User_App\input.c(811): error C70: d_lap: undefined member
+User_App\input.c(815): error C70: d_lap: undefined member
+User_App\input.c(828): error C70: d_lap: undefined member
+User_App\input.c(841): error C70: d_lap: undefined member
+User_App\input.c(854): error C70: d_lap: undefined member
+User_App\input.c(868): error C70: d_lap: undefined member
+User_App\input.c(878): error C70: x_rel: undefined member
+User_App\input.c(880): error C70: x_rel: undefined member
+User_App\input.c(882): error C70: x_rel: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(884): error C70: x_lap: undefined member
+User_App\input.c(885): error C70: x_brk: undefined member
+User_App\input.c(889): error C70: x_run: undefined member
+User_App\input.c(891): error C70: x_run: undefined member
+User_App\input.c(893): error C70: x_rel: undefined member
+User_App\input.c(894): error C70: x_run: undefined member
+User_App\input.c(895): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_brk: undefined member
+User_App\input.c(900): error C70: x_lap: undefined member
+User_App\input.c(902): error C70: x_lap: undefined member
+User_App\input.c(904): error C70: x_rel: undefined member
+User_App\input.c(905): error C70: x_run: undefined member
+User_App\input.c(906): error C70: x_lap: undefined member
+User_App\input.c(907): error C70: x_brk: undefined member
+User_App\input.c(911): error C70: x_brk: undefined member
+User_App\input.c(913): error C70: x_brk: undefined member
+User_App\input.c(915): error C70: x_rel: undefined member
+User_App\input.c(916): error C70: x_run: undefined member
+User_App\input.c(917): error C70: x_lap: undefined member
+User_App\input.c(918): error C70: x_brk: undefined member
+User_App\input.c(925): error C70: d_lap: undefined member
+User_App\input.c(930): error C70: x_rel: undefined member
+User_App\input.c(931): error C70: x_run: undefined member
+User_App\input.c(932): error C70: x_lap: undefined member
+User_App\input.c(933): error C70: x_brk: undefined member
+User_App\input.c(944): error C67: 'bcu_port': undefined identifier
+User_App\input.c(944): warning C96: 'Get_Brake_Position': too few actual parameters
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(130): error C53: redefinition of 'Get_Brake_Position': number of parameters different
+User_App\input.c(144): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(145): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(146): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(147): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(148): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(149): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(150): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(155): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(156): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(157): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(158): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(159): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(160): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(161): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(166): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(167): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(168): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(169): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(170): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(171): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(172): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(178): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(179): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(180): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(181): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(182): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(183): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(184): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(189): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(190): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(191): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(192): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(193): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(194): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(195): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(200): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(201): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(202): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(203): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(204): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(205): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(206): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(212): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(213): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(214): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(215): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(216): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(217): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(218): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(223): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(224): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(225): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(226): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(227): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(228): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(229): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(234): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(235): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(236): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(237): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(238): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(239): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(240): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(246): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(247): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(248): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(249): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(250): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(251): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(252): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(257): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(258): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(259): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(260): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(261): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(262): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(263): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(268): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(269): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(270): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(271): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(272): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(273): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(274): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(280): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(281): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(282): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(283): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(284): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(285): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(286): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(291): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(292): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(293): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(294): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(295): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(296): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(297): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(302): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(303): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(304): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(305): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(306): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(307): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(308): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(314): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(315): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(316): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(317): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(318): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(319): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(320): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(325): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(326): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(327): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(328): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(329): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(330): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(331): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(336): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(337): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(338): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(339): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(340): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(341): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(342): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(348): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(349): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(350): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(351): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(352): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(353): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(354): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(356): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(357): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(358): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(359): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(360): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(361): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(362): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(364): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(365): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(366): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(367): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(368): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(369): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(370): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(373): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(375): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(376): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(377): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(378): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(379): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(380): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(381): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(383): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(385): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(386): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(387): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(388): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(389): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(390): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(391): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(393): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(395): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(396): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(397): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(398): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(399): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(400): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(401): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(403): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(405): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(406): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(407): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(408): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(409): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(410): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(411): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(413): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(415): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(416): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(417): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(418): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(419): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(420): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(421): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(423): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(425): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(426): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(427): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(428): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(429): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(430): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(431): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(435): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(436): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(437): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(438): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(439): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(440): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(441): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(446): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(447): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(448): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(452): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(453): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(454): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(458): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(459): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(460): error C67: 'buc_pos_t': undefined identifier
+User_App\input.c(129): warning C47: 'buc_block_t': unreferenced parameter
+User_App\input.c(129): warning C47: 'buc_pos_t': unreferenced parameter
+User_App\input.c(711): error C70: pusher: undefined member
+User_App\input.c(712): error C70: leading: undefined member
+User_App\input.c(721): error C70: leading: undefined member
+User_App\input.c(722): error C70: pusher: undefined member
+User_App\input.c(771): error C70: d_lap: undefined member
+User_App\input.c(776): error C70: x_rel: undefined member
+User_App\input.c(777): error C70: x_run: undefined member
+User_App\input.c(778): error C70: x_lap: undefined member
+User_App\input.c(779): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(802): error C70: d_lap: undefined member
+User_App\input.c(809): error C70: d_lap: undefined member
+User_App\input.c(811): error C70: d_lap: undefined member
+User_App\input.c(815): error C70: d_lap: undefined member
+User_App\input.c(828): error C70: d_lap: undefined member
+User_App\input.c(841): error C70: d_lap: undefined member
+User_App\input.c(854): error C70: d_lap: undefined member
+User_App\input.c(868): error C70: d_lap: undefined member
+User_App\input.c(878): error C70: x_rel: undefined member
+User_App\input.c(880): error C70: x_rel: undefined member
+User_App\input.c(882): error C70: x_rel: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(884): error C70: x_lap: undefined member
+User_App\input.c(885): error C70: x_brk: undefined member
+User_App\input.c(889): error C70: x_run: undefined member
+User_App\input.c(891): error C70: x_run: undefined member
+User_App\input.c(893): error C70: x_rel: undefined member
+User_App\input.c(894): error C70: x_run: undefined member
+User_App\input.c(895): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_brk: undefined member
+User_App\input.c(900): error C70: x_lap: undefined member
+User_App\input.c(902): error C70: x_lap: undefined member
+User_App\input.c(904): error C70: x_rel: undefined member
+User_App\input.c(905): error C70: x_run: undefined member
+User_App\input.c(906): error C70: x_lap: undefined member
+User_App\input.c(907): error C70: x_brk: undefined member
+User_App\input.c(911): error C70: x_brk: undefined member
+User_App\input.c(913): error C70: x_brk: undefined member
+User_App\input.c(915): error C70: x_rel: undefined member
+User_App\input.c(916): error C70: x_run: undefined member
+User_App\input.c(917): error C70: x_lap: undefined member
+User_App\input.c(918): error C70: x_brk: undefined member
+User_App\input.c(925): error C70: d_lap: undefined member
+User_App\input.c(930): error C70: x_rel: undefined member
+User_App\input.c(931): error C70: x_run: undefined member
+User_App\input.c(932): error C70: x_lap: undefined member
+User_App\input.c(933): error C70: x_brk: undefined member
+User_App\input.c(944): warning C95: 'Get_Brake_Position': too many actual parameters
+User_App\input.c(944): warning C98: parameter 1: pointer to different objects
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(130): error C53: redefinition of 'Get_Brake_Position': number of parameters different
+User_App\input.c(144): error C67: 'buc_block_t': undefined identifier
+User_App\input.c(145): error C25: syntax error near 'buc_block_t'
+User_App\input.c(145): error C25: syntax error near '->'
+User_App\input.c(145): error C25: syntax error near '.'
+User_App\input.c(146): error C25: syntax error near '->'
+User_App\input.c(146): error C25: syntax error near '.'
+User_App\input.c(147): error C25: syntax error near '->'
+User_App\input.c(147): error C25: syntax error near '.'
+User_App\input.c(148): error C25: syntax error near '->'
+User_App\input.c(148): error C25: syntax error near '.'
+User_App\input.c(149): error C25: syntax error near '->'
+User_App\input.c(149): error C25: syntax error near '.'
+User_App\input.c(149): error C7: compilation aborted
+User_App\input.c(39): warning C174: 'Byte_To_Bit': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling input.c...
+User_App\input.c(145): error C70: por: undefined member
+User_App\input.c(145): error C25: syntax error near 'buc_block_t'
+User_App\input.c(145): error C25: syntax error near '->'
+User_App\input.c(145): error C25: syntax error near '.'
+User_App\input.c(146): error C25: syntax error near '->'
+User_App\input.c(146): error C25: syntax error near '.'
+User_App\input.c(147): error C25: syntax error near '->'
+User_App\input.c(147): error C25: syntax error near '.'
+User_App\input.c(148): error C25: syntax error near '->'
+User_App\input.c(148): error C25: syntax error near '.'
+User_App\input.c(149): error C25: syntax error near '->'
+User_App\input.c(149): error C25: syntax error near '.'
+User_App\input.c(149): error C7: compilation aborted
+User_App\input.c(39): warning C174: 'Byte_To_Bit': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(711): error C70: pusher: undefined member
+User_App\input.c(712): error C70: leading: undefined member
+User_App\input.c(721): error C70: leading: undefined member
+User_App\input.c(722): error C70: pusher: undefined member
+User_App\input.c(771): error C70: d_lap: undefined member
+User_App\input.c(776): error C70: x_rel: undefined member
+User_App\input.c(777): error C70: x_run: undefined member
+User_App\input.c(778): error C70: x_lap: undefined member
+User_App\input.c(779): error C70: x_brk: undefined member
+User_App\input.c(789): error C70: d_lap: undefined member
+User_App\input.c(802): error C70: d_lap: undefined member
+User_App\input.c(809): error C70: d_lap: undefined member
+User_App\input.c(811): error C70: d_lap: undefined member
+User_App\input.c(815): error C70: d_lap: undefined member
+User_App\input.c(828): error C70: d_lap: undefined member
+User_App\input.c(841): error C70: d_lap: undefined member
+User_App\input.c(854): error C70: d_lap: undefined member
+User_App\input.c(868): error C70: d_lap: undefined member
+User_App\input.c(878): error C70: x_rel: undefined member
+User_App\input.c(880): error C70: x_rel: undefined member
+User_App\input.c(882): error C70: x_rel: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(884): error C70: x_lap: undefined member
+User_App\input.c(885): error C70: x_brk: undefined member
+User_App\input.c(889): error C70: x_run: undefined member
+User_App\input.c(891): error C70: x_run: undefined member
+User_App\input.c(893): error C70: x_rel: undefined member
+User_App\input.c(894): error C70: x_run: undefined member
+User_App\input.c(895): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_brk: undefined member
+User_App\input.c(900): error C70: x_lap: undefined member
+User_App\input.c(902): error C70: x_lap: undefined member
+User_App\input.c(904): error C70: x_rel: undefined member
+User_App\input.c(905): error C70: x_run: undefined member
+User_App\input.c(906): error C70: x_lap: undefined member
+User_App\input.c(907): error C70: x_brk: undefined member
+User_App\input.c(911): error C70: x_brk: undefined member
+User_App\input.c(913): error C70: x_brk: undefined member
+User_App\input.c(915): error C70: x_rel: undefined member
+User_App\input.c(916): error C70: x_run: undefined member
+User_App\input.c(917): error C70: x_lap: undefined member
+User_App\input.c(918): error C70: x_brk: undefined member
+User_App\input.c(925): error C70: d_lap: undefined member
+User_App\input.c(930): error C70: x_rel: undefined member
+User_App\input.c(931): error C70: x_run: undefined member
+User_App\input.c(932): error C70: x_lap: undefined member
+User_App\input.c(933): error C70: x_brk: undefined member
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(763): error C70: d_lap: undefined member
+User_App\input.c(768): error C70: x_rel: undefined member
+User_App\input.c(769): error C70: x_run: undefined member
+User_App\input.c(770): error C70: x_lap: undefined member
+User_App\input.c(771): error C70: x_brk: undefined member
+User_App\input.c(781): error C70: d_lap: undefined member
+User_App\input.c(794): error C70: d_lap: undefined member
+User_App\input.c(801): error C70: d_lap: undefined member
+User_App\input.c(803): error C70: d_lap: undefined member
+User_App\input.c(807): error C70: d_lap: undefined member
+User_App\input.c(820): error C70: d_lap: undefined member
+User_App\input.c(833): error C70: d_lap: undefined member
+User_App\input.c(846): error C70: d_lap: undefined member
+User_App\input.c(860): error C70: d_lap: undefined member
+User_App\input.c(870): error C70: x_rel: undefined member
+User_App\input.c(872): error C70: x_rel: undefined member
+User_App\input.c(874): error C70: x_rel: undefined member
+User_App\input.c(875): error C70: x_run: undefined member
+User_App\input.c(876): error C70: x_lap: undefined member
+User_App\input.c(877): error C70: x_brk: undefined member
+User_App\input.c(881): error C70: x_run: undefined member
+User_App\input.c(883): error C70: x_run: undefined member
+User_App\input.c(885): error C70: x_rel: undefined member
+User_App\input.c(886): error C70: x_run: undefined member
+User_App\input.c(887): error C70: x_lap: undefined member
+User_App\input.c(888): error C70: x_brk: undefined member
+User_App\input.c(892): error C70: x_lap: undefined member
+User_App\input.c(894): error C70: x_lap: undefined member
+User_App\input.c(896): error C70: x_rel: undefined member
+User_App\input.c(897): error C70: x_run: undefined member
+User_App\input.c(898): error C70: x_lap: undefined member
+User_App\input.c(899): error C70: x_brk: undefined member
+User_App\input.c(903): error C70: x_brk: undefined member
+User_App\input.c(905): error C70: x_brk: undefined member
+User_App\input.c(907): error C70: x_rel: undefined member
+User_App\input.c(908): error C70: x_run: undefined member
+User_App\input.c(909): error C70: x_lap: undefined member
+User_App\input.c(910): error C70: x_brk: undefined member
+User_App\input.c(917): error C70: d_lap: undefined member
+User_App\input.c(922): error C70: x_rel: undefined member
+User_App\input.c(923): error C70: x_run: undefined member
+User_App\input.c(924): error C70: x_lap: undefined member
+User_App\input.c(925): error C70: x_brk: undefined member
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(613): error C70: d_lap: undefined member
+User_App\input.c(618): error C70: x_rel: undefined member
+User_App\input.c(619): error C70: x_run: undefined member
+User_App\input.c(620): error C70: x_lap: undefined member
+User_App\input.c(621): error C70: x_brk: undefined member
+User_App\input.c(631): error C70: d_lap: undefined member
+User_App\input.c(644): error C70: d_lap: undefined member
+User_App\input.c(651): error C70: d_lap: undefined member
+User_App\input.c(653): error C70: d_lap: undefined member
+User_App\input.c(657): error C70: d_lap: undefined member
+User_App\input.c(670): error C70: d_lap: undefined member
+User_App\input.c(683): error C70: d_lap: undefined member
+User_App\input.c(696): error C70: d_lap: undefined member
+User_App\input.c(710): error C70: d_lap: undefined member
+User_App\input.c(720): error C70: x_rel: undefined member
+User_App\input.c(722): error C70: x_rel: undefined member
+User_App\input.c(724): error C70: x_rel: undefined member
+User_App\input.c(725): error C70: x_run: undefined member
+User_App\input.c(726): error C70: x_lap: undefined member
+User_App\input.c(727): error C70: x_brk: undefined member
+User_App\input.c(731): error C70: x_run: undefined member
+User_App\input.c(733): error C70: x_run: undefined member
+User_App\input.c(735): error C70: x_rel: undefined member
+User_App\input.c(736): error C70: x_run: undefined member
+User_App\input.c(737): error C70: x_lap: undefined member
+User_App\input.c(738): error C70: x_brk: undefined member
+User_App\input.c(742): error C70: x_lap: undefined member
+User_App\input.c(744): error C70: x_lap: undefined member
+User_App\input.c(746): error C70: x_rel: undefined member
+User_App\input.c(747): error C70: x_run: undefined member
+User_App\input.c(748): error C70: x_lap: undefined member
+User_App\input.c(749): error C70: x_brk: undefined member
+User_App\input.c(753): error C70: x_brk: undefined member
+User_App\input.c(755): error C70: x_brk: undefined member
+User_App\input.c(757): error C70: x_rel: undefined member
+User_App\input.c(758): error C70: x_run: undefined member
+User_App\input.c(759): error C70: x_lap: undefined member
+User_App\input.c(760): error C70: x_brk: undefined member
+User_App\input.c(767): error C70: d_lap: undefined member
+User_App\input.c(772): error C70: x_rel: undefined member
+User_App\input.c(773): error C70: x_run: undefined member
+User_App\input.c(774): error C70: x_lap: undefined member
+User_App\input.c(775): error C70: x_brk: undefined member
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13444
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13450
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling global.c...
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13418
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(521): warning C174: 'Get_Brake_Area_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13418
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+User_App\input.c(521): warning C174: 'Get_Brake_Area_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13418
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13536
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13654
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13654
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13654
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(467): warning C174: 'Get_Key_Value': unreferenced 'static' function
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13536
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13654
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+User_App\input.c(452): error C67: 'esel': undefined identifier
+User_App\input.c(452): error C25: syntax error near 'buc_pos_t'
+User_App\input.c(452): error C25: syntax error near '->'
+User_App\input.c(454): error C25: syntax error near 'if'
+User_App\input.c(455): warning C34: 'buc_pos_t': missing declaration specifiers
+User_App\input.c(455): error C42: 'buc_pos_t': not in formal parameter list
+User_App\input.c(455): error C25: syntax error near '->'
+User_App\input.c(463): warning C34: 'key_t': missing declaration specifiers
+User_App\input.c(463): error C42: 'key_t': not in formal parameter list
+User_App\input.c(473): error C25: syntax error near '+'
+User_App\input.c(474): error C25: syntax error near '+'
+User_App\input.c(475): error C25: syntax error near '+'
+User_App\input.c(476): error C25: syntax error near '+'
+User_App\input.c(481): warning C34: 'switch_t': missing declaration specifiers
+User_App\input.c(481): error C42: 'switch_t': not in formal parameter list
+User_App\input.c(492): error C25: syntax error near '+'
+User_App\input.c(493): error C25: syntax error near '+'
+User_App\input.c(494): error C25: syntax error near '+'
+User_App\input.c(494): error C7: compilation aborted
+User_App\input.c(39): warning C174: 'Byte_To_Bit': unreferenced 'static' function
+Target not created
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13642
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13642
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13336
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1973(near=1973) const=1200(near=136) code=13364
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+User_App\input.c(307): error C70: d_other: undefined member
+User_App\input.c(317): error C70: d_other: undefined member
+User_App\input.c(327): error C70: d_other: undefined member
+User_App\input.c(337): error C70: d_other: undefined member
+User_App\input.c(347): error C70: d_other: undefined member
+User_App\input.c(357): error C70: d_other: undefined member
+User_App\input.c(367): error C70: d_other: undefined member
+Target not created
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1963(near=1963) const=1200(near=136) code=13332
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1963(near=1963) const=1200(near=136) code=13332
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1963(near=1963) const=1200(near=136) code=13332
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1963(near=1963) const=1200(near=136) code=13332
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1963(near=1963) const=1200(near=136) code=13332
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling init.c...
+User_App\init.c(8): error C67: 'DO01': undefined identifier
+User_App\init.c(8): error C67: 'FALSE': undefined identifier
+User_App\init.c(9): error C67: 'DO02': undefined identifier
+User_App\init.c(9): error C67: 'FALSE': undefined identifier
+User_App\init.c(10): error C67: 'DO03': undefined identifier
+User_App\init.c(10): error C67: 'FALSE': undefined identifier
+User_App\init.c(11): error C67: 'DO04': undefined identifier
+User_App\init.c(11): error C67: 'FALSE': undefined identifier
+User_App\init.c(12): error C67: 'DO05': undefined identifier
+User_App\init.c(12): error C67: 'FALSE': undefined identifier
+User_App\init.c(13): error C67: 'DO06': undefined identifier
+User_App\init.c(13): error C67: 'FALSE': undefined identifier
+User_App\init.c(14): error C67: 'DO07': undefined identifier
+User_App\init.c(14): error C67: 'FALSE': undefined identifier
+User_App\init.c(15): error C67: 'DO08': undefined identifier
+User_App\init.c(15): error C67: 'FALSE': undefined identifier
+User_App\init.c(16): error C67: 'DO09': undefined identifier
+User_App\init.c(16): error C67: 'FALSE': undefined identifier
+User_App\init.c(17): error C67: 'DO10': undefined identifier
+User_App\init.c(17): error C67: 'FALSE': undefined identifier
+User_App\init.c(18): error C67: 'DO11': undefined identifier
+User_App\init.c(18): error C67: 'FALSE': undefined identifier
+User_App\init.c(19): error C67: 'DO12': undefined identifier
+User_App\init.c(19): error C67: 'FALSE': undefined identifier
+User_App\init.c(21): error C67: 'PO2_EBV': undefined identifier
+User_App\init.c(21): error C67: 'bcu_press': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling init.c...
+User_App\init.c(21): error C67: 'PO2_EBV': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+compiling init.c...
+linking...
+Program Size: data=1966(near=1966) const=1210(near=136) code=13354
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling input.c...
+compiling init.c...
+linking...
+Program Size: data=1964(near=1964) const=1204(near=136) code=13354
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling input.c...
+linking...
+Program Size: data=1964(near=1964) const=1204(near=136) code=13440
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1964(near=1964) const=1204(near=136) code=13440
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling global.c...
+linking...
+Program Size: data=1964(near=1964) const=1218(near=136) code=13440
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling global.c...
+linking...
+Program Size: data=1964(near=1964) const=1218(near=136) code=13440
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling self_check.c...
+User_App\self_check.c(19): error C67: 'M_ENABLE_ALL': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling self_check.c...
+User_App\self_check.c(19): error C67: 'M_ENABLE_ALL': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+linking...
+Program Size: data=1971(near=1971) const=1246(near=136) code=13476
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling self_check.c...
+linking...
+Program Size: data=1971(near=1971) const=1246(near=136) code=13476
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+linking...
+Program Size: data=1971(near=1971) const=1246(near=136) code=13476
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+Program Size: data=1971(near=1971) const=1246(near=136) code=13476
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+MAIN.C(347): warning C140: 'D_Res_Logic' undefined; assuming 'extern int D_Res_Logic()'
+MAIN.C(351): warning C140: 'D_Mul_Logic' undefined; assuming 'extern int D_Mul_Logic()'
+compiling brake_control.c...
+User_App\brake_control.c(4): error C318: can't open file 'Config.h'
+User_App\brake_control.c(7): error C318: can't open file 'fault_check.h'
+User_App\brake_control.c(17): error C70: ZJI4: undefined member
+User_App\brake_control.c(20): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(22): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(27): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(29): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(32): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(36): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(39): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(41): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(42): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(42): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(42): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(42): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(42): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(46): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(55): error C70: ZJI4: undefined member
+User_App\brake_control.c(58): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(60): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(65): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(67): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(70): error C67: 'a_error': undefined identifier
+User_App\brake_control.c(72): error C67: 'L': undefined identifier
+User_App\brake_control.c(73): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(76): error C67: 'a_error': undefined identifier
+User_App\brake_control.c(77): error C67: 'L': undefined identifier
+User_App\brake_control.c(79): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(82): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(84): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(86): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(87): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(87): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(87): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(87): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(87): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(91): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(102): error C67: 'd_move_flag': undefined identifier
+User_App\brake_control.c(113): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(118): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(123): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(126): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(127): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(127): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(127): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(127): error C67: 'JIANK_PO1': undefined identifier
+User_App\brake_control.c(127): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(143): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(144): error C67: 'EM_LOCK': undefined identifier
+User_App\brake_control.c(146): error C67: 'emc_time': undefined identifier
+User_App\brake_control.c(147): error C67: 'emc_time_send': undefined identifier
+User_App\brake_control.c(156): error C67: 'CHFA_SUO': undefined identifier
+User_App\brake_control.c(157): error C67: 'CHENFA_FLAG': undefined identifier
+User_App\brake_control.c(162): error C67: 'd_move_flag': undefined identifier
+User_App\brake_control.c(167): error C67: 'CHENFA_FLAG': undefined identifier
+User_App\brake_control.c(171): error C67: 'a_error': undefined identifier
+User_App\brake_control.c(173): error C67: 'L': undefined identifier
+User_App\brake_control.c(174): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(185): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(251): error C70: x_run: undefined member
+User_App\brake_control.c(253): error C67: 'BUJI_FLAG': undefined identifier
+User_App\brake_control.c(259): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(267): error C67: 'BUJI_FLAG': undefined identifier
+User_App\brake_control.c(298): error C70: x_rel: undefined member
+User_App\brake_control.c(312): error C70: x_run: undefined member
+User_App\brake_control.c(320): error C70: x_lap: undefined member
+User_App\brake_control.c(325): error C70: x_brk: undefined member
+User_App\brake_control.c(329): error C67: 'faults': undefined identifier
+User_App\brake_control.c(330): error C70: bc_pre: undefined member
+User_App\brake_control.c(332): error C70: wp: undefined member
+User_App\brake_control.c(342): error C70: x_rel: undefined member
+User_App\brake_control.c(344): error C67: 'faults': undefined identifier
+User_App\brake_control.c(346): error C70: bc_pre: undefined member
+User_App\brake_control.c(347): error C70: bc_pre: undefined member
+User_App\brake_control.c(348): error C70: bc_pre: undefined member
+User_App\brake_control.c(349): error C70: bc_pre: undefined member
+User_App\brake_control.c(350): error C70: bc_pre: undefined member
+User_App\brake_control.c(351): error C70: bc_pre: undefined member
+User_App\brake_control.c(354): error C70: bc_pre: undefined member
+User_App\brake_control.c(355): error C70: bc_pre: undefined member
+User_App\brake_control.c(362): error C70: wp: undefined member
+User_App\brake_control.c(363): error C70: wp: undefined member
+User_App\brake_control.c(364): error C70: wp: undefined member
+User_App\brake_control.c(365): error C70: wp: undefined member
+User_App\brake_control.c(366): error C70: wp: undefined member
+User_App\brake_control.c(367): error C70: wp: undefined member
+User_App\brake_control.c(370): error C70: wp: undefined member
+User_App\brake_control.c(371): error C70: wp: undefined member
+User_App\brake_control.c(387): error C70: x_brk: undefined member
+User_App\brake_control.c(391): error C70: x_lap: undefined member
+User_App\brake_control.c(429): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(429): error C67: 'EM_LOCK': undefined identifier
+User_App\brake_control.c(431): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(432): error C67: 'EM_LOCK': undefined identifier
+User_App\brake_control.c(436): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(439): error C70: ZJI3: undefined member
+User_App\brake_control.c(440): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(442): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(444): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(447): error C67: 'a_error': undefined identifier
+User_App\brake_control.c(450): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(450): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(460): error C70: ZJI1: undefined member
+User_App\brake_control.c(462): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(469): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(482): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(482): error C67: 'CHENFA_FLAG': undefined identifier
+User_App\brake_control.c(487): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(490): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(493): error C67: 'a_error': undefined identifier
+User_App\brake_control.c(493): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(495): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(495): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(497): error C70: bc_pre: undefined member
+User_App\brake_control.c(499): error C70: leading: undefined member
+User_App\brake_control.c(501): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(503): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(504): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(504): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(507): error C67: 'L': undefined identifier
+User_App\brake_control.c(511): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(511): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(513): error C67: 'RUN_BIAOJI': undefined identifier
+User_App\brake_control.c(515): error C70: x_brk: undefined member
+User_App\brake_control.c(523): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(523): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(535): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(535): error C67: 'b_error': undefined identifier
+User_App\brake_control.c(538): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(542): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(552): error C70: bc_pre: undefined member
+User_App\brake_control.c(567): error C70: x_rel: undefined member
+User_App\brake_control.c(599): error C67: 'ZJ3': undefined identifier
+User_App\brake_control.c(599): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(605): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(631): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(633): error C70: x_rel: undefined member
+User_App\brake_control.c(639): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(639): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(642): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(647): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(650): error C70: ma: undefined member
+User_App\brake_control.c(660): error C70: ma: undefined member
+User_App\brake_control.c(669): warning C192: '=': value truncated
+User_App\brake_control.c(674): error C70: bc1: undefined member
+User_App\brake_control.c(676): error C70: bc1: undefined member
+User_App\brake_control.c(681): error C70: bc1: undefined member
+User_App\brake_control.c(683): error C70: bc1: undefined member
+User_App\brake_control.c(690): error C70: bc1: undefined member
+User_App\brake_control.c(692): error C70: bc1: undefined member
+User_App\brake_control.c(697): error C70: bc1: undefined member
+User_App\brake_control.c(699): error C70: bc1: undefined member
+User_App\brake_control.c(706): error C67: 'jin_xrel_flag': undefined identifier
+User_App\brake_control.c(709): error C67: 'L': undefined identifier
+User_App\brake_control.c(715): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(724): error C67: 'L': undefined identifier
+User_App\brake_control.c(730): error C67: 'L': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(46): warning C135: 'Monitor_Logic': no return value
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Res_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Mul_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+Program Size: data=1972(near=1972) const=1250(near=136) code=13560
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(71): warning C135: 'Monitor_Logic': no return value
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Res_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Mul_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+Program Size: data=1974(near=1974) const=1262(near=136) code=13620
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(71): warning C135: 'Monitor_Logic': no return value
+linking...
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Res_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+*** WARNING L20: DATA TYPES DIFFERENT
+    SYMBOL:  D_Mul_Logic
+    MODULE:  .\obj\MAIN.obj (MAIN)
+   DEFINED:  .\obj\brake_control.obj (BRAKE_CONTROL)
+Program Size: data=1974(near=1974) const=1262(near=136) code=13620
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+compiling brake_control.c...
+User_App\brake_control.c(71): warning C135: 'Monitor_Logic': no return value
+linking...
+Program Size: data=1974(near=1974) const=1262(near=136) code=13620
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+compiling brake_control.c...
+linking...
+Program Size: data=1974(near=1974) const=1262(near=136) code=13622
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+MAIN.C(363): error C67: 'JIANK_PO1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+linking...
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Logic_All_Pre
+    MODULE:  .\obj\MAIN.obj (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Logic_All_Pre
+    MODULE:  .\obj\MAIN.obj (MAIN)
+    ADDRESS: 2FB0H
+Program Size: data=1974(near=1974) const=1262(near=136) code=13700
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+linking...
+Program Size: data=1974(near=1974) const=1262(near=136) code=13702
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=1974(near=1974) const=1262(near=136) code=13702
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(8): error C67: 'ZJ1': undefined identifier
+User_App\brake_control.c(9): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(12): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(12): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(12): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(14): error C67: 'PO1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+compiling brake_control.c...
+User_App\brake_control.c(8): error C67: 'ZJ1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+compiling brake_control.c...
+User_App\brake_control.c(12): error C67: 'PO1': undefined identifier
+User_App\brake_control.c(12): error C67: 'PO1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+linking...
+Program Size: data=1980(near=1980) const=1280(near=136) code=13778
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling brake_control.c...
+linking...
+Program Size: data=1982(near=1982) const=1286(near=136) code=13876
+creating hex file from ".\obj\CF_EBCU"...
+".\obj\CF_EBCU" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling MAIN.C...
+compiling SCS.C...
+compiling IO.C...
+compiling U2C0.C...
+compiling USIC2.C...
+compiling GPT1.C...
+compiling GPT2.C...
+compiling WDT.C...
+compiling CC2.C...
+compiling CAN.C...
+compiling DIO.c...
+Hardward File\DIO.c(326): warning C192: '=': value truncated
+compiling Delay.c...
+compiling AIO.c...
+compiling glable.c...
+compiling canDrive.c...
+compiling protocol.c...
+Hardward File\protocol.c(19): warning C192: '=': value truncated
+Hardward File\protocol.c(93): warning C47: 'port': unreferenced parameter
+compiling pid.c...
+compiling PWM.c...
+compiling global.c...
+compiling init.c...
+compiling input.c...
+compiling self_check.c...
+compiling brake_control.c...
+User_App\brake_control.c(44): error C70: run: undefined member
+User_App\brake_control.c(48): error C70: res: undefined member
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(44): error C70: run: undefined member
+User_App\brake_control.c(48): error C70: res: undefined member
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(68): error C25: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(71): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(71): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(71): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(71): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(75): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(75): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(81): error C25: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(73): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(73): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(73): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(73): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(77): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(77): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(131): warning C192: '=': value truncated
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling brake_control.c...
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(100): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+User_App\brake_control.c(108): error C67: 'AI_JIANYA': undefined identifier
+Target not created

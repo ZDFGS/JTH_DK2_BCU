@@ -1,0 +1,55 @@
+C166 COMPILER V7.53.0.0, INIT                                                              07/29/2021 09:18:01 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE INIT
+OBJECT MODULE PLACED IN .\obj\init.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE User_App\init.c MODV2 BROWSE INCDIR(.\Hardward File;
+                    -.\User_App) MODV2 DEBUG PRINT(.\list\init.lst) OBJECT(.\obj\init.obj) 
+
+ stmt lvl     source
+
+    1         
+    2         #include "MAIN.H"
+    3         
+    4         void BCU_Init(void)
+    5         {
+    6  1      //      Fault_Reset();
+    7  1              
+    8  1              DO01 = FALSE;
+    9  1              DO02 = FALSE;
+   10  1              DO03 = FALSE;
+   11  1              DO04 = FALSE;
+   12  1              DO05 = FALSE;
+   13  1              DO06 = FALSE;
+   14  1              DO07 = FALSE;
+   15  1              DO08 = FALSE;
+   16  1              DO09 = FALSE;
+   17  1              DO10 = FALSE;
+   18  1              DO11 = FALSE;
+   19  1              DO12 = FALSE;
+   20  1              
+   21  1              PO2_EBV = bcu_press.bc;
+   22  1      }
+   23         
+   24         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =          22     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           1     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

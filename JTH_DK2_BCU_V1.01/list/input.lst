@@ -1,0 +1,787 @@
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE INPUT
+OBJECT MODULE PLACED IN .\obj\input.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE User_App\input.c MODV2 BROWSE INCDIR(.\Hardward File
+                    -;.\User_App) MODV2 DEBUG PRINT(.\list\input.lst) OBJECT(.\obj\input.obj) 
+
+ stmt lvl     source
+
+    1         
+    2         #include "MAIN.H"
+    3         
+    4         
+    5         //字节按位处理化//
+    6         static void Get_DI_Bit(unsigned char *dindata_t, BOOL *sbit_t)
+    7         {
+    8  1              unsigned char i=0,j=0;
+    9  1              
+   10  1              for(i=0; i<(sizeof(dindata_t)/sizeof(dindata_t[0])); i++)
+   11  1              {
+   12  2                      for(j=0; j<8; j++)
+   13  2                      {
+   14  3                              *(sbit_t + i*8 + j) = (BOOL)((*(dindata_t + i) >> j) & 0x01);  
+   15  3                      }
+   16  2              }
+   17  1      }
+   18         
+   19         
+   20         static void Byte_To_Bit(unsigned char dindata_t, BOOL *sbit_t, unsigned char len)
+   21         {
+   22  1              unsigned char i=0;
+   23  1              
+   24  1              for(i=0; i<len; i++)
+   25  1              {
+   26  2                      *(sbit_t + i) = (BOOL)((dindata_t >> i) & 0x01);  
+   27  2              }
+   28  1      }
+   29         
+   30         
+   31         
+   32         static void Bit_Filter(BOOL *fdata_t, BOOL *sdata_t, unsigned char timer_t[][2], unsigned char *filter_tim
+             -e, unsigned char len)
+   33         {
+   34  1              unsigned char i=0;
+   35  1              
+   36  1              for(i=0; i<len; i++)
+   37  1              {
+   38  2                      if(*(sdata_t + i))
+   39  2                      {
+   40  3                              timer_t[i][1] = 0;
+   41  3                              timer_t[i][0]++;
+   42  3                              if(timer_t[i][0] >= *(filter_time + i))
+   43  3                              {
+   44  4                                      timer_t[i][0] = *(filter_time + i);
+   45  4                                      *(fdata_t + i) = *(sdata_t + i);
+   46  4                              }
+   47  3                      }
+   48  2                      else
+   49  2                      {
+   50  3                              timer_t[i][0] = 0;
+   51  3                              timer_t[i][1]++;
+   52  3                              if(timer_t[i][1] >= *(filter_time + i))
+   53  3                              {
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 2   
+
+   54  4                                      timer_t[i][1] = *(filter_time + i);
+   55  4                                      *(fdata_t + i) = *(sdata_t + i);
+   56  4                              }       
+   57  3                      }
+   58  2              }
+   59  1      }
+   60         
+   61         
+   62         //32位输入滤波//
+   63         static void Input_Filter(BOOL *sbit_t, unsigned char timer_t[32][2], unsigned char *filter_time,unsigned c
+             -har len)
+   64         {
+   65  1              static BOOL fbit_t[32] = {FALSE};
+   66  1              
+   67  1              Bit_Filter(fbit_t, sbit_t, timer_t, filter_time,len);
+   68  1              
+   69  1              DI32 = *(fbit_t + 0);
+   70  1              DI31 = *(fbit_t + 1);
+   71  1              DI30 = *(fbit_t + 2);
+   72  1              DI29 = *(fbit_t + 3);
+   73  1              DI28 = *(fbit_t + 4);
+   74  1              DI27 = *(fbit_t + 5);
+   75  1              DI26 = *(fbit_t + 6);
+   76  1              DI25 = *(fbit_t + 7);
+   77  1      
+   78  1              DI24 = *(fbit_t + 8);
+   79  1              DI23 = *(fbit_t + 9);
+   80  1              DI22 = *(fbit_t + 10);
+   81  1              DI21 = *(fbit_t + 11);
+   82  1              DI20 = *(fbit_t + 12);
+   83  1              DI19 = *(fbit_t + 13);
+   84  1              DI18 = *(fbit_t + 14);
+   85  1              DI17 = *(fbit_t + 15);
+   86  1      
+   87  1              DI16 = *(fbit_t + 16);
+   88  1              DI15 = *(fbit_t + 17);
+   89  1              DI14 = *(fbit_t + 18);
+   90  1              DI13 = *(fbit_t + 19);
+   91  1              DI12 = *(fbit_t + 20);
+   92  1              DI11 = *(fbit_t + 21);
+   93  1              DI10 = *(fbit_t + 22);
+   94  1              DI09 = *(fbit_t + 23);
+   95  1              
+   96  1              DI08 = *(fbit_t + 24);
+   97  1              DI07 = *(fbit_t + 25);
+   98  1              DI06 = *(fbit_t + 26);
+   99  1              DI05 = *(fbit_t + 27);
+  100  1              DI04 = *(fbit_t + 28);
+  101  1              DI03 = *(fbit_t + 29);
+  102  1              DI02 = *(fbit_t + 30);
+  103  1              DI01 = *(fbit_t + 31);
+  104  1      }
+  105         
+  106         
+  107         
+  108         /***获取闸位***/
+  109         void Get_Brake_Position(BRAKE_PortTypeDef *buc_block_t, BRAKE_PosTypeDef *buc_pos_t)
+  110         {
+  111  1              BOOL in_bit_s[32] = {FALSE};
+  112  1              unsigned char io_filter_timer[32] = {2,2,2,2,2,2,2,2,
+  113  1                                                                                   2,2,2,2,2,2,2,2,
+  114  1                                                                                   2,2,2,2,2,2,2,2,
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 3   
+
+  115  1                                                                                   2,2,2,2,2,2,2,2};
+  116  1              static unsigned char io_timer[32][2] = {0};
+  117  1      
+  118  1              Get_DI_Bit(dindata,in_bit_s);
+  119  1              Input_Filter(in_bit_s, io_timer, io_filter_timer,32);
+  120  1              
+  121  1              /*******************大闸过充位*******************/
+  122  1              if(DI04 && !DI05)
+  123  1              {
+  124  2                      buc_block_t->port1.d_oc  = TRUE;
+  125  2                      buc_block_t->port2.d_oc  = FALSE;
+  126  2                      buc_block_t->net.d_oc  = FALSE; 
+  127  2              }
+  128  1              else if(DI10 && !DI09)
+  129  1              {
+  130  2                      buc_block_t->port1.d_oc  = FALSE;
+  131  2                      buc_block_t->port2.d_oc  = TRUE;
+  132  2                      buc_block_t->net.d_oc  = FALSE; 
+  133  2              }
+  134  1              else if(DI20 && !DI30)
+  135  1              {
+  136  2                      buc_block_t->port1.d_oc  = FALSE;
+  137  2                      buc_block_t->port2.d_oc  = FALSE;
+  138  2                      buc_block_t->net.d_oc  = TRUE;  
+  139  2              }
+  140  1              else
+  141  1              {
+  142  2                      buc_block_t->port1.d_oc  = FALSE;
+  143  2                      buc_block_t->port2.d_oc  = FALSE;
+  144  2                      buc_block_t->net.d_oc  = FALSE;
+  145  2              }
+  146  1              
+  147  1              
+  148  1              /*******************大闸运转位*******************/
+  149  1              if(DI05 && DI07 && DI08)
+  150  1              {
+  151  2                      buc_block_t->port1.d_run = TRUE;
+  152  2                      buc_block_t->port2.d_run = FALSE;
+  153  2                      buc_block_t->net.d_run = FALSE;
+  154  2              }       
+  155  1              else if(DI05 && DI07 && DI08)
+  156  1              {
+  157  2                      buc_block_t->port1.d_run = FALSE;
+  158  2                      buc_block_t->port2.d_run = TRUE;
+  159  2                      buc_block_t->net.d_run = FALSE;
+  160  2              }
+  161  1              else if(DI05 && DI07 && DI08)
+  162  1              {
+  163  2                      buc_block_t->port1.d_run = FALSE;
+  164  2                      buc_block_t->port2.d_run = FALSE;
+  165  2                      buc_block_t->net.d_run = TRUE;
+  166  2              }       
+  167  1              else
+  168  1              {
+  169  2                      buc_block_t->port1.d_run = FALSE;
+  170  2                      buc_block_t->port2.d_run = FALSE;
+  171  2                      buc_block_t->net.d_run = FALSE;         
+  172  2              }
+  173  1              
+  174  1              /*******************大闸制动位*******************/
+  175  1              if(DI09 && DI10)
+  176  1              {
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 4   
+
+  177  2                      buc_block_t->port1.d_brk = TRUE;
+  178  2                      buc_block_t->port2.d_brk = FALSE;
+  179  2                      buc_block_t->net.d_brk = FALSE;
+  180  2              }
+  181  1              else if(DI09 && DI10)
+  182  1              {
+  183  2                      buc_block_t->port1.d_brk = FALSE;
+  184  2                      buc_block_t->port2.d_brk = TRUE;
+  185  2                      buc_block_t->net.d_brk = FALSE;
+  186  2              }
+  187  1              else if(DI09 && DI10)
+  188  1              {
+  189  2                      buc_block_t->port1.d_brk = FALSE;
+  190  2                      buc_block_t->port2.d_brk = FALSE;
+  191  2                      buc_block_t->net.d_brk = TRUE;
+  192  2              }
+  193  1              else
+  194  1              {
+  195  2                      buc_block_t->port1.d_brk = FALSE;
+  196  2                      buc_block_t->port2.d_brk = FALSE;
+  197  2                      buc_block_t->net.d_brk = FALSE;         
+  198  2              }
+  199  1              
+  200  1              /*******************大闸抑制位*******************/
+  201  1              if(DI07 && DI09)
+  202  1              {
+  203  2                      buc_block_t->port1.d_res = TRUE;
+  204  2                      buc_block_t->port2.d_res = FALSE;
+  205  2                      buc_block_t->net.d_res = FALSE;
+  206  2              }       
+  207  1              else if(DI07 && DI09)
+  208  1              {
+  209  2                      buc_block_t->port1.d_res = FALSE;
+  210  2                      buc_block_t->port2.d_res = TRUE;
+  211  2                      buc_block_t->net.d_res = FALSE;
+  212  2              }       
+  213  1              else if(DI07 && DI09)
+  214  1              {
+  215  2                      buc_block_t->port1.d_res = FALSE;
+  216  2                      buc_block_t->port2.d_res = FALSE;
+  217  2                      buc_block_t->net.d_res = TRUE;
+  218  2              }       
+  219  1              else
+  220  1              {
+  221  2                      buc_block_t->port1.d_res = FALSE;
+  222  2                      buc_block_t->port2.d_res = FALSE;
+  223  2                      buc_block_t->net.d_res = FALSE;         
+  224  2              }
+  225  1      
+  226  1              /*******************大闸重联位*******************/
+  227  1              if(DI07 && !DI09 && !DI05)
+  228  1              {
+  229  2                      buc_block_t->port1.d_mul = TRUE;
+  230  2                      buc_block_t->port2.d_mul = FALSE;
+  231  2                      buc_block_t->net.d_mul = FALSE;
+  232  2              }       
+  233  1              else if(DI07 && !DI09 && !DI05)
+  234  1              {
+  235  2                      buc_block_t->port1.d_mul = FALSE;
+  236  2                      buc_block_t->port2.d_mul = TRUE;
+  237  2                      buc_block_t->net.d_mul = FALSE;
+  238  2              }       
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 5   
+
+  239  1              else if(DI07 && !DI09 && !DI05)
+  240  1              {
+  241  2                      buc_block_t->port1.d_mul = FALSE;
+  242  2                      buc_block_t->port2.d_mul = FALSE;
+  243  2                      buc_block_t->net.d_mul = TRUE;
+  244  2              }       
+  245  1              else
+  246  1              {
+  247  2                      buc_block_t->port1.d_mul = FALSE;
+  248  2                      buc_block_t->port2.d_mul = FALSE;
+  249  2                      buc_block_t->net.d_mul = FALSE;         
+  250  2              }
+  251  1              
+  252  1              /*******************大闸紧急位*******************/
+  253  1              if(DI05 && !DI07)
+  254  1              {
+  255  2                      buc_block_t->port1.d_emc = TRUE;
+  256  2                      buc_block_t->port2.d_emc = FALSE;
+  257  2                      buc_block_t->net.d_emc = FALSE;
+  258  2              }       
+  259  1              else if(DI05 && !DI07)
+  260  1              {
+  261  2                      buc_block_t->port1.d_emc = FALSE;
+  262  2                      buc_block_t->port2.d_emc = TRUE;
+  263  2                      buc_block_t->net.d_emc = FALSE;
+  264  2              }       
+  265  1              else if(DI05 && !DI07)
+  266  1              {
+  267  2                      buc_block_t->port1.d_emc = FALSE;
+  268  2                      buc_block_t->port2.d_emc = FALSE;
+  269  2                      buc_block_t->net.d_emc = TRUE;
+  270  2              }               
+  271  1              else
+  272  1              {
+  273  2                      buc_block_t->port1.d_emc = FALSE;
+  274  2                      buc_block_t->port2.d_emc = FALSE;
+  275  2                      buc_block_t->net.d_emc = FALSE;
+  276  2              }
+  277  1      
+  278  1              /*****大闸位置判断*****/
+  279  1              if(buc_block_t->port1.d_oc || buc_block_t->port2.d_oc || buc_block_t->net.d_oc)
+  280  1              {
+  281  2                      buc_pos_t->d_oc = TRUE; 
+  282  2                      buc_pos_t->d_run = FALSE;
+  283  2                      buc_pos_t->d_brk = FALSE;
+  284  2                      buc_pos_t->d_res = FALSE;
+  285  2                      buc_pos_t->d_mul = FALSE;
+  286  2                      buc_pos_t->d_emc = FALSE;
+  287  2              }
+  288  1              else if(buc_block_t->port1.d_run || buc_block_t->port2.d_run || buc_block_t->net.d_run)
+  289  1              {
+  290  2                      buc_pos_t->d_oc = FALSE;        
+  291  2                      buc_pos_t->d_run = TRUE;
+  292  2                      buc_pos_t->d_brk = FALSE;
+  293  2                      buc_pos_t->d_res = FALSE;
+  294  2                      buc_pos_t->d_mul = FALSE;
+  295  2                      buc_pos_t->d_emc = FALSE;
+  296  2              }
+  297  1              else if(buc_block_t->port1.d_brk || buc_block_t->port2.d_brk || buc_block_t->net.d_brk)
+  298  1              {
+  299  2                      buc_pos_t->d_oc = FALSE;        
+  300  2                      buc_pos_t->d_run = FALSE;
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 6   
+
+  301  2                      buc_pos_t->d_brk = TRUE;
+  302  2                      buc_pos_t->d_res = FALSE;
+  303  2                      buc_pos_t->d_mul = FALSE;
+  304  2                      buc_pos_t->d_emc = FALSE;
+  305  2              }
+  306  1              else if(buc_block_t->port1.d_res || buc_block_t->port2.d_res || buc_block_t->net.d_res)
+  307  1              {
+  308  2                      buc_pos_t->d_oc = FALSE;        
+  309  2                      buc_pos_t->d_run = FALSE;
+  310  2                      buc_pos_t->d_brk = FALSE;
+  311  2                      buc_pos_t->d_res = TRUE;
+  312  2                      buc_pos_t->d_mul = FALSE;
+  313  2                      buc_pos_t->d_emc = FALSE;
+  314  2              }
+  315  1              else if(buc_block_t->port1.d_mul || buc_block_t->port2.d_mul || buc_block_t->net.d_mul)
+  316  1              {
+  317  2                      buc_pos_t->d_oc = FALSE;        
+  318  2                      buc_pos_t->d_run = FALSE;
+  319  2                      buc_pos_t->d_brk = FALSE;
+  320  2                      buc_pos_t->d_res = FALSE;
+  321  2                      buc_pos_t->d_mul = TRUE;
+  322  2                      buc_pos_t->d_emc = FALSE;
+  323  2              }
+  324  1              else if(buc_block_t->port1.d_emc || buc_block_t->port2.d_emc || buc_block_t->net.d_emc)
+  325  1              {
+  326  2                      buc_pos_t->d_oc = FALSE;        
+  327  2                      buc_pos_t->d_run = FALSE;
+  328  2                      buc_pos_t->d_brk = FALSE;
+  329  2                      buc_pos_t->d_res = FALSE;
+  330  2                      buc_pos_t->d_mul = FALSE;
+  331  2                      buc_pos_t->d_emc = TRUE;
+  332  2              }
+  333  1              else
+  334  1              {
+  335  2                      buc_pos_t->d_oc = FALSE;        
+  336  2                      buc_pos_t->d_run = FALSE;
+  337  2                      buc_pos_t->d_brk = FALSE;
+  338  2                      buc_pos_t->d_res = FALSE;
+  339  2                      buc_pos_t->d_mul = FALSE;
+  340  2                      buc_pos_t->d_emc = FALSE;
+  341  2              }
+  342  1      
+  343  1              /*****小闸位置判断*****/  
+  344  1              if(DI21)
+  345  1              {
+  346  2                      buc_pos_t->s_zero = TRUE;
+  347  2                      buc_pos_t->s_brake_area = FALSE;
+  348  2                      buc_pos_t->s_fast_brake = FALSE;
+  349  2              }
+  350  1              else if(DI22)
+  351  1              {
+  352  2                      buc_pos_t->s_zero = FALSE;
+  353  2                      buc_pos_t->s_brake_area = TRUE;
+  354  2                      buc_pos_t->s_fast_brake = FALSE;
+  355  2              }
+  356  1              else if(DI23)
+  357  1              {
+  358  2                      buc_pos_t->s_zero = FALSE;
+  359  2                      buc_pos_t->s_brake_area = FALSE;
+  360  2                      buc_pos_t->s_fast_brake = TRUE;
+  361  2              }
+  362  1              else
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 7   
+
+  363  1              {
+  364  2                      buc_pos_t->s_zero = FALSE;
+  365  2                      buc_pos_t->s_brake_area = FALSE;
+  366  2                      buc_pos_t->s_fast_brake = FALSE;
+  367  2              }
+  368  1      }
+  369         
+  370         
+  371         
+  372         /***获取按键状态***/
+  373         static void Get_Key_Value(unsigned char skey_t, BCU_KeyTypeDef *key_t)
+  374         {
+  375  1              BOOL s_key[4] = {FALSE};
+  376  1              static BOOL f_key[4] = {FALSE};
+  377  1              unsigned char filter_timer[4] = {20,20,20,20};
+  378  1              static unsigned char key_timer[4][2] = {0};
+  379  1              
+  380  1              Byte_To_Bit(skey_t, s_key, 4);
+  381  1              Bit_Filter(f_key, s_key, key_timer, filter_timer, 4);
+  382  1              
+  383  1              key_t->F1 = *(f_key+0); 
+  384  1              key_t->F2 = *(f_key+1);         
+  385  1              key_t->F3 = *(f_key+2); 
+  386  1              key_t->F4 = *(f_key+3);         
+  387  1      }
+  388         
+  389         
+  390         
+  391         static void Get_Toggle_Switch(unsigned char data_t, BCU_SwitchTypeDef *switch_t)
+  392         {
+  393  1              BOOL s_switch[4] = {FALSE};
+  394  1              static BOOL f_switch[4] = {FALSE};
+  395  1              
+  396  1              unsigned char filter_timer[4] = {20,20,20,20};
+  397  1              static unsigned char switch_timer[4][2] = {0};
+  398  1              
+  399  1              Byte_To_Bit(data_t, s_switch, 4);
+  400  1              Bit_Filter(f_switch, s_switch, switch_timer, filter_timer, 4);
+  401  1      
+  402  1              switch_t->S1 = *(f_switch + 0); 
+  403  1              switch_t->S2 = *(f_switch + 1);
+  404  1              switch_t->S3 = *(f_switch + 2); 
+  405  1              switch_t->S4 = *(f_switch + 3);
+  406  1      }
+  407         
+  408         
+  409         
+  410         /***模拟量换算－压力传感器***/
+  411         static unsigned int Get_AI_Value(unsigned int adc_data)
+  412         {
+  413  1              unsigned int conv_value=0;
+  414  1      
+  415  1              if(adc_data < 12221)
+  416  1                      adc_data = 12221;
+  417  1              else if(adc_data > 61105)
+  418  1                      adc_data = 61105;
+  419  1              conv_value = (unsigned int)(((adc_data - 12221)*1000)/48884);           //16位采样
+  420  1      
+  421  1              return (conv_value);
+  422  1      }
+  423         
+  424         
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 8   
+
+  425         /***模拟量换算－制动区***/
+  426         static unsigned int Get_Brake_Area_Value(unsigned int adc_data)
+  427         {
+  428  1              unsigned int conv_value=0;
+  429  1      
+  430  1              if(adc_data < 3232)
+  431  1                      adc_data = 3232;
+  432  1              conv_value = MIN(MAX(((unsigned int)((adc_data - 3232)*(M_JIANYA_MAX - 50)/59000)+50),50),M_JIANYA_MAX);        
+             -        //16位采样
+  433  1      
+  434  1              return (conv_value);
+  435  1      }
+  436         
+  437         
+  438         /**来自模拟板的串口数据**/
+  439         void Get_Brake_Press(unsigned int *aindata_t, BCU_PressTypeDef *bcu_press_t)
+  440         {
+  441  1              bcu_press_t->bc = Get_AI_Value(aindata_t[0]);
+  442  1              bcu_press_t->mr  = Get_AI_Value(aindata_t[1]);
+  443  1              bcu_press_t->bp  = Get_AI_Value(aindata_t[2]);
+  444  1              bcu_press_t->er  = Get_AI_Value(aindata_t[3]);
+  445  1              bcu_press_t->cv  = Get_AI_Value(aindata_t[4]);
+  446  1              
+  447  1              bcu_press_t->ebv1  = Get_Brake_Area_Value(aindata_t[5]);
+  448  1              bcu_press_t->ebv2  = Get_Brake_Area_Value(aindata_t[6]);
+  449  1              bcu_press_t->ebv3  = Get_Brake_Area_Value(aindata_t[7]);
+  450  1      }       
+  451         
+  452         
+  453         
+  454         ///***获取按键状态***/
+  455         //void Get_Key_Value(BOOL *key_value_t, unsigned char filter_time)
+  456         //{
+  457         //      BOOL skey1,skey2,skey3,skey4;
+  458         //      
+  459         //      skey1 = (BOOL)HAL_GPIO_ReadPin(GPIOD,GPIO_PIN_2);
+  460         //      skey2 = (BOOL)HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_15);
+  461         //      skey3 = (BOOL)HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_14);
+  462         //      skey4 = (BOOL)HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_13);      
+  463         //      
+  464         //      Bit_Filter(*(key_value_t + 0), skey1, filter_time);     
+  465         //      Bit_Filter(*(key_value_t + 1), skey2, filter_time);     
+  466         //      Bit_Filter(*(key_value_t + 2), skey3, filter_time);     
+  467         //      Bit_Filter(*(key_value_t + 3), skey4, filter_time);     
+  468         //}
+  469         
+  470         
+  471         
+  472         void Get_Brake_Mode(BCU_ModeTypeDef *bcu_mode_t)
+  473         {
+  474  1              if(DI18)
+  475  1              {
+  476  2                      bcu_mode_t->slave = TRUE;       //补机
+  477  2                      bcu_mode_t->master = FALSE;     //本机
+  478  2              }
+  479  1              else
+  480  1              {
+  481  2                      bcu_mode_t->master = TRUE;                      //本机
+  482  2                      bcu_mode_t->slave = FALSE;                      //补机
+  483  2      
+  484  2              }
+  485  1      }
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 9   
+
+  486         
+  487         
+  488         
+  489         //BOOL Brake_Pos_Move(BRAKE_PosTypeDef *buc_cur_pos_t, BRAKE_PosTypeDef *buc_last_pos_t)
+  490         //{
+  491         //      if(
+  492         //              buc_last_pos_t->d_oc  != buc_cur_pos_t->d_oc    ||
+  493         //              buc_last_pos_t->d_run != buc_cur_pos_t->d_run   ||
+  494         //              buc_last_pos_t->d_lap != buc_cur_pos_t->d_lap   ||
+  495         //              buc_last_pos_t->d_brk != buc_cur_pos_t->d_brk   ||
+  496         //              buc_last_pos_t->d_mul != buc_cur_pos_t->d_mul   ||
+  497         //              buc_last_pos_t->d_emc != buc_cur_pos_t->d_emc
+  498         //      )
+  499         //              return TRUE;
+  500         //      else
+  501         //              return FALSE;
+  502         //}
+  503         
+  504         
+  505         //BOOL d_move_flag = FALSE;
+  506         
+  507         //void Updata_Brake_Pos(BRAKE_PosTypeDef *buc_cur_pos_t, BRAKE_PosTypeDef *buc_old_pos_t)
+  508         //{
+  509         //      static unsigned char flag = 0;
+  510         //      static BOOL t1 = FALSE;
+  511         //      static BOOL t2 = FALSE;
+  512         //      static BOOL t3 = FALSE;
+  513         //      static BOOL t4 = FALSE;
+  514         //      static BOOL t5 = FALSE;
+  515         //      static BOOL t6 = FALSE; 
+  516         //      
+  517         //      static BOOL xt1 = FALSE;        
+  518         //      static BOOL xt2 = FALSE;
+  519         //      static BOOL xt3 = FALSE;
+  520         //      static BOOL xt4 = FALSE;
+  521         //      
+  522         //      if(flag ==0)
+  523         //      {
+  524         //              flag = 1;
+  525         //              t1 = buc_cur_pos_t->d_oc;
+  526         //              t2 = buc_cur_pos_t->d_run;
+  527         //              t3 = buc_cur_pos_t->d_lap;
+  528         //              t4 = buc_cur_pos_t->d_brk;
+  529         //              t5 = buc_cur_pos_t->d_mul;
+  530         //              t6 = buc_cur_pos_t->d_emc;
+  531         
+  532         //              xt1 = buc_cur_pos_t->x_rel;
+  533         //              xt2 = buc_cur_pos_t->x_run;
+  534         //              xt3 = buc_cur_pos_t->x_lap;
+  535         //              xt4 = buc_cur_pos_t->x_brk;
+  536         //      }
+  537         //      else
+  538         //      {
+  539         //              if(t1 != buc_cur_pos_t->d_oc)
+  540         //              {
+  541         //                      if(t1 && !(buc_cur_pos_t->d_oc))
+  542         //                      {
+  543         //                              buc_old_pos_t->d_oc = TRUE;
+  544         //                              buc_old_pos_t->d_run = FALSE;
+  545         //                              buc_old_pos_t->d_lap = FALSE;
+  546         //                              buc_old_pos_t->d_brk = FALSE;
+  547         //                              buc_old_pos_t->d_mul = FALSE;
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 10  
+
+  548         //                              buc_old_pos_t->d_emc = FALSE;
+  549         //                      }
+  550         //              }                       
+  551         //              
+  552         //              if(t2 != buc_cur_pos_t->d_run)
+  553         //              {
+  554         //                      if(t2 && !(buc_cur_pos_t->d_run))
+  555         //                      {
+  556         //                              buc_old_pos_t->d_oc = FALSE;
+  557         //                              buc_old_pos_t->d_run = TRUE;
+  558         //                              buc_old_pos_t->d_lap = FALSE;
+  559         //                              buc_old_pos_t->d_brk = FALSE;
+  560         //                              buc_old_pos_t->d_mul = FALSE;
+  561         //                              buc_old_pos_t->d_emc = FALSE;
+  562         //                      }
+  563         //              }
+  564         //              
+  565         //              if(t3 != buc_cur_pos_t->d_lap)
+  566         //              {
+  567         //                      if(t3 && !(buc_cur_pos_t->d_lap))
+  568         //                      {
+  569         //                              buc_old_pos_t->d_oc = FALSE;
+  570         //                              buc_old_pos_t->d_run = FALSE;
+  571         //                              buc_old_pos_t->d_lap = TRUE;
+  572         //                              buc_old_pos_t->d_brk = FALSE;
+  573         //                              buc_old_pos_t->d_mul = FALSE;
+  574         //                              buc_old_pos_t->d_emc = FALSE;
+  575         //                      }
+  576         //              }
+  577         //              
+  578         //              if(t4 != buc_cur_pos_t->d_brk)
+  579         //              {
+  580         //                      if(t4 && !(buc_cur_pos_t->d_brk))
+  581         //                      {
+  582         //                              buc_old_pos_t->d_oc = FALSE;
+  583         //                              buc_old_pos_t->d_run = FALSE;
+  584         //                              buc_old_pos_t->d_lap = FALSE;
+  585         //                              buc_old_pos_t->d_brk = TRUE;
+  586         //                              buc_old_pos_t->d_mul = FALSE;
+  587         //                              buc_old_pos_t->d_emc = FALSE;
+  588         //                      }
+  589         //              }
+  590         //              
+  591         //              if(t5 != buc_cur_pos_t->d_mul)
+  592         //              {
+  593         //                      if(t5 && !(buc_cur_pos_t->d_mul))
+  594         //                      {
+  595         //                              buc_old_pos_t->d_oc = FALSE;
+  596         //                              buc_old_pos_t->d_run = FALSE;
+  597         //                              buc_old_pos_t->d_lap = FALSE;
+  598         //                              buc_old_pos_t->d_brk = FALSE;
+  599         //                              buc_old_pos_t->d_mul = TRUE;
+  600         //                              buc_old_pos_t->d_emc = FALSE;
+  601         //                      }
+  602         //              }
+  603         //              
+  604         //              if(t6 != buc_cur_pos_t->d_emc)
+  605         //              {
+  606         //                      if(t6 && !(buc_cur_pos_t->d_emc))
+  607         //                      {
+  608         //                              buc_old_pos_t->d_oc = FALSE;
+  609         //                              buc_old_pos_t->d_run = FALSE;
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 11  
+
+  610         //                              buc_old_pos_t->d_lap = FALSE;
+  611         //                              buc_old_pos_t->d_brk = FALSE;
+  612         //                              buc_old_pos_t->d_mul = FALSE;
+  613         //                              buc_old_pos_t->d_emc = TRUE;
+  614         //                      }
+  615         //              }
+  616         //              
+  617         //              if(
+  618         //                      t1 != buc_cur_pos_t->d_oc       ||
+  619         //                      t2 != buc_cur_pos_t->d_run      ||
+  620         //                      t3 != buc_cur_pos_t->d_lap      ||
+  621         //                      t4 != buc_cur_pos_t->d_brk      ||
+  622         //                      t5 != buc_cur_pos_t->d_mul      ||
+  623         //                      t6 != buc_cur_pos_t->d_emc
+  624         //              )
+  625         //              {
+  626         //                      d_move_flag = TRUE;
+  627         //              }
+  628         //              else
+  629         //              {
+  630         //                      d_move_flag = FALSE;
+  631         //              }
+  632         //              
+  633         //              
+  634         //              if(xt1 != buc_cur_pos_t->x_rel)
+  635         //              {
+  636         //                      if(xt1 && !(buc_cur_pos_t->x_rel))
+  637         //                      {
+  638         //                              buc_old_pos_t->x_rel = TRUE;
+  639         //                              buc_old_pos_t->x_run = FALSE;
+  640         //                              buc_old_pos_t->x_lap = FALSE;
+  641         //                              buc_old_pos_t->x_brk = FALSE;
+  642         //                      }
+  643         //              }
+  644         //              
+  645         //              if(xt2 != buc_cur_pos_t->x_run)
+  646         //              {
+  647         //                      if(xt2 && !(buc_cur_pos_t->x_run))
+  648         //                      {
+  649         //                              buc_old_pos_t->x_rel = FALSE;
+  650         //                              buc_old_pos_t->x_run = TRUE;
+  651         //                              buc_old_pos_t->x_lap = FALSE;
+  652         //                              buc_old_pos_t->x_brk = FALSE;
+  653         //                      }
+  654         //              }               
+  655         //              
+  656         //              if(xt3 != buc_cur_pos_t->x_lap)
+  657         //              {
+  658         //                      if(xt3 && !(buc_cur_pos_t->x_lap))
+  659         //                      {
+  660         //                              buc_old_pos_t->x_rel = FALSE;
+  661         //                              buc_old_pos_t->x_run = FALSE;
+  662         //                              buc_old_pos_t->x_lap = TRUE;
+  663         //                              buc_old_pos_t->x_brk = FALSE;
+  664         //                      }
+  665         //              }       
+  666         
+  667         //              if(xt4 != buc_cur_pos_t->x_brk)
+  668         //              {
+  669         //                      if(xt4 && !(buc_cur_pos_t->x_brk))
+  670         //                      {
+  671         //                              buc_old_pos_t->x_rel = FALSE;
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 12  
+
+  672         //                              buc_old_pos_t->x_run = FALSE;
+  673         //                              buc_old_pos_t->x_lap = FALSE;
+  674         //                              buc_old_pos_t->x_brk = TRUE;
+  675         //                      }
+  676         //              }       
+  677         
+  678         //              
+  679         //              t1 = buc_cur_pos_t->d_oc;
+  680         //              t2 = buc_cur_pos_t->d_run;
+  681         //              t3 = buc_cur_pos_t->d_lap;
+  682         //              t4 = buc_cur_pos_t->d_brk;
+  683         //              t5 = buc_cur_pos_t->d_mul;
+  684         //              t6 = buc_cur_pos_t->d_emc;      
+  685         
+  686         //              xt1 = buc_cur_pos_t->x_rel;
+  687         //              xt2 = buc_cur_pos_t->x_run;
+  688         //              xt3 = buc_cur_pos_t->x_lap;
+  689         //              xt4 = buc_cur_pos_t->x_brk;             
+  690         //      }
+  691         //}
+  692         
+  693         static void Get_Punish_State(BCU_PunishTypeDef *punish_t)
+  694         {
+  695  1              if(DI10)
+  696  1                      punish_t->ATP = TRUE;
+  697  1              else
+  698  1                      punish_t->ATP = FALSE;
+  699  1      
+  700  1              if(DI11)
+  701  1                      punish_t->CCU = TRUE;
+  702  1              else
+  703  1                      punish_t->CCU = FALSE;
+  704  1      
+  705  1              if(DI12)
+  706  1                      punish_t->HD = TRUE;
+  707  1              else
+  708  1                      punish_t->HD = FALSE;
+  709  1              
+  710  1              if(DI13)
+  711  1                      punish_t->DS = TRUE;
+  712  1              else
+  713  1                      punish_t->DS = FALSE;
+  714  1      }
+  715         
+  716         /***获取32位数字量状态及过滤设置***/
+  717         void Get_Input(void)
+  718         {
+  719  1              ALLDIN();
+  720  1              GatAllAD();     
+  721  1              Get_Brake_Position(&bcu_port,&bcu_pos);
+  722  1              Get_Brake_Mode(&bcu_mode);
+  723  1              Get_Key_Value(key_value, &bcu_key);
+  724  1              Get_Toggle_Switch(switch_value, &bcu_switch);
+  725  1              Get_Brake_Press(AD_Data, &bcu_press);
+  726  1              Get_Punish_State(&bcu_punish);
+  727  1      }
+  728         
+  729         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =        2308     --------
+C166 COMPILER V7.53.0.0, INPUT                                                             07/29/2021 09:18:02 PAGE 13  
+
+  NEAR-CONST SIZE  =         120     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =         161     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =         184     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

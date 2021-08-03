@@ -1,0 +1,1 @@
+"CAN.C" MODV2 BROWSE INCDIR(.\Hardward File;.\User_App) MODV2 DEBUG PRINT(.\list\CAN.lst) OBJECT(.\obj\CAN.obj)

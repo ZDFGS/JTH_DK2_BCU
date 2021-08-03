@@ -1,0 +1,495 @@
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\obj\MAIN.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE MAIN.C MODV2 BROWSE INCDIR(.\Hardward File;.\User_Ap
+                    -p) MODV2 DEBUG PRINT(.\list\MAIN.lst) OBJECT(.\obj\MAIN.obj) 
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        Project Settings
+    3         // @Filename      MAIN.C
+    4         // @Project       CF_EBCU.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167FM-72F80
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.0
+   11         //
+   12         // @Description   This file contains the project initialization function.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2021/7/20 15:44:53
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (MAIN_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (MAIN_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (MAIN_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (MAIN_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (MAIN_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (MAIN_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (MAIN_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (MAIN_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (MAIN_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void MAIN_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This function initializes the microcontroller.
+  104         //
+  105         //----------------------------------------------------------------------------
+  106         // @Returnvalue   None
+  107         //
+  108         //----------------------------------------------------------------------------
+  109         // @Parameters    None
+  110         //
+  111         //----------------------------------------------------------------------------
+  112         // @Date          2021/7/20
+  113         //
+  114         //****************************************************************************
+  115         
+  116         // USER CODE BEGIN (Init,1)
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 3   
+
+  117         
+  118         // USER CODE END
+  119         
+  120         void MAIN_vInit(void)
+  121         {
+  122  1      
+  123  1        SCS_ErrorType Error;
+  124  1      
+  125  1        // USER CODE BEGIN (Init,2)
+  126  1      
+  127  1        // USER CODE END
+  128  1      
+  129  1        //   globally disable interrupts
+  130  1        PSW_IEN        =  0;          
+  131  1      
+  132  1        ///  -----------------------------------------------------------------------
+  133  1        ///  Configuration of the System Clock:
+  134  1        ///  -----------------------------------------------------------------------
+  135  1        ///  - VCO clock used, input clock is connected
+  136  1        ///  - input frequency is 8.00 MHz
+  137  1        ///  - configured system frequency is 80.00 MHz
+  138  1        ///  - system clock is 80.00MHz
+  139  1      
+  140  1        MAIN_vUnlockProtecReg();     // unlock write security
+  141  1      
+  142  1        // initialize CCU6 timer T13 for SCS driver
+  143  1        SCS_InitTimer();
+  144  1      
+  145  1        // perform transition from base mode to normal operating mode
+  146  1        Error = SCS_GoFromBaseToNormalMode();
+  147  1      
+  148  1        // restore CCU6 timer used by SCS driver
+  149  1        SCS_RestoreTimer();
+  150  1      
+  151  1        //   -----------------------------------------------------------------------
+  152  1        //   Initialization of the Peripherals:
+  153  1        //   -----------------------------------------------------------------------
+  154  1      
+  155  1        //   initializes the Parallel Ports
+  156  1        IO_vInit();
+  157  1      
+  158  1        //   initializes the General Purpose Timer Unit (GPT1)
+  159  1        GPT1_vInit();
+  160  1      
+  161  1        //   initializes the General Purpose Timer Unit (GPT2)
+  162  1        GPT2_vInit();
+  163  1      
+  164  1        //   initializes the Capture / Compare Unit 2 (CAPCOM2)
+  165  1        CC2_vInit();
+  166  1      
+  167  1        //   initializes the MultiCAN Module (CAN)
+  168  1        CAN_vInit();
+  169  1      
+  170  1        //   initializes the Watchdog Timer (WDT)
+  171  1        WDT_vInit();
+  172  1      
+  173  1        //   initializes the USIC2 Module
+  174  1        USIC2_vInit();
+  175  1      
+  176  1      
+  177  1        //   -----------------------------------------------------------------------
+  178  1        //   Initialization of the Bank Select registers:
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 4   
+
+  179  1        //   -----------------------------------------------------------------------
+  180  1      
+  181  1      
+  182  1        // USER CODE BEGIN (Init,3)
+  183  1      
+  184  1        // USER CODE END
+  185  1      
+  186  1        MAIN_vLockProtecReg();       // lock write security
+  187  1      
+  188  1        //   globally enable interrupts
+  189  1        PSW_IEN        =  1;          
+  190  1      
+  191  1      } //  End of function MAIN_vInit
+  192         
+  193         
+  194         //****************************************************************************
+  195         // @Function      void MAIN_vUnlockProtecReg(void) 
+  196         //
+  197         //----------------------------------------------------------------------------
+  198         // @Description   This function makes it possible to write one protected 
+  199         //                register.
+  200         //
+  201         //----------------------------------------------------------------------------
+  202         // @Returnvalue   None
+  203         //
+  204         //----------------------------------------------------------------------------
+  205         // @Parameters    None
+  206         //
+  207         //----------------------------------------------------------------------------
+  208         // @Date          2021/7/20
+  209         //
+  210         //****************************************************************************
+  211         
+  212         // USER CODE BEGIN (UnlockProtecReg,1)
+  213         
+  214         // USER CODE END
+  215         
+  216         void MAIN_vUnlockProtecReg(void)
+  217         {
+  218  1      
+  219  1          SCU_SLC = 0xAAAA;                   // command 0
+  220  1          SCU_SLC = 0x5554;                   // command 1
+  221  1          SCU_SLC = 0x96FF;                   // command 2
+  222  1          SCU_SLC = 0x0000;                   // command 3
+  223  1      
+  224  1      } //  End of function MAIN_vUnlockProtecReg
+  225         
+  226         
+  227         //****************************************************************************
+  228         // @Function      void MAIN_vLockProtecReg(void) 
+  229         //
+  230         //----------------------------------------------------------------------------
+  231         // @Description   This function makes it possible to lock one protected 
+  232         //                register.
+  233         //
+  234         //----------------------------------------------------------------------------
+  235         // @Returnvalue   None
+  236         //
+  237         //----------------------------------------------------------------------------
+  238         // @Parameters    None
+  239         //
+  240         //----------------------------------------------------------------------------
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 5   
+
+  241         // @Date          2021/7/20
+  242         //
+  243         //****************************************************************************
+  244         
+  245         // USER CODE BEGIN (LockProtecReg,1)
+  246         
+  247         // USER CODE END
+  248         
+  249         void MAIN_vLockProtecReg(void)
+  250         {
+  251  1      
+  252  1          SCU_SLC = 0xAAAA;                   // command 0
+  253  1          SCU_SLC = 0x5554;                   // command 1
+  254  1          SCU_SLC = 0x96FF;                   // command 2
+  255  1          SCU_SLC = 0x1800;                   // command 3;
+  256  1          SCU_SLC = 0x8EFF;                   // command 4
+  257  1      
+  258  1      } //  End of function MAIN_vLockProtecReg
+  259         
+  260         
+  261         //****************************************************************************
+  262         // @Function      void main(void) 
+  263         //
+  264         //----------------------------------------------------------------------------
+  265         // @Description   This is the main function.
+  266         //
+  267         //----------------------------------------------------------------------------
+  268         // @Returnvalue   None
+  269         //
+  270         //----------------------------------------------------------------------------
+  271         // @Parameters    None
+  272         //
+  273         //----------------------------------------------------------------------------
+  274         // @Date          2021/7/20
+  275         //
+  276         //****************************************************************************
+  277         
+  278         // USER CODE BEGIN (Main,1)     
+  279         Message SendTestMes1 = {0x81,0,8,{11,12,13,14,5,6,7,8}};
+  280         Message SendTestMes2 = {0x83,0,8,{21,22,23,24,25,26,27,28}};
+  281         
+  282         ubyte CAN_OperateFlag = 1;                        //CAN切换标志
+  283         static ubyte power_initCount;     //上电次数
+  284         uword CPUtime_Addr[30] = {0x10, 0x30, 0x50, 0x70,0x90,0xb0,0xd0,0xf0,0x110, 0x130};     //时间戳地址
+  285         timeInfo CPUTime = {0};
+  286         int can_switch_cntrl = 0;
+  287         
+  288         void Init();
+  289         
+  290         // USER CODE END
+  291         
+  292         void main(void)
+  293         {
+  294  1              // USER CODE BEGIN (Main,2)
+  295  1              static unsigned char countResume = 0; 
+  296  1              static unsigned char CPU_Life_Pre = 0;                             //
+  297  1              unsigned char i=0;
+  298  1              // USER CODE END
+  299  1      
+  300  1              MAIN_vInit();
+  301  1      
+  302  1              // USER CODE BEGIN (Main,3)
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 6   
+
+  303  1              WDT_vEnableWDT();
+  304  1              //CAN_Init         //CAN_OperateFlag为 1: 代表CANA工作 ， 为2：代表CANB
+  305  1              CAN_OperateFlag = 1;
+  306  1      
+  307  1              power_initCount++;              //
+  308  1              if(power_initCount>=255)
+  309  1              {
+  310  2              power_initCount = 0;
+  311  2              }
+  312  1              PowerCount = power_initCount;
+  313  1      
+  314  1              CPU_Life_Pre = CPUBoardLife;
+  315  1              // USER CODE END
+  316  1      
+  317  1              while(1)
+  318  1              {
+  319  2      
+  320  2                      // USER CODE BEGIN (Main,4)
+  321  2      
+  322  2                      if((CAN_NSR0 & 0x80) )//CAN 总线关闭
+  323  2                      {       
+  324  3                              CAN_NCR0 = 0;//总线恢复
+  325  3                      }
+  326  2      
+  327  2                      if( (CAN_NSR2  & 0x80))
+  328  2                      {
+  329  3                              CAN_NCR2 = 0;
+  330  3                      }
+  331  2              
+  332  2                  if(CycleFlag == 1)          // 20ms周期
+  333  2                  {
+  334  3                              CycleFlag = 0;
+  335  3                              LED_Flash();
+  336  3                              Watch_Dog();    
+  337  3                              EPBoardLife++;
+  338  3                              
+  339  3                              /****************输入********************************************************/
+  340  3                              Get_Input();  
+  341  3                              if(bcu_mode.master || DI29)     //主控
+  342  3                              {
+  343  4                                      if(!M_ENABLE_ALL)
+  344  4                                      {
+  345  5                                                      if(bcu_pos.d_res)       
+  346  5                                                      {
+  347  6                                                              D_Res_Logic();
+  348  6                                                      }                               
+  349  5                                                      else if(bcu_pos.d_mul)
+  350  5                                                      {
+  351  6                                                              D_Mul_Logic();
+  352  6                                                      }
+  353  5                                      }
+  354  4                                      else
+  355  4                                      {
+  356  5                                              if(Get_Check_State(&bcu_pos) || (check_busy==1))        //自检
+  357  5                                              {
+  358  6                                                      BCU_Self_Check();
+  359  6                                              }
+  360  5                                              else
+  361  5                                              {
+  362  6                                                      Logic_All_Pre();
+  363  6      //                                              JIANK_PO1 = Monitor_Logic();
+  364  6                                                      
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 7   
+
+  365  6                                                      if(bcu_pos.d_oc)                //?????
+  366  6                                                      {
+  367  7                                                              D_Oc_Logic();
+  368  7                                                      }
+  369  6                                                      
+  370  6                                                      else if(bcu_pos.d_run)  //?????
+  371  6                                                      {
+  372  7                                                              D_Run_Logic();
+  373  7                                                      }
+  374  6                                                      
+  375  6                                                      else if(bcu_pos.d_brk)  //?????
+  376  6                                                      {
+  377  7                                                              D_Brk_Logic();
+  378  7                                                      }
+  379  6                                                      
+  380  6                                                      else if(bcu_pos.d_res)  //?????
+  381  6                                                      {
+  382  7                                                              D_Res_Logic();
+  383  7                                                      }
+  384  6                                                      
+  385  6                                                      else if(bcu_pos.d_mul)  //?????
+  386  6                                                      {
+  387  7                                                              D_Mul_Logic();
+  388  7                                                      }
+  389  6                                                      
+  390  6                                                      else if(bcu_pos.d_emc)  //?????
+  391  6                                                      {
+  392  7                                                              D_Emc_Logic();
+  393  7                                                      }
+  394  6                                              }
+  395  5                                      }
+  396  4                              }
+  397  3                              
+  398  3                      /****************输出*******************************************************/   
+  399  3                              if(CPU_Life_Pre!=CPUBoardLife)  
+  400  3                              {
+  401  4                                      dout(1, 0x55);
+  402  4                                      dout(2, 0xfa);
+  403  4                                      CPU_Life_Pre = CPUBoardLife;
+  404  4                                      countResume = 0;                                        
+  405  4                              }
+  406  3                              else
+  407  3                              {
+  408  4                                      if(countResume++ > 50)          //1s之后cpu_boardLife仍然不变 , 关掉所有输出
+  409  4                                      {       
+  410  5                                              countResume = 0;                                                         
+  411  5                                              dout(1, 0);     
+  412  5                                              dout(2, 0);             
+  413  5                                      }       
+  414  4                              }
+  415  3                              for(i=0;i<4;i++)
+  416  3                                      EP_SendAnswer(i);       
+  417  3                      }
+  418  2      
+  419  2      
+  420  2              //======================= 下载相关，勿动 ==================================
+  421  2      //              if(Download_Flag) //开始下载命令，跳转到bootloader
+  422  2      //              {
+  423  2      //                      CPUCON1 &= 0xFFF7;
+  424  2      //                      VECSEG = 0xC1;          
+  425  2      //                      ((void (far *)(void)) 0xC10000)();  // start download code
+  426  2      //              }
+C166 COMPILER V7.53.0.0, MAIN                                                              07/29/2021 09:17:52 PAGE 8   
+
+  427  2              //==========================================================================
+  428  2      
+  429  2                      // USER CODE END
+  430  2              }
+  431  1      } //  End of function main
+  432         
+  433         
+  434         
+  435         // USER CODE BEGIN (MAIN_General,10)
+  436         void Init()
+  437         {
+  438  1              //IO_Init
+  439  1               DIN1_byte1 = 0;
+  440  1               DIN1_byte2 = 0;
+  441  1               DIN1_byte3 = 0;
+  442  1               dout(1, 0);    
+  443  1               dout(2, 0);    
+  444  1      
+  445  1              //CAN_Init, CANA工作，CANB关闭
+  446  1               CAN_OperateFlag = 1;
+  447  1      }
+  448         
+  449         // USER CODE END
+  450         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         494     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =         121     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =         154     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

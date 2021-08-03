@@ -1,0 +1,1 @@
+"USIC2.C" MODV2 BROWSE INCDIR(.\Hardward File;.\User_App) MODV2 DEBUG PRINT(.\list\USIC2.lst) OBJECT(.\obj\USIC2.obj)

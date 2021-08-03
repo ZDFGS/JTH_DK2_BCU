@@ -1,0 +1,41 @@
+C166 COMPILER V7.53.0.0, PWM                                                               07/29/2021 09:18:01 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE PWM
+OBJECT MODULE PLACED IN .\obj\PWM.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\PWM.c MODV2 BROWSE INCDIR(.\Hardward F
+                    -ile;.\User_App) MODV2 DEBUG PRINT(.\list\PWM.lst) OBJECT(.\obj\PWM.obj) 
+
+ stmt lvl     source
+
+    1         /*****************************************************************
+    2         *FileName: PWM.c
+    3         *Author: Chenbin                Version:V2.0            Date:3/17/2017
+    4         *Description: 
+    5         *                        该头文件定义了常用的功能函数。
+    6         ******************************************************************/
+    7         #include  "main.h"
+    8         
+    9         
+   10         unsigned char PWMOE1,PWMOE2,PWMOEbyte;
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =    --------     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           4     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,149 @@
+C166 COMPILER V7.53.0.0, PROTOCOL                                                          07/29/2021 09:17:59 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE PROTOCOL
+OBJECT MODULE PLACED IN .\obj\protocol.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE Hardward File\protocol.c MODV2 BROWSE INCDIR(.\Hardw
+                    -ard File;.\User_App) MODV2 DEBUG PRINT(.\list\protocol.lst) OBJECT(.\obj\protocol.obj) 
+
+ stmt lvl     source
+
+    1         #include  "MAIN.H"
+    2         
+    3         
+    4         typedef volatile struct
+    5         {
+    6                 unsigned int    MESID       : 4;
+    7                 unsigned int    SENDID      : 4;
+    8                 unsigned int    CtrID       : 3;
+    9                 unsigned int    undifine    : 5;
+   10         }vsCANID;       
+   11         
+   12         
+   13         void EP_Dispatch(ubyte MessageID, Message *m) //接收主帧内容
+   14         {
+   15  1              switch(MessageID)
+   16  1              {
+   17  2                      case 0: 
+   18  2                              DOUT1_data =(((m->data[5])&0x3F)<<1 );
+   19  2                              DOUT2_data =((((m->data[5])&0xC0)>>5) | ((m->data[4])<<3) );
+*** WARNING C192 IN LINE 19 OF Hardward File\protocol.c: '=': value truncated
+   20  2                              CPUBoardLife = (m->data[6]);
+   21  2                              break;
+   22  2                      
+   23  2                      case 1: 
+   24  2                                      //DA_DATA  = (((m->data[4]&0x00ff)<<8) + m->data[5]);
+   25  2                              break;  
+   26  2                      
+   27  2                      default:
+   28  2                              break;  
+   29  2              }
+   30  1      
+   31  1      
+   32  1      }
+   33         
+   34         unsigned char SendMessage_data[8]={0,0,0,0,0,0,0,0};
+   35         
+   36         void EP_SendAnswer(ubyte index) //发送应答帧
+   37         {
+   38  1              switch(index)
+   39  1              {
+   40  2                      case 0: 
+   41  2                              SendMessage_data[3] = DIN1_byte3;
+   42  2                              SendMessage_data[4] = DIN1_byte2;
+   43  2                              SendMessage_data[5] = DIN1_byte1;
+   44  2                              SendMessage_data[6] = OUTOE1;
+   45  2                              SendMessage_data[7] = EPBoardLife;      
+   46  2                              CAN_vLoadData(0,SendMessage_data);      
+   47  2                              CAN_vLoadData(8,SendMessage_data);      
+   48  2                              break;
+   49  2                      
+   50  2                      case 1:
+   51  2                              SendMessage_data[0] = (ubyte)((AD_Data[0] & 0xff00)>>8);
+   52  2                              SendMessage_data[1] = (ubyte)(AD_Data[0] & 0x00ff);
+   53  2                              SendMessage_data[2] = (ubyte)((AD_Data[1] & 0xff00)>>8);
+C166 COMPILER V7.53.0.0, PROTOCOL                                                          07/29/2021 09:17:59 PAGE 2   
+
+   54  2                              SendMessage_data[3] = (ubyte)(AD_Data[1] & 0x00ff);
+   55  2                              SendMessage_data[4] = (ubyte)((AD_Data[2] & 0xff00)>>8);
+   56  2                              SendMessage_data[5] = (ubyte)(AD_Data[2] & 0x00ff);
+   57  2                              CAN_vLoadData(2,SendMessage_data);      
+   58  2                              CAN_vLoadData(10,SendMessage_data);     
+   59  2                              break;
+   60  2                      
+   61  2                      case 2:
+   62  2                              SendMessage_data[0] = (ubyte)((AD_Data[3] & 0xff00)>>8);
+   63  2                              SendMessage_data[1] = (ubyte)(AD_Data[3] & 0x00ff);
+   64  2                              SendMessage_data[2] = (ubyte)((AD_Data[4] & 0xff00)>>8);
+   65  2                              SendMessage_data[3] = (ubyte)(AD_Data[4] & 0x00ff);//电制动申请的反馈
+   66  2                              SendMessage_data[4] = (ubyte)((AD_Data[5] & 0xff00)>>8);
+   67  2                              SendMessage_data[5] = (ubyte)(AD_Data[5] & 0x00ff);
+   68  2                              SendMessage_data[6] = OUTOE2;
+   69  2                              SendMessage_data[7] = EP_Fault;                 
+   70  2                              CAN_vLoadData(3,SendMessage_data);      
+   71  2                              CAN_vLoadData(11,SendMessage_data);     
+   72  2                              break;
+   73  2                      
+   74  2                      case 3:
+   75  2                              SendMessage_data[0] = (ubyte)((AD_Data[6] & 0xff00)>>8);
+   76  2                              SendMessage_data[1] = (ubyte)(AD_Data[6] & 0x00ff);
+   77  2                              SendMessage_data[2] = (ubyte)((AD_Data[7] & 0xff00)>>8);                  
+   78  2                              SendMessage_data[3] = (ubyte)(AD_Data[7] & 0x00ff);
+   79  2                              SendMessage_data[4] = (ubyte)((AD_Data[8] & 0xff00)>>8);
+   80  2                              SendMessage_data[5] = (ubyte)(AD_Data[8] & 0x00ff);
+   81  2      //                      SendMessage_data[6] = (ubyte)((RealSpeed1& 0xff00)>>8);
+   82  2      //                      SendMessage_data[7] = (ubyte)(RealSpeed1& 0x00ff);      
+   83  2                              CAN_vLoadData(4,SendMessage_data);      
+   84  2                              CAN_vLoadData(12,SendMessage_data);                     
+   85  2                              break;
+   86  2                      
+   87  2                      default:
+   88  2                              break;
+   89  2              }
+   90  1      }
+   91         
+   92         
+   93         void CanDispatch(ubyte port, Message *m)
+   94         {
+   95  1              uword CANID = m->cob_id;                  
+   96  1              ubyte SourceID =  (((vsCANID *) &CANID)->SENDID);  //发送端ID
+   97  1              ubyte MessageID = ((vsCANID *) &CANID)->MESID;   //板内帧ID             
+   98  1              if(SourceID == 3) //主节点发送的, 需要模拟板应答
+   99  1              {
+  100  2                      EP_Dispatch(MessageID,m); //EP板接收主帧内容
+  101  2              }
+  102  1              else 
+  103  1                      return;                 
+  104  1      }
+*** WARNING C47 IN LINE 93 OF Hardward File\protocol.c: 'port': unreferenced parameter
+  105         
+  106         
+  107         
+  108         
+  109         
+  110         
+  111         
+  112         
+
+
+C166 COMPILER V7.53.0.0, PROTOCOL                                                          07/29/2021 09:17:59 PAGE 3   
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         498     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           9     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =          12     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

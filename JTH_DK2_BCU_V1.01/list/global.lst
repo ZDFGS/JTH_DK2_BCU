@@ -1,0 +1,105 @@
+C166 COMPILER V7.53.0.0, GLOBAL                                                            07/29/2021 09:18:01 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE GLOBAL
+OBJECT MODULE PLACED IN .\obj\global.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE User_App\global.c MODV2 BROWSE INCDIR(.\Hardward Fil
+                    -e;.\User_App) MODV2 DEBUG PRINT(.\list\global.lst) OBJECT(.\obj\global.obj) 
+
+ stmt lvl     source
+
+    1         
+    2         #include "global.h"
+    3         
+    4         //****************硬件与应用接口变量****************//
+    5         
+    6         unsigned char dindata[4] = {0};                 //32通道数字量变量
+    7         unsigned char doutdata[2] = {0};                //16通道数字量变量
+    8         //unsigned char aindata[18]={0};                        //9通道模拟量
+    9         unsigned char key_value = 0;                //4按键变量
+   10         unsigned char switch_value = 0;                 //4位钮子开关
+   11         //unsigned char digital_tube[3] = {0};  //3位数码管变量
+   12         //unsigned char can0_rx[][8] = {0};
+   13         //unsigned char can1_rx[][8] = {0};
+   14         //unsigned char emc_time_send = 0;
+   15         
+   16         //unsigned short int bp_press_ad = 0;   //用于计算列车管变化率
+   17         unsigned int  STD_PRESS = 505;                  //定压值
+   18         unsigned int  M_ZHAG_MAX = 373;                 //BC最大值
+   19         unsigned int  M_JIANYA_MAX = 153;               //ER最大减压量
+   20         //BOOL EM_LOCK = FALSE;                                 //紧急锁
+   21         BOOL M_ENABLE_ALL = FALSE;                      //制动机解锁
+   22         //BOOL POM1=TRUE;
+   23         //BOOL POM2=TRUE;
+   24         //BOOL CHENFA_FLAG = FALSE;                     //惩罚锁标记
+   25         //BOOL CHFA_SUO = FALSE;
+   26         BOOL bcu_emc = FALSE;                           //紧急//BOOL ZJ1 = FALSE;                             
+   27         BOOL bcu_monitor = FALSE;                       //监控//BOOL ZJ3 = FALSE;     
+   28         //BOOL RUN_BIAOJI = TRUE;                                       //影响切换阀得失电的变量
+   29         //BOOL jin_xrel_flag = FALSE;
+   30         //BOOL L = FALSE;
+   31         //BOOL BUJI_FLAG = FALSE;
+   32         
+   33         //unsigned int emc_time=0;
+   34         unsigned int PO2_EBV=0;
+   35         unsigned int er_target=0;                                       //均衡目标值PO1=0;
+   36         //unsigned int PO2=0;                                           //闸缸目标值
+   37         //unsigned int JIANK_PO1 = 0;
+   38         
+   39         
+   40         //unsigned char usart1_rx[20] = {0};            //接收模拟板数据
+   41         //unsigned char usart1_rx_buf[20] = {0};  //接收模拟板数据缓存区
+   42         //unsigned char usart1_tx[8]={0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08};
+   43         
+   44         //unsigned char usart3_rx[8] = {0};
+   45         //unsigned char usart3_tx[8]={0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38};
+   46         
+   47         //unsigned char can_rx[][8] = {0};
+   48         //unsigned char can_tx[][8] = {0};
+   49         
+   50         
+   51         ////****************全局变量****************//
+   52         //unsigned char cpu_life_signal = 0;
+   53         //BOOL cycle_flag = FALSE;
+   54         BOOL d_move_flag = FALSE;
+C166 COMPILER V7.53.0.0, GLOBAL                                                            07/29/2021 09:18:01 PAGE 2   
+
+   55         
+   56         ////unsigned char bcu_enable = 0;               //0:BCU未解锁;  1:BCU解锁
+   57         ////unsigned char em_lock = 0;          //0:紧急未解锁; 1:紧急解锁
+   58         
+   59         
+   60         BOOL DI01,DI02,DI03,DI04,DI05,DI06,DI07,DI08;
+   61         BOOL DI09,DI10,DI11,DI12,DI13,DI14,DI15,DI16;
+   62         BOOL DI17,DI18,DI19,DI20,DI21,DI22,DI23,DI24;
+   63         BOOL DI25,DI26,DI27,DI28,DI29,DI30,DI31,DI32;
+   64         
+   65         
+   66         BRAKE_PortTypeDef       bcu_port;
+   67         BRAKE_PosTypeDef        bcu_pos,bcu_last_pos;
+   68         BCU_ModeTypeDef         bcu_mode;
+   69         BCU_PressTypeDef        bcu_press;
+   70         BCU_SwitchTypeDef       bcu_switch;
+   71         BCU_KeyTypeDef          bcu_key;
+   72         BCU_PunishTypeDef   bcu_punish={FALSE,FALSE,FALSE,FALSE};
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =    --------     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =         226     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =          94     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

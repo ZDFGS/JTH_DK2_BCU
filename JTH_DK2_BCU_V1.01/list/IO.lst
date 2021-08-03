@@ -1,0 +1,444 @@
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 1   
+
+
+C166 COMPILER V7.53.0.0, COMPILATION OF MODULE IO
+OBJECT MODULE PLACED IN .\obj\IO.obj
+COMPILER INVOKED BY: D:\Program Files (x86)\Keil4\C166\BIN\C166.EXE IO.C MODV2 BROWSE INCDIR(.\Hardward File;.\User_App)
+                    - MODV2 DEBUG PRINT(.\list\IO.lst) OBJECT(.\obj\IO.obj) 
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        Parallel Ports
+    3         // @Filename      IO.C
+    4         // @Project       CF_EBCU.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XE167FM-72F80
+    7         //
+    8         // @Compiler      Keil
+    9         //
+   10         // @Codegenerator 2.0
+   11         //
+   12         // @Description   This file contains functions that use the IO module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2021/7/20 15:44:55
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (IO_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.H"
+   30         
+   31         // USER CODE BEGIN (IO_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (IO_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (IO_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 2   
+
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (IO_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (IO_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (IO_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (IO_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (IO_General,9)
+   95         
+   96         // USER CODE END
+   97         
+   98         
+   99         //****************************************************************************
+  100         // @Function      void IO_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This is the initialization function of the IO function 
+  104         //                library. It is assumed that the SFRs used by this library 
+  105         //                are in reset state. 
+  106         //
+  107         //----------------------------------------------------------------------------
+  108         // @Returnvalue   None
+  109         //
+  110         //----------------------------------------------------------------------------
+  111         // @Parameters    None
+  112         //
+  113         //----------------------------------------------------------------------------
+  114         // @Date          2021/7/20
+  115         //
+  116         //****************************************************************************
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 3   
+
+  117         
+  118         // USER CODE BEGIN (IO_Function,1)
+  119         
+  120         // USER CODE END
+  121         
+  122         void IO_vInit(void)
+  123         {
+  124  1        // USER CODE BEGIN (IO_Function,2)
+  125  1      
+  126  1        // USER CODE END
+  127  1      
+  128  1      
+  129  1        ///  -----------------------------------------------------------------------
+  130  1        ///  Configuration of Port P0:
+  131  1        ///  -----------------------------------------------------------------------
+  132  1        ///  P0.0 is used as general purpose output
+  133  1        ///  - push/pull output is selected
+  134  1        ///  - the pin status is high level
+  135  1        ///  P0.1 is used as general purpose output
+  136  1        ///  - push/pull output is selected
+  137  1        ///  - the pin status is high level
+  138  1        ///  P0.2 is used as general purpose output
+  139  1        ///  - push/pull output is selected
+  140  1        ///  - the pin status is high level
+  141  1      
+  142  1        ///  P0.0 - P0.3 output driver characteristic: strong driver
+  143  1        ///  P0.4 - P0.7 output driver characteristic: strong driver
+  144  1      
+  145  1        ///  P0.0 - P0.3 output edge characteristic: sharp edge mode
+  146  1        ///  P0.4 - P0.7 output edge characteristic: sharp edge mode
+  147  1      
+  148  1        P0_OUT         =  0x0007;      // load data output register
+  149  1        P0_IOCR00      =  0x0080;      // load port control register 0
+  150  1        P0_IOCR01      =  0x0080;      // load port control register 1
+  151  1        P0_IOCR02      =  0x0080;      // load port control register 2
+  152  1      
+  153  1        ///  -----------------------------------------------------------------------
+  154  1        ///  Configuration of Port P1:
+  155  1        ///  -----------------------------------------------------------------------
+  156  1        ///  P1.4 is used as general purpose output
+  157  1        ///  - push/pull output is selected
+  158  1        ///  - the pin status is high level
+  159  1        ///  P1.7 is used as general purpose output
+  160  1        ///  - push/pull output is selected
+  161  1        ///  - the pin status is high level
+  162  1      
+  163  1        ///  P1.0 - P1.3 output driver characteristic: strong driver
+  164  1        ///  P1.4 - P1.7 output driver characteristic: strong driver
+  165  1      
+  166  1        ///  P1.0 - P1.3 output edge characteristic: sharp edge mode
+  167  1        ///  P1.4 - P1.7 output edge characteristic: sharp edge mode
+  168  1      
+  169  1        P1_OUT         =  0x0090;      // load data output register
+  170  1        P1_IOCR04      =  0x0080;      // load port control register 4
+  171  1        P1_IOCR07      =  0x0080;      // load port control register 7
+  172  1      
+  173  1        ///  -----------------------------------------------------------------------
+  174  1        ///  Configuration of Port P2:
+  175  1        ///  -----------------------------------------------------------------------
+  176  1        ///  P2.0 is used as alternate input for the CAN0 Receive input(RXDC0C)
+  177  1        ///  P2.1 is used as alternate output for the CAN0 Transmit output(TXDC0C)
+  178  1        ///  - push/pull output is selected
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 4   
+
+  179  1        ///  P2.3 is used as alternate output for the CAPCOM2 output(CC2_16)
+  180  1        ///  - push/pull output is selected
+  181  1        ///  P2.4 is used as alternate output for the CAPCOM2 output(CC2_17)
+  182  1        ///  - push/pull output is selected
+  183  1        ///  P2.5 is used as alternate output for the CAPCOM2 output(CC2_18)
+  184  1        ///  - push/pull output is selected
+  185  1        ///  P2.6 is used as alternate output for the CAPCOM2 output(CC2_19)
+  186  1        ///  - push/pull output is selected
+  187  1      
+  188  1        ///  P2.0 - P2.3 output driver characteristic: strong driver
+  189  1        ///  P2.4 - P2.7 output driver characteristic: strong driver
+  190  1        ///  P2.8 - P2.13 output driver characteristic: strong driver
+  191  1      
+  192  1        ///  P2.0 - P2.3 output edge characteristic: sharp edge mode
+  193  1        ///  P2.4 - P2.7 output edge characteristic: sharp edge mode
+  194  1        ///  P2.8 - P2.13 output edge characteristic: sharp edge mode
+  195  1      
+  196  1      
+  197  1        ///  -----------------------------------------------------------------------
+  198  1        ///  Configuration of Port P3:
+  199  1        ///  -----------------------------------------------------------------------
+  200  1        ///  P3.0 is used as general purpose output
+  201  1        ///  - push/pull output is selected
+  202  1        ///  - the pin status is high level
+  203  1        ///  P3.1 is used as general purpose output
+  204  1        ///  - push/pull output is selected
+  205  1        ///  - the pin status is high level
+  206  1        ///  P3.2 is used as alternate output for the USIC2 Channel0 Shift Clock 
+  207  1        ///  output(SCLKOUT)
+  208  1        ///  - push/pull output is selected
+  209  1      
+  210  1        ///  P3.0 - P3.3 output driver characteristic: strong driver
+  211  1        ///  P3.4 - P3.7 output driver characteristic: strong driver
+  212  1      
+  213  1        ///  P3.0 - P3.3 output edge characteristic: sharp edge mode
+  214  1        ///  P3.4 - P3.7 output edge characteristic: sharp edge mode
+  215  1      
+  216  1        P3_OUT         =  0x0003;      // load data output register
+  217  1        P3_IOCR00      =  0x0080;      // load port control register 0
+  218  1        P3_IOCR01      =  0x0080;      // load port control register 1
+  219  1      
+  220  1        ///  -----------------------------------------------------------------------
+  221  1        ///  Configuration of Port P4:
+  222  1        ///  -----------------------------------------------------------------------
+  223  1        ///  P4.0 is used as general purpose output
+  224  1        ///  - push/pull output is selected
+  225  1        ///  - the pin status is low level
+  226  1        ///  P4.2 is used as alternate output for the CAN2 Transmit output(TXDC2B)
+  227  1        ///  - push/pull output is selected
+  228  1        ///  P4.3 is used as alternate input for the CAN2 Receive inputA(RXDC2A)
+  229  1        ///  P4.5 is used as general purpose output
+  230  1        ///  - push/pull output is selected
+  231  1        ///  - the pin status is high level
+  232  1        ///  P4.6 is used as general purpose output
+  233  1        ///  - push/pull output is selected
+  234  1        ///  - the pin status is high level
+  235  1        ///  P4.7 is used as general purpose output
+  236  1        ///  - push/pull output is selected
+  237  1        ///  - the pin status is high level
+  238  1      
+  239  1        ///  P4.0 - P4.3 output driver characteristic: strong driver
+  240  1        ///  P4.4 - P4.7 output driver characteristic: strong driver
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 5   
+
+  241  1      
+  242  1        ///  P4.0 - P4.3 output edge characteristic: sharp edge mode
+  243  1        ///  P4.4 - P4.7 output edge characteristic: sharp edge mode
+  244  1      
+  245  1        P4_OUT         =  0x00E0;      // load data output register
+  246  1        P4_IOCR00      =  0x0080;      // load port control register 0
+  247  1        P4_IOCR05      =  0x0080;      // load port control register 5
+  248  1        P4_IOCR06      =  0x0080;      // load port control register 6
+  249  1        P4_IOCR07      =  0x0080;      // load port control register 7
+  250  1      
+  251  1        ///  -----------------------------------------------------------------------
+  252  1        ///  Configuration of Port P5:
+  253  1        ///  -----------------------------------------------------------------------
+  254  1        ///  P5.5 is used as general input
+  255  1        ///  P5.6 is used as general input
+  256  1        ///  P5.7 is used as general input
+  257  1        ///  P5.8 is used as general input
+  258  1      
+  259  1      
+  260  1        ///  -----------------------------------------------------------------------
+  261  1        ///  Configuration of Port P6:
+  262  1        ///  -----------------------------------------------------------------------
+  263  1        ///  P6.3 is used as general purpose output
+  264  1        ///  - push/pull output is selected
+  265  1        ///  - the pin status is high level
+  266  1      
+  267  1        ///  P6.0 - P6.3 output driver characteristic: strong driver
+  268  1      
+  269  1        ///  P6.0 - P6.3 output edge characteristic: sharp edge mode
+  270  1      
+  271  1        P6_OUT         =  0x0008;      // load data output register
+  272  1        P6_IOCR03      =  0x0080;      // load port control register 3
+  273  1      
+  274  1        ///  -----------------------------------------------------------------------
+  275  1        ///  Configuration of Port P7:
+  276  1        ///  -----------------------------------------------------------------------
+  277  1        ///  P7.3 is used as general purpose output
+  278  1        ///  - push/pull output is selected
+  279  1        ///  - the pin status is low level
+  280  1        ///  P7.4 is used as general input
+  281  1        ///  - pull device is tristate 
+  282  1      
+  283  1        ///  P7.0 - P7.3 output driver characteristic: strong driver
+  284  1        ///  P7.4 - P7.4 output driver characteristic: strong driver
+  285  1      
+  286  1        ///  P7.0 - P7.3 output edge characteristic: sharp edge mode
+  287  1        ///  P7.4 - P7.4 output edge characteristic: sharp edge mode
+  288  1      
+  289  1        P7_IOCR03      =  0x0080;      // load port control register 3
+  290  1      
+  291  1        ///  -----------------------------------------------------------------------
+  292  1        ///  Configuration of Port P8:
+  293  1        ///  -----------------------------------------------------------------------
+  294  1        ///  P8.0 is used as general purpose output
+  295  1        ///  - push/pull output is selected
+  296  1        ///  - the pin status is high level
+  297  1        ///  P8.1 is used as general purpose output
+  298  1        ///  - push/pull output is selected
+  299  1        ///  - the pin status is high level
+  300  1        ///  P8.2 is used as general input
+  301  1        ///  - pull device is tristate 
+  302  1        ///  P8.3 is used as general purpose output
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 6   
+
+  303  1        ///  - push/pull output is selected
+  304  1        ///  - the pin status is high level
+  305  1      
+  306  1        ///  P8.0 - P8.3 output driver characteristic: strong driver
+  307  1        ///  P8.4 - P8.6 output driver characteristic: strong driver
+  308  1      
+  309  1        ///  P8.0 - P8.3 output edge characteristic: sharp edge mode
+  310  1        ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
+  311  1      
+  312  1        P8_OUT         =  0x000B;      // load data output register
+  313  1        P8_IOCR00      =  0x0080;      // load port control register 0
+  314  1        P8_IOCR01      =  0x0080;      // load port control register 1
+  315  1        P8_IOCR03      =  0x0080;      // load port control register 3
+  316  1      
+  317  1        ///  -----------------------------------------------------------------------
+  318  1        ///  Configuration of Port P9:
+  319  1        ///  -----------------------------------------------------------------------
+  320  1        ///  P9.2 is used as general purpose output
+  321  1        ///  - push/pull output is selected
+  322  1        ///  - the pin status is high level
+  323  1        ///  P9.4 is used as alternate output for the USIC2 Channel0 Shift Data 
+  324  1        ///  Output(DOUT)
+  325  1        ///  - push/pull output is selected
+  326  1        ///  P9.5 is used as alternate input for the USIC2 Channel0 Shift Data 
+  327  1        ///  input(DX0E)
+  328  1      
+  329  1        ///  P9.0 - P9.3 output driver characteristic: strong driver
+  330  1        ///  P9.4 - P9.7 output driver characteristic: strong driver
+  331  1      
+  332  1        ///  P9.0 - P9.3 output edge characteristic: sharp edge mode
+  333  1        ///  P9.4 - P9.7 output edge characteristic: sharp edge mode
+  334  1      
+  335  1        P9_OUT         =  0x0004;      // load data output register
+  336  1        P9_IOCR02      =  0x0080;      // load port control register 2
+  337  1      
+  338  1        ///  -----------------------------------------------------------------------
+  339  1        ///  Configuration of Port P10:
+  340  1        ///  -----------------------------------------------------------------------
+  341  1        ///  P10.11 is used as general purpose output
+  342  1        ///  - push/pull output is selected
+  343  1        ///  - the pin status is high level
+  344  1        ///  P10.13 is used as general purpose output
+  345  1        ///  - push/pull output is selected
+  346  1        ///  - the pin status is low level
+  347  1        ///  P10.14 is used as general purpose output
+  348  1        ///  - push/pull output is selected
+  349  1        ///  - the pin status is low level
+  350  1      
+  351  1        ///  P10.0 - P10.3 output driver characteristic: strong driver
+  352  1        ///  P10.4 - P10.7 output driver characteristic: strong driver
+  353  1        ///  P10.8 - P10.11 output driver characteristic: strong driver
+  354  1        ///  P10.12 - P10.15 output driver characteristic: strong driver
+  355  1      
+  356  1        ///  P10.0 - P10.3 output edge characteristic: sharp edge mode
+  357  1        ///  P10.4 - P10.7 output edge characteristic: sharp edge mode
+  358  1        ///  P10.8 - P10.11 output edge characteristic: sharp edge mode
+  359  1        ///  P10.12 - P10.15 output edge characteristic: sharp edge mode
+  360  1      
+  361  1        P10_OUT        =  0x0800;      // load data output register
+  362  1        P10_IOCR11     =  0x0080;      // load port control register 11
+  363  1        P10_IOCR13     =  0x0080;      // load port control register 13
+  364  1        P10_IOCR14     =  0x0080;      // load port control register 14
+C166 COMPILER V7.53.0.0, IO                                                                07/29/2021 09:17:53 PAGE 7   
+
+  365  1      
+  366  1        ///  -----------------------------------------------------------------------
+  367  1        ///  Configuration of Port P11:
+  368  1        ///  -----------------------------------------------------------------------
+  369  1        ///  P11.4 is used as general purpose output
+  370  1        ///  - push/pull output is selected
+  371  1        ///  - the pin status is low level
+  372  1      
+  373  1        ///  P11.0 - P11.3 output driver characteristic: strong driver
+  374  1        ///  P11.4 - P11.5 output driver characteristic: strong driver
+  375  1      
+  376  1        ///  P11.0 - P11.3 output edge characteristic: sharp edge mode
+  377  1        ///  P11.4 - P11.5 output edge characteristic: sharp edge mode
+  378  1      
+  379  1        P11_IOCR04     =  0x0080;      // load port control register 4
+  380  1      
+  381  1        ///  -----------------------------------------------------------------------
+  382  1        ///  Configuration of Port P15:
+  383  1        ///  -----------------------------------------------------------------------
+  384  1        ///  - no pin of port P15 is used
+  385  1        ///  - Port15 Data register P15(Read only)
+  386  1      
+  387  1      
+  388  1      
+  389  1        // USER CODE BEGIN (IO_Function,3)
+  390  1      
+  391  1        // USER CODE END
+  392  1      
+  393  1      } //  End of function IO_vInit
+  394         
+  395         
+  396         
+  397         
+  398         // USER CODE BEGIN (IO_General,10)
+  399         
+  400         // USER CODE END
+  401         
+
+
+MODULE INFORMATION:   INITIALIZED  UNINITIALIZED
+  CODE SIZE        =         122     --------
+  NEAR-CONST SIZE  =    --------     --------
+  FAR-CONST SIZE   =    --------     --------
+  HUGE-CONST SIZE  =    --------     --------
+  XHUGE-CONST SIZE =    --------     --------
+  NEAR-DATA SIZE   =           1     --------
+  FAR-DATA SIZE    =    --------     --------
+  XHUGE-DATA SIZE  =    --------     --------
+  IDATA-DATA SIZE  =    --------     --------
+  SDATA-DATA SIZE  =    --------     --------
+  BDATA-DATA SIZE  =    --------     --------
+  HUGE-DATA SIZE   =    --------     --------
+  BIT SIZE         =    --------     --------
+  INIT'L SIZE      =    --------     --------
+END OF MODULE INFORMATION.
+
+
+C166 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
